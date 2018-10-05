@@ -20,7 +20,7 @@
 	<div class="collapse navbar-collapse" id="navbarColor01">
 		<ul class="navbar-nav mr-auto">
 			<li class="nav-item active"><a class="nav-link"
-				href="/plat"> ZEWAJ HELALL <span class="sr-only">(current)</span></a>
+				href="/Zwaj"> ZEWAJ HELALL <span class="sr-only">(current)</span></a>
 			</li>
 			<li class="nav-item"><a class="nav-link" href="/test">
 					Olach Hed </a></li>

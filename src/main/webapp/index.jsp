@@ -10,7 +10,7 @@
 <body>
 
 	<nav class="navbar navbar-expand-lg navbar-dark bg-primary"> <a
-		class="navbar-brand" href="#">Delta</a>
+		class="navbar-brand" href="#">Yemak a Naim</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse"
 		data-target="#navbarColor01" aria-controls="navbarColor01"
 		aria-expanded="false" aria-label="Toggle navigation">
@@ -20,18 +20,12 @@
 	<div class="collapse navbar-collapse" id="navbarColor01">
 		<ul class="navbar-nav mr-auto">
 			<li class="nav-item active"><a class="nav-link"
-				href="/plat"> Plat Principale <span class="sr-only">(current)</span></a>
+				href="/plat"> ZEWAJ HELALL <span class="sr-only">(current)</span></a>
 			</li>
 			<li class="nav-item"><a class="nav-link" href="/test">
-					Nos Entrées </a></li>
+					Olach Hed </a></li>
 			<li class="nav-item"><a class="nav-link" href="/dessert">
-					Nos Desserts </a></li>
-
-			<li class="nav-item"><a class="nav-link" href="/boisson">
-					Nos Boissons </a></li>
-
-			<li class="nav-item"><a class="nav-link" href="/salade">
-					Nos Salades </a></li>
+					lien ne marche pas </a></li>
 
 			<li class="nav-item"><a class="nav-link" href="#">About</a></li>
 		</ul>

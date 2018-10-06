@@ -36,11 +36,11 @@ public class Dessert extends HttpServlet {
 			Connection db = Connexion.getConnection();
 			Statement stmt = db.createStatement();
 			stmt.executeUpdate("CREATE TABLE Booking (
-				'BookingId' int(11) NOT NULL;
-				'BookingDated' varchar(15) NOT NULL;
-				'ProductId' int(11) NOT NULL;
+				'BookingId' int(11) NOT NULL,
+				'BookingDated' varchar(15) NOT NULL,
+				'ProductId' int(11) NOT NULL,
 				'UserId' int(11) NOT NULL
-			  ) ENGINE=InnoDB DEFAULT CHARSET=latin1;");
+				)");
 	        // stmt.executeUpdate("CREATE TABLE ticks (tick timestamp)");
 	        // stmt.executeUpdate("INSERT INTO ticks VALUES (now())");
 		 

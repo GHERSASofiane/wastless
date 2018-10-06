@@ -8,6 +8,8 @@ import org.apache.catalina.startup.Tomcat;
 import org.apache.catalina.webresources.DirResourceSet;
 import org.apache.catalina.webresources.StandardRoot;
  
+import BackEnd;
+
 public class Main {
 
     public static void main(String[] args) throws Exception {
@@ -38,9 +40,9 @@ public class Main {
 
         tomcat.start();
 
-        //TODO
-        // Thread t1 = new Thread(new test());
-        // t1.start();
+        // Launch Back-End
+        // test t1 = new test();
+        // t1.testerBack();
   
         tomcat.getServer().await();
     }

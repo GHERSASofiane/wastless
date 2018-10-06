@@ -25,7 +25,7 @@
 			<li class="nav-item"><a class="nav-link" href="/test">
 					Olach Hed </a></li>
 			<li class="nav-item"><a class="nav-link" href="/dessert">
-					lien ne marche pas </a></li>
+					lien ne marche pas avec kahina </a></li>
 
 			<li class="nav-item"><a class="nav-link" href="#">SOSSEM KAN</a></li>
 		</ul>

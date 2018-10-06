@@ -37,7 +37,7 @@ public class Dessert extends HttpServlet {
 			Statement stmt = db.createStatement();
 			// stmt.executeUpdate("CREATE TABLE Booking (BookingId int NOT NULL,BookingDated varchar(15) NOT NULL,ProductId int NOT NULL,UserId int NOT NULL )");
 			// stmt.executeUpdate("CREATE TABLE Product (ProductId int NOT NULL,ProductName varchar(50) NOT NULL,ProductDescription varchar(200) NOT NULL,ProductPrice int NOT NULL,ProductPicture varchar(100) NOT NULL,ProductStatus int NOT NULL DEFAULT '0',UserId int NOT NULL )");
-			stmt.executeUpdate("CREATE TABLE User (UserId int NOT NULL,UserMail text NOT NULL,UserName text NOT NULL,UserPassword text NOT NULL,UserPhone int NOT NULL,UserAdress text NOT NULL,UserProfilePicture text NOT NULL )");
+			stmt.executeUpdate("CREATE TABLE User (UserId int NOT NULL, UserMail varchar(50) NOT NULL, UserName varchar(10) NOT NULL, UserPassword varchar(20) NOT NULL, UserPhone int NOT NULL, UserAdress varchar(100) NOT NULL, UserProfilePicture varchar(100) NOT NULL )");
 			// stmt.executeUpdate("CREATE TABLE Weather (WeatherId int NOT NULL,Dated varchar(15) NOT NULL,Degree varchar(10) NOT NULL,Description varchar(50) NOT NULL )");
 			// stmt.executeUpdate("");
 			// stmt.executeUpdate("");

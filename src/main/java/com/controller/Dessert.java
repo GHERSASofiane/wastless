@@ -32,25 +32,31 @@ public class Dessert extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		// try {
-		// 	Connection db = Connexion.getConnection();
-		// 	Statement stmt = db.createStatement();
-		// 	stmt.executeUpdate("DROP TABLE IF EXISTS ticks");
-	    //     stmt.executeUpdate("CREATE TABLE ticks (tick timestamp)");
-	    //     stmt.executeUpdate("INSERT INTO ticks VALUES (now())");
-	    //     ResultSet rs = stmt.executeQuery("SELECT tick FROM ticks");
+		try {
+			Connection db = Connexion.getConnection();
+			Statement stmt = db.createStatement();
+			stmt.executeUpdate("CREATE TABLE `Booking` (
+				`BookingId` int(11) NOT NULL,
+				`BookingDated` varchar(15) NOT NULL,
+				`ProductId` int(11) NOT NULL,
+				`UserId` int(11) NOT NULL
+			  ) ENGINE=InnoDB DEFAULT CHARSET=latin1;");
+	        // stmt.executeUpdate("CREATE TABLE ticks (tick timestamp)");
+	        // stmt.executeUpdate("INSERT INTO ticks VALUES (now())");
+		 
+			System.out.println("BRAVOOOO !!!!!");
 	    //     while (rs.next()) {
 	    //         response.getWriter().println("Read from DB: " + rs.getTimestamp("tick"));
 	    //    // 	System.out.println("Read from DB: " + rs.getTimestamp("tick"));
 	    //     }
 			  
-		// } catch (URISyntaxException e) {
-		// 	// TODO Auto-generated catch block
-		// 	e.printStackTrace();
-		// } catch (SQLException e) {
-		// 	// TODO Auto-generated catch block
-		// 	e.printStackTrace();
-		// }
+		} catch (URISyntaxException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		// response.getWriter().println("Read from DB: ");
 		// request.getRequestDispatcher("WEB-INF/dessert.jsp").forward(request, response);
 	}

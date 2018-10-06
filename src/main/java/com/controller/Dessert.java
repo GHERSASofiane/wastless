@@ -39,7 +39,7 @@ public class Dessert extends HttpServlet {
 	        // stmt.executeUpdate("CREATE TABLE ticks (tick timestamp)");
 	        // stmt.executeUpdate("INSERT INTO ticks VALUES (now())");
 		 
-			System.out.println("BRAVOOOO !!!!!");
+			System.out.println("BRAVOOOO !!!!!!!!!!!");
 	    //     while (rs.next()) {
 	    //         response.getWriter().println("Read from DB: " + rs.getTimestamp("tick"));
 	    //    // 	System.out.println("Read from DB: " + rs.getTimestamp("tick"));

@@ -35,7 +35,7 @@ public class Dessert extends HttpServlet {
 		try {
 			Connection db = connection.getConnection();
 			Statement stmt = db.createStatement();
-			stmt.executeUpdate("CREATE TABLE Booking (BookingId int(11) NOT NULL, BookingDated varchar(15) NOT NULL, ProductId int(11) NOT NULL, UserId int(11) NOT NULL )");
+			stmt.executeUpdate("CREATE TABLE Booking (BookingId int NOT NULL, BookingDated varchar(15) NOT NULL, ProductId int NOT NULL, UserId int NOT NULL )");
 	        // stmt.executeUpdate("CREATE TABLE ticks (tick timestamp)");
 	        // stmt.executeUpdate("INSERT INTO ticks VALUES (now())");
 		 

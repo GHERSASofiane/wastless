@@ -12,15 +12,13 @@ public class signIn extends HttpServlet {
     
     public signIn() { }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) 
-        throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
 
     }
 	
 
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) 
-        throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
             
     }
 

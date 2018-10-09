@@ -20,6 +20,7 @@ public class HeadersFilter implements Filter{
 	public void doFilter(ServletRequest request, ServletResponse  response, FilterChain chain)
 			throws IOException, ServletException {
 		
+		 response.setContentType("application/json");
 		 ((HttpServletResponse) response).setHeader("Access-Control-Allow-Origin", "*"); 
 		 ((HttpServletResponse) response).setHeader("Access-Control-Allow-Credentials", "true");
 		 ((HttpServletResponse) response).setHeader("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT, OPTIONS, HEAD");

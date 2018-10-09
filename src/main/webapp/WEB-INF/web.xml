@@ -22,8 +22,18 @@
   	<description></description>
   	<servlet-class>controller.SignIn</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>InscriptionController</servlet-name>
+  	<display-name>InscriptionController</display-name>
+  	<description></description>
+  	<servlet-class>controller.InscriptionController</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>SignIn</servlet-name>
   	<url-pattern>/authentification</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>InscriptionController</servlet-name>
+  	<url-pattern>/InscriptionController</url-pattern>
   </servlet-mapping>
 </web-app>

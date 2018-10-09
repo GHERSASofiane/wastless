@@ -37,8 +37,8 @@ public class SignIn extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// recuperer les informations de la requete exemple name et passwd
-    	JsonObject o = JSonConverter.objectToJson(request.getReader());
+		
+		 JsonObject o = JSonConverter.objectToJson(request.getReader());
 		  
 		 String name = o.get("name").getAsString();
 		 String password = o.get("password").getAsString();
@@ -48,7 +48,7 @@ public class SignIn extends HttpServlet {
 		 
 	
 		 PrintWriter pr = response.getWriter();
-		 response.setContentType("application/json");
+		 
 		 pr.println(obj);
 		 pr.flush();
 		 

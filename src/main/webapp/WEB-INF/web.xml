@@ -4,7 +4,7 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
-  
+  <!-- 
   <filter>
   	<filter-name>FilterHeadears</filter-name>
   	<filter-class>filters.HeadersFilter</filter-class>
@@ -14,7 +14,7 @@
   	<filter-name>FilterHeadears</filter-name>
   	<url-pattern>/*</url-pattern>
   </filter-mapping>
-  
+  -->
   
   <servlet>
   	<servlet-name>SignIn</servlet-name>
@@ -28,10 +28,12 @@
   	<description></description>
   	<servlet-class>controller.InscriptionController</servlet-class>
   </servlet>
+  
   <servlet-mapping>
   	<servlet-name>SignIn</servlet-name>
   	<url-pattern>/authentification</url-pattern>
   </servlet-mapping>
+  
   <servlet-mapping>
   	<servlet-name>InscriptionController</servlet-name>
   	<url-pattern>/signup</url-pattern>

@@ -31,7 +31,7 @@ public class SignIn extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		/**
 		 response.setContentType("application/json");
 		 response.setHeader("Access-Control-Allow-Origin", "*"); 
 		 response.setHeader("Access-Control-Allow-Credentials", "true");
@@ -42,6 +42,25 @@ public class SignIn extends HttpServlet {
 		PrintWriter pw = response.getWriter();
 		pw.println(JSonConverter.objectToJson(new Reponse("ok", "")));
 		pw.flush();
+*/
+
+	   //creation de la reponse
+   StringBuffer sb = new StringBuffer();
+   sb.append("<HTML>\n");
+   sb.append("<HEAD>\n");
+   sb.append("<TITLE>Bonjour</TITLE>\n");
+   sb.append("</HEAD>\n");
+   sb.append("<BODY>\n");
+   sb.append("<H1>Bonjour</H1>\n");
+   sb.append("</BODY>\n");
+   sb.append("</HTML>");
+   
+   // envoi des infos de l'en-tete
+   response.setContentType("text/html");
+   response.setContentLength(sb.length());
+   
+   // envoi de la réponse
+   response.getOutputStream().print(sb.toString());
 	}
 
 	/**

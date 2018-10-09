@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.JsonObject;
 import services.PersonneService;
-
+import status.Reponse;
 import converters.JSonConverter;
 
 /**
@@ -31,6 +31,9 @@ public class SignIn extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		PrintWriter pw = response.getWriter();
+		pw.println(JSonConverter.objectToJson(new Reponse("ok", "")));
+		pw.flush();
 	}
 
 	/**

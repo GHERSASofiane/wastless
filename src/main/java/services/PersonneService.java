@@ -16,9 +16,6 @@ public class PersonneService {
 	{
 		PersonneDAO personne = new PersonneDAO();
 		Reponse rep = personne.logIn(name, password);
-		
-		
-		
 		return JSonConverter.objectToJson(rep);
 		
 		

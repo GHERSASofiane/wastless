@@ -54,6 +54,7 @@ public class SignIn extends HttpServlet {
    sb.append("<H1>Bonjour</H1>\n");
    sb.append("</BODY>\n");
    sb.append("</HTML>");
+		 response.setHeader("Access-Control-Allow-Origin", "http://localhost:8100"); 
    
    // envoi des infos de l'en-tete
    response.setContentType("text/html");

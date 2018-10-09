@@ -15,14 +15,11 @@ public class PersonneService {
 	public JsonObject getUserInformation(String name, String password)
 	{
 		PersonneDAO personne = new PersonneDAO();
-		boolean exist = personne.logIn(name, password);
+		Reponse rep = personne.logIn(name, password);
 		
-		if(exist)
-		{
-			return JSonConverter.objectToJson(new Reponse("ok", ""));
-		}
 		
-		return JSonConverter.objectToJson(new Reponse("ko", "user don't exist, verify your mail or password !!!"));
+		
+		return JSonConverter.objectToJson(rep);
 		
 		
 	}

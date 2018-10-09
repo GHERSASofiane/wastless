@@ -5,19 +5,20 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
+
 
 
 
 import configuration.Connexion;
-import models.Personne;
+
+import status.Reponse;
 
 
 
 public class PersonneDAO {
 
 	
-	public boolean logIn(String user, String password)
+	public Reponse logIn(String user, String password)
 	{
 		Connection db;
 		
@@ -34,7 +35,7 @@ public class PersonneDAO {
 			int result = rs.getInt(1);
 			
 			if(result == 1)
-				return true;
+				return new Reponse("ok", "");
 			
 		} catch (URISyntaxException e) {
 			// TODO Auto-generated catch block
@@ -44,6 +45,6 @@ public class PersonneDAO {
 			e.printStackTrace();
 		}
 		
-		return false;
+		return new Reponse("ko", "user don't exist,please check your mail or password or create new account");
 	}
 }

@@ -13,14 +13,9 @@ public class InscriptionService {
 	public JsonObject getInscriptionStatus(Personne personne)
 	{
 		InscriptionDAO insc = new InscriptionDAO();
-		boolean exist = insc.incription(personne);
-		
-		if(exist)
-		{
-			return JSonConverter.objectToJson(new Reponse("ok", ""));
-		}
-		
-		return JSonConverter.objectToJson(new Reponse("ko", "there was an error, please try again !!!"));
+		Reponse rep = insc.incription(personne);
+
+		return JSonConverter.objectToJson(rep);
 		
 		
 	}

@@ -34,6 +34,6 @@
   </servlet-mapping>
   <servlet-mapping>
   	<servlet-name>InscriptionController</servlet-name>
-  	<url-pattern>/InscriptionController</url-pattern>
+  	<url-pattern>/signup</url-pattern>
   </servlet-mapping>
 </web-app>

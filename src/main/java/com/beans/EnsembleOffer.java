@@ -24,6 +24,8 @@ public class EnsembleOffer {
          String ProductName, ProductDate, ProductDescription, ProductPicture;
          int ProductId, ProductPrice, ProductStatus, UserId;
 
+        try {
+
         Connection db = connection.getConnection();
         Statement stmt = db.createStatement();
         ResultSet rs = stmt.executeQuery("SELECT * FROM Product");
@@ -37,6 +39,12 @@ public class EnsembleOffer {
             ProductStatus = rs.getInt("ProductStatus");
             UserId = rs.getInt("UserId");
             this.MyListOffre.add(new Offer(10));
+        }
+
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+        }catch (SQLException e) {
+            e.printStackTrace();
         }
 
         this.MyListOffre.add(new Offer(0));

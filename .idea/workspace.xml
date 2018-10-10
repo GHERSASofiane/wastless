@@ -70,13 +70,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="230" />
+          <entry key="java" value="239" />
           <entry key="xml" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="229" />
+          <entry key="JAVA" value="238" />
           <entry key="Scratch" value="1" />
           <entry key="XML" value="4" />
         </counts>
@@ -136,16 +136,20 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/beans/EnsembleOffer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="26" column="34" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
+            <state relative-caret-position="435">
+              <caret line="46" column="32" selection-start-line="46" selection-start-column="32" selection-end-line="46" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#532#574#1" expanded="true" />
                 <element signature="e#548#573#0" expanded="true" />
                 <element signature="e#583#621#1" expanded="true" />
                 <element signature="e#630#689#1" expanded="true" />
-                <element signature="e#837#1355#0" expanded="true" />
-                <element signature="e#837#1355#0" expanded="true" />
+                <element signature="e#852#1370#0" expanded="true" />
+                <element signature="e#852#1370#0" expanded="true" />
+                <element signature="e#1382#1455#0" expanded="true" />
+                <element signature="e#1382#1455#0" expanded="true" />
+                <element signature="e#1455#1522#0" expanded="true" />
+                <element signature="e#1455#1522#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -289,7 +293,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539202378594" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539202548938" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JAVA" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
@@ -547,16 +551,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/beans/EnsembleOffer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="34" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
+        <state relative-caret-position="435">
+          <caret line="46" column="32" selection-start-line="46" selection-start-column="32" selection-end-line="46" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#532#574#1" expanded="true" />
             <element signature="e#548#573#0" expanded="true" />
             <element signature="e#583#621#1" expanded="true" />
             <element signature="e#630#689#1" expanded="true" />
-            <element signature="e#837#1355#0" expanded="true" />
-            <element signature="e#837#1355#0" expanded="true" />
+            <element signature="e#852#1370#0" expanded="true" />
+            <element signature="e#852#1370#0" expanded="true" />
+            <element signature="e#1382#1455#0" expanded="true" />
+            <element signature="e#1382#1455#0" expanded="true" />
+            <element signature="e#1455#1522#0" expanded="true" />
+            <element signature="e#1455#1522#0" expanded="true" />
           </folding>
         </state>
       </provider>

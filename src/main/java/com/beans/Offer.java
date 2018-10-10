@@ -6,16 +6,16 @@ public class Offer {
     private String ProductName, ProductDate, ProductDescription, ProductPicture;
     private int ProductId, ProductPrice, ProductStatus, UserId;
 
-    public Offer(int i) {
-        this.ProductName = "ProductName"+i;
-        this.ProductDate = "ProductDate"+i;
-        this.ProductDescription = "ProductDescription"+i;
-        this.ProductPicture = "ProductPicture"+i;
+    public Offer(String ProductName, String ProductDate, String ProductDescription, String ProductPicture, int ProductId, int ProductPrice, int ProductStatus, int UserId ) {
+        this.ProductName = ProductName;
+        this.ProductDate = ProductDate;
+        this.ProductDescription = ProductDescription;
+        this.ProductPicture = ProductPicture;
 
-        this.ProductId = i;
-        this.ProductPrice = i;
-        this.ProductStatus = i;
-        this.UserId = i;
+        this.ProductId = ProductId;
+        this.ProductPrice = ProductPrice;
+        this.ProductStatus = ProductStatus;
+        this.UserId = UserId;
     }
 
     @Override

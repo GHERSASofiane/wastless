@@ -38,7 +38,8 @@ public class EnsembleOffer {
             ProductPrice = rs.getInt("ProductPrice");
             ProductStatus = rs.getInt("ProductStatus");
             UserId = rs.getInt("UserId");
-            this.MyListOffre.add(new Offer(10));
+
+            this.MyListOffre.add(new Offer(ProductName, ProductDate, ProductDescription, ProductPicture, ProductId, ProductPrice, ProductStatus, UserId ));
         }
 
         } catch (URISyntaxException e) {
@@ -47,10 +48,7 @@ public class EnsembleOffer {
             e.printStackTrace();
         }
 
-        this.MyListOffre.add(new Offer(0));
-        this.MyListOffre.add(new Offer(1));
-       // this.MyListOffre.add(new Offer(0));
-        this.MyListOffre.add(new Offer(1));
+
     }
 
 

@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1b691451-90ef-45b2-81ac-2761e629338e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/src/main/java/com/beans/EnsembleOffer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beans/EnsembleOffer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/beans/Offer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beans/Offer.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -70,13 +71,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="239" />
+          <entry key="java" value="246" />
           <entry key="xml" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="238" />
+          <entry key="JAVA" value="245" />
           <entry key="Scratch" value="1" />
           <entry key="XML" value="4" />
         </counts>
@@ -97,11 +98,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/beans/Offer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="6" selection-end-column="63" />
+            <state relative-caret-position="255">
+              <caret line="17" column="29" lean-forward="true" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
               <folding>
                 <element signature="e#588#607#1" expanded="true" />
                 <element signature="e#639#657#0" expanded="true" />
@@ -133,23 +134,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/beans/EnsembleOffer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="46" column="32" selection-start-line="46" selection-start-column="32" selection-end-line="46" selection-end-column="32" />
+            <state relative-caret-position="315">
+              <caret line="41" column="42" selection-start-line="41" selection-start-column="42" selection-end-line="41" selection-end-column="153" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#532#574#1" expanded="true" />
                 <element signature="e#548#573#0" expanded="true" />
                 <element signature="e#583#621#1" expanded="true" />
                 <element signature="e#630#689#1" expanded="true" />
-                <element signature="e#852#1370#0" expanded="true" />
-                <element signature="e#852#1370#0" expanded="true" />
-                <element signature="e#1382#1455#0" expanded="true" />
-                <element signature="e#1382#1455#0" expanded="true" />
-                <element signature="e#1455#1522#0" expanded="true" />
-                <element signature="e#1455#1522#0" expanded="true" />
+                <element signature="e#852#1478#0" expanded="true" />
+                <element signature="e#852#1478#0" expanded="true" />
+                <element signature="e#1490#1563#0" expanded="true" />
+                <element signature="e#1490#1563#0" expanded="true" />
+                <element signature="e#1563#1630#0" expanded="true" />
+                <element signature="e#1563#1630#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -184,9 +185,9 @@
         <option value="$PROJECT_DIR$/src/main/java/com/model/OfferSearch.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/beans/Offer.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/controller/OfferSearch.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/beans/EnsembleOffer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/beans/Offer.java" />
       </list>
     </option>
   </component>
@@ -293,7 +294,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539202548938" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539202879038" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JAVA" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
@@ -515,10 +516,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/beans/EnsembleOffer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="41" column="42" selection-start-line="41" selection-start-column="42" selection-end-line="41" selection-end-column="153" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#532#574#1" expanded="true" />
+            <element signature="e#548#573#0" expanded="true" />
+            <element signature="e#583#621#1" expanded="true" />
+            <element signature="e#630#689#1" expanded="true" />
+            <element signature="e#852#1478#0" expanded="true" />
+            <element signature="e#852#1478#0" expanded="true" />
+            <element signature="e#1490#1563#0" expanded="true" />
+            <element signature="e#1490#1563#0" expanded="true" />
+            <element signature="e#1563#1630#0" expanded="true" />
+            <element signature="e#1563#1630#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/beans/Offer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="6" selection-end-column="63" />
+        <state relative-caret-position="255">
+          <caret line="17" column="29" lean-forward="true" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
           <folding>
             <element signature="e#588#607#1" expanded="true" />
             <element signature="e#639#657#0" expanded="true" />
@@ -545,26 +566,6 @@
             <element signature="e#1466#1481#0" expanded="true" />
             <element signature="e#1515#1536#0" expanded="true" />
             <element signature="e#1515#1536#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/beans/EnsembleOffer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="46" column="32" selection-start-line="46" selection-start-column="32" selection-end-line="46" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#532#574#1" expanded="true" />
-            <element signature="e#548#573#0" expanded="true" />
-            <element signature="e#583#621#1" expanded="true" />
-            <element signature="e#630#689#1" expanded="true" />
-            <element signature="e#852#1370#0" expanded="true" />
-            <element signature="e#852#1370#0" expanded="true" />
-            <element signature="e#1382#1455#0" expanded="true" />
-            <element signature="e#1382#1455#0" expanded="true" />
-            <element signature="e#1455#1522#0" expanded="true" />
-            <element signature="e#1455#1522#0" expanded="true" />
           </folding>
         </state>
       </provider>

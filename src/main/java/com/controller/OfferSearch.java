@@ -19,10 +19,10 @@ public class OfferSearch  extends HttpServlet {
         response.setHeader("Access-Control-Allow-Headers", "Content-Type, Accept, X-Requested-With");
 
         response.setContentType("application/json");
-
+        PrintWriter out = response.getWriter();
         try {
-            response.setContentType("application/json");
-            PrintWriter out = response.getWriter();
+
+
             out.println("{");
             out.println("\"First Name\": \"Devesh\",");
             out.println("\"Last Name\": \"Sharma\"");

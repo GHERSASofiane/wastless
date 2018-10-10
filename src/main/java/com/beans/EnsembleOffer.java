@@ -28,7 +28,7 @@ public class EnsembleOffer {
 
         Connection db = connection.getConnection();
         Statement stmt = db.createStatement();
-        ResultSet rs = stmt.executeQuery("SELECT * FROM Product WHERE ProductName LIKE '%"+this.nameArticle+"%'");
+        ResultSet rs = stmt.executeQuery("SELECT * FROM Product WHERE ProductName LIKE "+this.nameArticle+"%");
         while (rs.next()) {
             ProductName = rs.getString("ProductName");
             ProductDate = rs.getString("ProductDate");

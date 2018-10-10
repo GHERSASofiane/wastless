@@ -4,16 +4,6 @@
   <artifactId>wastless</artifactId>
   <version>0.0.1-SNAPSHOT</version>
 
-    <dependency>
-        <groupId>javax.servlet</groupId>
-        <artifactId>javax.servlet-api</artifactId>
-        <version>${javax.servlet.version}</version>
-    </dependency>
-    <dependency>
-        <groupId>com.google.code.gson</groupId>
-        <artifactId>gson</artifactId>
-        <version>${gson.version}</version>
-    </dependency>
 
   <properties>
     <java.version>1.8</java.version>
@@ -23,8 +13,18 @@
     <tomcat.version>8.5.32</tomcat.version>
   </properties>
   <dependencies>
-   
-    <dependency>
+      <dependency>
+          <groupId>javax.servlet</groupId>
+          <artifactId>javax.servlet-api</artifactId>
+          <version>${javax.servlet.version}</version>
+      </dependency>
+      <dependency>
+          <groupId>com.google.code.gson</groupId>
+          <artifactId>gson</artifactId>
+          <version>${gson.version}</version>
+      </dependency>
+
+      <dependency>
         <groupId>org.apache.tomcat.embed</groupId>
         <artifactId>tomcat-embed-core</artifactId>
         <version>${tomcat.version}</version>

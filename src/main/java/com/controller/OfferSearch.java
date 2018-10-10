@@ -31,7 +31,7 @@ public class OfferSearch  extends HttpServlet {
         listoff.add(new Offer(0));
         listoff.add(new Offer(1));
 
-        EnsembleOffer ensOff = new EnsembleOffer(listoff);
+        EnsembleOffer ensOff = new beans.EnsembleOffer(listoff);
        // System.out.println(ensOff.toString());
 
         //    out.println("{");

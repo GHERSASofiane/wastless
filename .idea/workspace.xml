@@ -88,18 +88,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/OfferSearch.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="21" column="47" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="47" />
+            <state relative-caret-position="60">
+              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#780#823#0" expanded="true" />
-                <element signature="e#780#823#0" expanded="true" />
+                <element signature="e#808#851#0" expanded="true" />
+                <element signature="e#808#851#0" expanded="true" />
                 <element signature="e#825#864#1" expanded="true" />
                 <element signature="e#843#863#0" expanded="true" />
                 <element signature="e#1003#1032#0" expanded="true" />
                 <element signature="e#1059#1086#0" expanded="true" />
-                <element signature="e#1118#1184#0" expanded="true" />
-                <element signature="e#1118#1184#0" expanded="true" />
+                <element signature="e#1122#1188#0" expanded="true" />
+                <element signature="e#1122#1188#0" expanded="true" />
                 <element signature="e#1216#1242#0" expanded="true" />
               </folding>
             </state>
@@ -292,7 +291,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539178002870" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539178179131" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JAVA" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
@@ -513,18 +512,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/OfferSearch.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="21" column="47" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="47" />
+        <state relative-caret-position="60">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#780#823#0" expanded="true" />
-            <element signature="e#780#823#0" expanded="true" />
+            <element signature="e#808#851#0" expanded="true" />
+            <element signature="e#808#851#0" expanded="true" />
             <element signature="e#825#864#1" expanded="true" />
             <element signature="e#843#863#0" expanded="true" />
             <element signature="e#1003#1032#0" expanded="true" />
             <element signature="e#1059#1086#0" expanded="true" />
-            <element signature="e#1118#1184#0" expanded="true" />
-            <element signature="e#1118#1184#0" expanded="true" />
+            <element signature="e#1122#1188#0" expanded="true" />
+            <element signature="e#1122#1188#0" expanded="true" />
             <element signature="e#1216#1242#0" expanded="true" />
           </folding>
         </state>

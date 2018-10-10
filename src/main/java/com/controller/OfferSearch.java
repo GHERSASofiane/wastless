@@ -8,6 +8,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import java.util.ArrayList;
+import java.util.List;
+import beans.*;
 
 public class OfferSearch  extends HttpServlet {
     
@@ -21,11 +24,20 @@ public class OfferSearch  extends HttpServlet {
 
         response.setContentType("application/json");
         PrintWriter out = response.getWriter();
-         
-            out.println("{");
-            out.println("\"First Name\": \"Devesh\",");
-            out.println("\"Last Name\": \"Sharma\"");
-            out.println("}");
+
+        List<Offer> listoff = new ArrayList<>();
+        listoff.add(new Offer(0));
+        listoff.add(new Offer(1));
+        listoff.add(new Offer(0));
+        listoff.add(new Offer(1));
+
+        EnsembleOffer ensOff = new EnsembleOffer(listoff);
+       // System.out.println(ensOff.toString());
+
+        //    out.println("{");
+        //    out.println("\"First Name\": \"Devesh\",");
+        //     out.println("\"Last Name\": \"Sharma\"");
+            out.println(ensOff.toString());
             out.close();
 
 

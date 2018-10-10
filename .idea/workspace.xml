@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="1b691451-90ef-45b2-81ac-2761e629338e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/src/main/java/com/beans/EnsembleOffer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beans/EnsembleOffer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/controller/OfferSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/controller/OfferSearch.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -137,16 +136,16 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/beans/EnsembleOffer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="38" column="44" selection-start-line="38" selection-start-column="44" selection-end-line="38" selection-end-column="44" />
+            <state relative-caret-position="390">
+              <caret line="26" column="34" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#532#574#1" expanded="true" />
                 <element signature="e#548#573#0" expanded="true" />
                 <element signature="e#583#621#1" expanded="true" />
                 <element signature="e#630#689#1" expanded="true" />
-                <element signature="e#836#1354#0" expanded="true" />
-                <element signature="e#836#1354#0" expanded="true" />
+                <element signature="e#837#1355#0" expanded="true" />
+                <element signature="e#837#1355#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -290,7 +289,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539202218657" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539202378594" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JAVA" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
@@ -548,16 +547,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/beans/EnsembleOffer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="38" column="44" selection-start-line="38" selection-start-column="44" selection-end-line="38" selection-end-column="44" />
+        <state relative-caret-position="390">
+          <caret line="26" column="34" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#532#574#1" expanded="true" />
             <element signature="e#548#573#0" expanded="true" />
             <element signature="e#583#621#1" expanded="true" />
             <element signature="e#630#689#1" expanded="true" />
-            <element signature="e#836#1354#0" expanded="true" />
-            <element signature="e#836#1354#0" expanded="true" />
+            <element signature="e#837#1355#0" expanded="true" />
+            <element signature="e#837#1355#0" expanded="true" />
           </folding>
         </state>
       </provider>

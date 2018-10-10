@@ -24,7 +24,7 @@ public class EnsembleOffer {
          String ProductName, ProductDate, ProductDescription, ProductPicture;
          int ProductId, ProductPrice, ProductStatus, UserId;
 
-        Connection db = Connexion.getConnection();
+        Connection db = connection.getConnection();
         Statement stmt = db.createStatement();
         ResultSet rs = stmt.executeQuery("SELECT * FROM Product");
         while (rs.next()) {

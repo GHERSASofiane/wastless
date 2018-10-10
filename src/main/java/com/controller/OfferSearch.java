@@ -21,17 +21,13 @@ public class OfferSearch  extends HttpServlet {
 
         response.setContentType("application/json");
         PrintWriter out = response.getWriter();
-        try {
-
-
+        
             out.println("{");
-            out.println("\"First Name\": \"Devesh\",");
-            out.println("\"Last Name\": \"Sharma\"");
+            out.println("'First Name': 'Devesh',");
+            out.println("'Last Name': 'Sharma'");
             out.println("}");
             out.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+
 
         // envoi de la réponse
     }

@@ -2,6 +2,13 @@ package com.beans;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.net.URISyntaxException;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import configuration.connection;
 
 public class EnsembleOffer {
 
@@ -14,6 +21,23 @@ public class EnsembleOffer {
     }
 
     public void ConstructListe(){
+         String ProductName, ProductDate, ProductDescription, ProductPicture;
+         int ProductId, ProductPrice, ProductStatus, UserId;
+
+        Connection db = Connexion.getConnection();
+        Statement stmt = db.createStatement();
+        ResultSet rs = stmt.executeQuery("SELECT * FROM Product");
+        while (rs.next()) {
+            ProductName = rs.getString("ProductName");
+            ProductDate = rs.getString("ProductDate");
+            ProductDescription = rs.getString("ProductDescription");
+            ProductPicture = rs.getString("ProductPicture");
+            ProductId = rs.getInt("ProductId");
+            ProductPrice = rs.getInt("ProductPrice");
+            ProductStatus = rs.getInt("ProductStatus");
+            UserId = rs.getInt("UserId");
+            this.MyListOffre.add(new Offer(10));
+        }
 
         this.MyListOffre.add(new Offer(0));
         this.MyListOffre.add(new Offer(1));

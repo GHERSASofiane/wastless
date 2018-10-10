@@ -17,7 +17,7 @@ public class EnsembleOffer {
 
         this.MyListOffre.add(new Offer(0));
         this.MyListOffre.add(new Offer(1));
-        this.MyListOffre.add(new Offer(0));
+       // this.MyListOffre.add(new Offer(0));
         this.MyListOffre.add(new Offer(1));
     }
 

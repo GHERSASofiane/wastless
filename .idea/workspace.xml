@@ -70,13 +70,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="197" />
+          <entry key="java" value="199" />
           <entry key="xml" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="196" />
+          <entry key="JAVA" value="198" />
           <entry key="Scratch" value="1" />
           <entry key="XML" value="4" />
         </counts>
@@ -88,8 +88,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/OfferSearch.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+            <state relative-caret-position="291">
+              <caret line="29" column="56" selection-start-line="29" selection-start-column="50" selection-end-line="29" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#879#922#0" expanded="true" />
@@ -149,22 +149,22 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/beans/EnsembleOffer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+            <state relative-caret-position="60">
+              <caret line="19" column="9" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#237#257#1" expanded="true" />
                 <element signature="e#290#339#0" expanded="true" />
                 <element signature="e#290#339#0" expanded="true" />
                 <element signature="e#374#391#0" expanded="true" />
-                <element signature="e#838#1039#0" expanded="true" />
+                <element signature="e#840#1041#0" expanded="true" />
                 <element signature="e#501#511#1" expanded="true" />
-                <element signature="e#838#1039#0" expanded="true" />
-                <element signature="e#838#1039#0" expanded="true" />
-                <element signature="e#858#883#0" expanded="true" />
-                <element signature="e#838#1039#0" expanded="true" />
-                <element signature="e#838#1039#0" expanded="true" />
-                <element signature="e#1100#1125#0" expanded="true" />
+                <element signature="e#840#1041#0" expanded="true" />
+                <element signature="e#840#1041#0" expanded="true" />
+                <element signature="e#860#885#0" expanded="true" />
+                <element signature="e#840#1041#0" expanded="true" />
+                <element signature="e#840#1041#0" expanded="true" />
+                <element signature="e#1102#1127#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -330,7 +330,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539183128569" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539183896015" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JAVA" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
@@ -586,8 +586,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/OfferSearch.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+        <state relative-caret-position="291">
+          <caret line="29" column="56" selection-start-line="29" selection-start-column="50" selection-end-line="29" selection-end-column="56" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#879#922#0" expanded="true" />
@@ -601,22 +601,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/beans/EnsembleOffer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        <state relative-caret-position="60">
+          <caret line="19" column="9" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#237#257#1" expanded="true" />
             <element signature="e#290#339#0" expanded="true" />
             <element signature="e#290#339#0" expanded="true" />
             <element signature="e#374#391#0" expanded="true" />
-            <element signature="e#838#1039#0" expanded="true" />
+            <element signature="e#840#1041#0" expanded="true" />
             <element signature="e#501#511#1" expanded="true" />
-            <element signature="e#838#1039#0" expanded="true" />
-            <element signature="e#838#1039#0" expanded="true" />
-            <element signature="e#858#883#0" expanded="true" />
-            <element signature="e#838#1039#0" expanded="true" />
-            <element signature="e#838#1039#0" expanded="true" />
-            <element signature="e#1100#1125#0" expanded="true" />
+            <element signature="e#840#1041#0" expanded="true" />
+            <element signature="e#840#1041#0" expanded="true" />
+            <element signature="e#860#885#0" expanded="true" />
+            <element signature="e#840#1041#0" expanded="true" />
+            <element signature="e#840#1041#0" expanded="true" />
+            <element signature="e#1102#1127#0" expanded="true" />
           </folding>
         </state>
       </provider>

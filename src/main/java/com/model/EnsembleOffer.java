@@ -1,4 +1,4 @@
-package com.beans;
+package com.model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,6 +9,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import configuration.connection;
+import com.beans.*;
 
 public class EnsembleOffer {
 

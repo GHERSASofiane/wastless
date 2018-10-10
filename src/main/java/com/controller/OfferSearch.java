@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.List;
 import com.beans.*;
+import com.model.*;
 
 public class OfferSearch  extends HttpServlet {
     
@@ -25,19 +26,11 @@ public class OfferSearch  extends HttpServlet {
         response.setContentType("application/json");
         PrintWriter out = response.getWriter();
 
-
-
         EnsembleOffer ensOff = new EnsembleOffer(request.getParameter("ProductName"));
-       // System.out.println(ensOff.toString());
 
-        //    out.println("{");
-        //    out.println("\"First Name\": \"Devesh\",");
-        //     out.println("\"Last Name\": \"Sharma\"");
-            out.println(ensOff.toString());
-            out.close();
+        out.println(ensOff.toString());
+        out.close();
 
-
-        // envoi de la réponse
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

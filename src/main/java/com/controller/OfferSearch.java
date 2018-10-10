@@ -34,7 +34,6 @@ public class OfferSearch  extends HttpServlet {
         }
 
         // envoi de la réponse
-        response.getOutputStream().print(out);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

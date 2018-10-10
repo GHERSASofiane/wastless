@@ -13,16 +13,6 @@
     <tomcat.version>8.5.32</tomcat.version>
   </properties>
   <dependencies>
-      <dependency>
-          <groupId>javax.servlet</groupId>
-          <artifactId>javax.servlet-api</artifactId>
-          <version>${javax.servlet.version}</version>
-      </dependency>
-      <dependency>
-          <groupId>com.google.code.gson</groupId>
-          <artifactId>gson</artifactId>
-          <version>${gson.version}</version>
-      </dependency>
 
       <dependency>
         <groupId>org.apache.tomcat.embed</groupId>

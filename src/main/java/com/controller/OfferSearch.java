@@ -18,21 +18,22 @@ public class OfferSearch  extends HttpServlet {
         response.setHeader("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT, OPTIONS, HEAD");
         response.setHeader("Access-Control-Allow-Headers", "Content-Type, Accept, X-Requested-With");
 
-        response.setContentType("text/html");
+        response.setContentType("application/json");
 
-        StringBuffer sb = new StringBuffer();
-        sb.append("<HTML>\n");
-        sb.append("<HEAD>\n");
-        sb.append("<TITLE>Bonjour</TITLE>\n");
-        sb.append("</HEAD>\n");
-        sb.append("<BODY>\n");
-        sb.append("<H1>Bonjour</H1>\n");
-        sb.append("</BODY>\n");
-        sb.append("</HTML>");
-        response.setContentLength(sb.length());
+        try {
+            response.setContentType("application/json");
+            PrintWriter out = response.getWriter();
+            out.println("{");
+            out.println("\"First Name\": \"Devesh\",");
+            out.println("\"Last Name\": \"Sharma\"");
+            out.println("}");
+            out.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         // envoi de la réponse
-        response.getOutputStream().print(sb.toString());
+        response.getOutputStream().print(out);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

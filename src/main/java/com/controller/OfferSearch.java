@@ -27,7 +27,7 @@ public class OfferSearch  extends HttpServlet {
 
 
 
-        EnsembleOffer ensOff = new EnsembleOffer("Iphone");
+        EnsembleOffer ensOff = new EnsembleOffer(request.getParameter("ProductName"));
        // System.out.println(ensOff.toString());
 
         //    out.println("{");

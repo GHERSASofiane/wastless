@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1b691451-90ef-45b2-81ac-2761e629338e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/beans/EnsembleOffer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beans/EnsembleOffer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/controller/OfferSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/controller/OfferSearch.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
@@ -70,13 +71,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="98" />
+          <entry key="java" value="195" />
           <entry key="xml" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="97" />
+          <entry key="JAVA" value="194" />
           <entry key="Scratch" value="1" />
           <entry key="XML" value="4" />
         </counts>
@@ -88,15 +89,14 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/OfferSearch.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
-              <caret line="31" column="34" lean-forward="true" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
+            <state relative-caret-position="246">
+              <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#879#922#0" expanded="true" />
                 <element signature="e#879#922#0" expanded="true" />
                 <element signature="e#825#864#1" expanded="true" />
                 <element signature="e#843#863#0" expanded="true" />
-                <element signature="e#961#1001#1" expanded="true" />
                 <element signature="e#1151#1201#1" expanded="true" />
               </folding>
             </state>
@@ -150,23 +150,24 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/beans/EnsembleOffer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="12" lean-forward="true" selection-start-column="8" selection-end-column="12" />
+            <state relative-caret-position="285">
+              <caret line="19" column="43" lean-forward="true" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
               <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="e#145#146#0" expanded="true" />
                 <element signature="e#181#182#0" expanded="true" />
                 <element signature="e#237#257#1" expanded="true" />
                 <element signature="e#290#339#0" expanded="true" />
                 <element signature="e#290#339#0" expanded="true" />
                 <element signature="e#374#391#0" expanded="true" />
-                <element signature="e#496#697#0" expanded="true" />
+                <element signature="e#807#1008#0" expanded="true" />
                 <element signature="e#501#511#1" expanded="true" />
-                <element signature="e#496#697#0" expanded="true" />
-                <element signature="e#496#697#0" expanded="true" />
-                <element signature="e#516#541#0" expanded="true" />
-                <element signature="e#496#697#0" expanded="true" />
-                <element signature="e#496#697#0" expanded="true" />
-                <element signature="e#758#783#0" expanded="true" />
+                <element signature="e#807#1008#0" expanded="true" />
+                <element signature="e#807#1008#0" expanded="true" />
+                <element signature="e#827#852#0" expanded="true" />
+                <element signature="e#807#1008#0" expanded="true" />
+                <element signature="e#807#1008#0" expanded="true" />
+                <element signature="e#1069#1094#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -214,8 +215,8 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/beans/Offer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/beans/EnsembleOffer.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/controller/OfferSearch.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/beans/EnsembleOffer.java" />
       </list>
     </option>
   </component>
@@ -332,7 +333,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539182398276" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539183017746" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JAVA" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
@@ -588,38 +589,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/beans/EnsembleOffer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="12" lean-forward="true" selection-start-column="8" selection-end-column="12" />
+        <state relative-caret-position="285">
+          <caret line="19" column="43" lean-forward="true" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="e#145#146#0" expanded="true" />
             <element signature="e#181#182#0" expanded="true" />
             <element signature="e#237#257#1" expanded="true" />
             <element signature="e#290#339#0" expanded="true" />
             <element signature="e#290#339#0" expanded="true" />
             <element signature="e#374#391#0" expanded="true" />
-            <element signature="e#496#697#0" expanded="true" />
+            <element signature="e#807#1008#0" expanded="true" />
             <element signature="e#501#511#1" expanded="true" />
-            <element signature="e#496#697#0" expanded="true" />
-            <element signature="e#496#697#0" expanded="true" />
-            <element signature="e#516#541#0" expanded="true" />
-            <element signature="e#496#697#0" expanded="true" />
-            <element signature="e#496#697#0" expanded="true" />
-            <element signature="e#758#783#0" expanded="true" />
+            <element signature="e#807#1008#0" expanded="true" />
+            <element signature="e#807#1008#0" expanded="true" />
+            <element signature="e#827#852#0" expanded="true" />
+            <element signature="e#807#1008#0" expanded="true" />
+            <element signature="e#807#1008#0" expanded="true" />
+            <element signature="e#1069#1094#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/OfferSearch.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="31" column="34" lean-forward="true" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
+        <state relative-caret-position="246">
+          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#879#922#0" expanded="true" />
             <element signature="e#879#922#0" expanded="true" />
             <element signature="e#825#864#1" expanded="true" />
             <element signature="e#843#863#0" expanded="true" />
-            <element signature="e#961#1001#1" expanded="true" />
             <element signature="e#1151#1201#1" expanded="true" />
           </folding>
         </state>

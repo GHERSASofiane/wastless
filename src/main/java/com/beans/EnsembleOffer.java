@@ -1,15 +1,25 @@
 package com.beans;
 
-
+import java.util.ArrayList;
 import java.util.List;
 
 public class EnsembleOffer {
 
-    List<Offer> MyListOffre;
+    public String nameArticle ;
+    public List<Offer> MyListOffre = new ArrayList<Offer>();
 
-    public EnsembleOffer(List<Offer> l) {
-        this.MyListOffre = l;
+    public EnsembleOffer(String name) {
+        this.nameArticle = name;
     }
+
+    public void ConstructListe(){
+
+        this.MyListOffre.add(new Offer(0));
+        this.MyListOffre.add(new Offer(1));
+        this.MyListOffre.add(new Offer(0));
+        this.MyListOffre.add(new Offer(1));
+    }
+
 
     @Override
     public String toString() {

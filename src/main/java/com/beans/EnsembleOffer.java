@@ -10,6 +10,7 @@ public class EnsembleOffer {
 
     public EnsembleOffer(String name) {
         this.nameArticle = name;
+        this.ConstructListe();
     }
 
     public void ConstructListe(){

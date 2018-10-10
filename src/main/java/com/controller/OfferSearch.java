@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import java.util.ArrayList;
 import java.util.List;
-import beans.*;
+import com.beans.*;
 
 public class OfferSearch  extends HttpServlet {
     
@@ -31,7 +31,7 @@ public class OfferSearch  extends HttpServlet {
         listoff.add(new Offer(0));
         listoff.add(new Offer(1));
 
-        EnsembleOffer ensOff = new beans.EnsembleOffer(listoff);
+        EnsembleOffer ensOff = new EnsembleOffer(listoff);
        // System.out.println(ensOff.toString());
 
         //    out.println("{");

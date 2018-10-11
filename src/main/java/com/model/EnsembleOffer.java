@@ -11,6 +11,10 @@ import java.sql.Statement;
 import configuration.connection;
 import com.beans.*;
 
+/**
+ *
+ * @author ghersa
+ */
 public class EnsembleOffer {
 
     public String nameArticle;

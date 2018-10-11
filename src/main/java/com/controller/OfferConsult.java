@@ -10,15 +10,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.model.*;
-
 /**
  *
  * @author ghersa
  */
-public class OfferSearch  extends HttpServlet {
-    
-    public OfferSearch() { }
+public class OfferConsult  extends HttpServlet {
 
+    public OfferConsult() { }
+    
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setHeader("Access-Control-Allow-Origin", "*");
         response.setHeader("Access-Control-Allow-Credentials", "true");
@@ -29,15 +28,13 @@ public class OfferSearch  extends HttpServlet {
         PrintWriter out = response.getWriter();
 
         // recuperer les params
-        String PName = request.getParameter("ProductName");
-        String Page = request.getParameter("Page"); 
-        if( PName == null)  PName = ""; 
+        String ProductId = request.getParameter("ProductId"); 
          
         // appeler le model
-        EnsembleOffer ensOff = new EnsembleOffer(PName, Page);
+        OfferConsultModel Off = new OfferConsultModel(ProductId);
  
         // envoie la réponse au client
-        out.println(ensOff.toString());
+        out.println(Off.toString());
         out.close();
 
     }

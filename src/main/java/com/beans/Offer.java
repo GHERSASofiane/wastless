@@ -1,10 +1,14 @@
 package com.beans;
 
+/**
+ *
+ * @author ghersa
+ */
 
 public class Offer {
 
-    private String ProductName, ProductDate, ProductDescription, ProductPicture;
-    private int ProductId, ProductPrice, ProductStatus, UserId;
+    public String ProductName, ProductDate, ProductDescription, ProductPicture;
+    public int ProductId, ProductPrice, ProductStatus, UserId;
 
     public Offer(String ProductName, String ProductDate, String ProductDescription, String ProductPicture, int ProductId, int ProductPrice, int ProductStatus, int UserId ) {
         this.ProductName = ProductName;

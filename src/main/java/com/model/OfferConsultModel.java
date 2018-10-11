@@ -66,7 +66,14 @@ public class OfferConsultModel {
 
     @Override
     public String toString() {
-        return "this.OffDet.toString()"+this.OffDet;  
+        String result;
+        if(this.OffDet == null){
+            result ="{\"answer\":\"no\""
+                    + "}";
+        }else{
+            result = this.OffDet.toString();
+        }
+        return result;  
     }
     
     

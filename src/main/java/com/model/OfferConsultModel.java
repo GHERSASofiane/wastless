@@ -37,7 +37,7 @@ public class OfferConsultModel {
 
         Connection db = connection.getConnection();
         Statement stmt = db.createStatement();
-        ResultSet rs = stmt.executeQuery("SELECT * FROM Product,Users WHERE Product.UserId=Users.UserId AND ProductId = "+this.ProductId);
+        ResultSet rs = stmt.executeQuery("SELECT * FROM Product,Users WHERE Product.UserId=Users.UserId ");
          
             ProductName = rs.getString("ProductName");
             ProductDate = rs.getString("ProductDate");

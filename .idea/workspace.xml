@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1b691451-90ef-45b2-81ac-2761e629338e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/beans/EnsembleOffer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/model/EnsembleOffer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/controller/OfferSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/controller/OfferSearch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/model/OfferSearch.java" beforeDir="false" />
-    </list>
+    <list default="true" id="1b691451-90ef-45b2-81ac-2761e629338e" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -54,8 +50,9 @@
       <usages-collector id="statistics.lifecycle.project">
         <counts>
           <entry key="project.closed" value="1" />
+          <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.22" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -88,25 +85,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/model/EnsembleOffer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-638">
+            <state relative-caret-position="15">
               <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
-              <folding>
-                <element signature="e#532#574#1" expanded="true" />
-                <element signature="e#548#573#0" expanded="true" />
-                <element signature="e#583#621#1" expanded="true" />
-                <element signature="e#630#689#1" expanded="true" />
-                <element signature="e#818#889#0" expanded="true" />
-                <element signature="e#818#889#0" expanded="true" />
-                <element signature="e#920#1546#0" expanded="true" />
-                <element signature="e#920#1546#0" expanded="true" />
-                <element signature="e#1558#1631#0" expanded="true" />
-                <element signature="e#1558#1631#0" expanded="true" />
-                <element signature="e#1631#1698#0" expanded="true" />
-                <element signature="e#1631#1698#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -114,24 +97,19 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/beans/Offer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="27" column="31" lean-forward="true" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="31" />
-              <folding>
-                <element signature="e#1033#1053#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="405">
+              <caret line="27" column="31" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="31" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/OfferSearch.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="151">
               <caret line="15" column="24" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#932#971#1" expanded="true" />
-                <element signature="e#950#970#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -320,8 +298,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1299" height="743" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20590582" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20909816" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -430,9 +409,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" selection-start-line="2" selection-end-line="7" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -464,9 +440,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
           <caret line="36" selection-start-line="36" selection-end-line="39" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -484,44 +457,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/model/OfferSearch.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/model/EnsembleOffer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-638">
-          <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
-          <folding>
-            <element signature="e#532#574#1" expanded="true" />
-            <element signature="e#548#573#0" expanded="true" />
-            <element signature="e#583#621#1" expanded="true" />
-            <element signature="e#630#689#1" expanded="true" />
-            <element signature="e#818#889#0" expanded="true" />
-            <element signature="e#818#889#0" expanded="true" />
-            <element signature="e#920#1546#0" expanded="true" />
-            <element signature="e#920#1546#0" expanded="true" />
-            <element signature="e#1558#1631#0" expanded="true" />
-            <element signature="e#1558#1631#0" expanded="true" />
-            <element signature="e#1631#1698#0" expanded="true" />
-            <element signature="e#1631#1698#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/model/OfferSearch.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/beans/Offer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="27" column="31" lean-forward="true" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="31" />
-          <folding>
-            <element signature="e#1033#1053#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="405">
+          <caret line="27" column="31" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -531,9 +471,14 @@
           <caret line="15" column="24" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#932#971#1" expanded="true" />
-            <element signature="e#950#970#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/model/EnsembleOffer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
         </state>
       </provider>
     </entry>

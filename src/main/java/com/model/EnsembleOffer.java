@@ -79,6 +79,7 @@ public class EnsembleOffer {
             }
         }
 
+        
         result = result.concat("]}");
         return result;
     }

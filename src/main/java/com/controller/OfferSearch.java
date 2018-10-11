@@ -25,11 +25,11 @@ public class OfferSearch  extends HttpServlet {
         PrintWriter out = response.getWriter();
 
         String PName, Page;  
-        if(request.getParameter("ProductName").equals(null))
+        if(request.getParameter("ProductName") == null)
             PName = "";
         else PName = request.getParameter("ProductName");
         
-        if(request.getParameter("Page").equals(null))
+        if(request.getParameter("Page") == null)
             Page = "";
         else Page = request.getParameter("Page");
         

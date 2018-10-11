@@ -66,7 +66,7 @@ public class OfferConsultModel {
 
     @Override
     public String toString() {
-        return "this.OffDet.toString()";  
+        return "this.OffDet.toString()"+this.OffDet;  
     }
     
     

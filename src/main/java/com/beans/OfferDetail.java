@@ -14,7 +14,7 @@ public class OfferDetail extends Offer{
             int ProductId, int ProductPrice, int ProductStatus, int UserId, 
             String UserName, String UserMail, String UserAdress, int UserPhone) {
         super(ProductName, ProductDate, ProductDescription, ProductPicture, 
-                ProductId, ProductPrice, ProductStatus, UserId);
+                ProductId, ProductPrice, ProductStatus, UserId, UserName);
         
         this.UserName = UserName;
         this.UserMail = UserMail;

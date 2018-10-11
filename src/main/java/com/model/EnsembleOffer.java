@@ -30,14 +30,14 @@ public class EnsembleOffer {
 
     // methode pour recuperer les données dans la BDD et créé les objs offer
     public void ConstructListe(){
-         String ProductName, ProductDate, ProductDescription, ProductPicture;
+         String ProductName, ProductDate, ProductDescription, ProductPicture, UserName;
          int ProductId, ProductPrice, ProductStatus, UserId;
 
         try {
 
         Connection db = connection.getConnection();
         Statement stmt = db.createStatement();
-        ResultSet rs = stmt.executeQuery("SELECT * FROM Product WHERE ProductName LIKE '%"+this.nameArticle+"%' OFFSET "+(this.page*10)+" LIMIT 10 ");
+        ResultSet rs = stmt.executeQuery("SELECT * FROM Product, Users WHERE Product.UserId = Users.UserId AND ProductName LIKE '%"+this.nameArticle+"%' OFFSET "+(this.page*10)+" LIMIT 10 ");
         while (rs.next()) {
             ProductName = rs.getString("ProductName");
             ProductDate = rs.getString("ProductDate");
@@ -47,8 +47,9 @@ public class EnsembleOffer {
             ProductPrice = rs.getInt("ProductPrice");
             ProductStatus = rs.getInt("ProductStatus");
             UserId = rs.getInt("UserId");
+            UserName = rs.getString("UserName");
 
-            this.MyListOffre.add(new Offer(ProductName, ProductDate, ProductDescription, ProductPicture, ProductId, ProductPrice, ProductStatus, UserId ));
+            this.MyListOffre.add(new Offer(ProductName, ProductDate, ProductDescription, ProductPicture, ProductId, ProductPrice, ProductStatus, UserId, UserName));
         }
 
         } catch (URISyntaxException e) {

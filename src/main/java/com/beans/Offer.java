@@ -7,10 +7,10 @@ package com.beans;
 
 public class Offer {
 
-    public String ProductName, ProductDate, ProductDescription, ProductPicture;
+    public String ProductName, ProductDate, ProductDescription, ProductPicture, UserName;
     public int ProductId, ProductPrice, ProductStatus, UserId;
 
-    public Offer(String ProductName, String ProductDate, String ProductDescription, String ProductPicture, int ProductId, int ProductPrice, int ProductStatus, int UserId ) {
+    public Offer(String ProductName, String ProductDate, String ProductDescription, String ProductPicture, int ProductId, int ProductPrice, int ProductStatus, int UserId , String UserName) {
         this.ProductName = ProductName;
         this.ProductDate = ProductDate;
         this.ProductDescription = ProductDescription;
@@ -20,6 +20,7 @@ public class Offer {
         this.ProductPrice = ProductPrice;
         this.ProductStatus = ProductStatus;
         this.UserId = UserId;
+        this.UserName = UserName;
     }
 
     @Override
@@ -40,7 +41,9 @@ public class Offer {
         result = result.concat("\"ProductStatus\" : ");
         result = result.concat("\""+this.ProductStatus+"\",");
         result = result.concat("\"UserId\" : ");
-        result = result.concat("\""+this.UserId+"\"");
+        result = result.concat("\""+this.UserId+"\",");
+        result = result.concat("\"UserName\" : ");
+        result = result.concat("\""+this.UserName+"\"");
 
         result = result.concat("}");
         return result;

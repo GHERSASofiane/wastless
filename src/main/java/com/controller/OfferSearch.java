@@ -31,7 +31,8 @@ public class OfferSearch  extends HttpServlet {
         // recuperer les params
         String PName = request.getParameter("ProductName");
         String Page = request.getParameter("Page"); 
-        if( PName == null)  PName = ""; 
+        if( PName == null)  PName = "";
+        if( Page == null) Page = "0";
          
         // appeler le model
         EnsembleOffer ensOff = new EnsembleOffer(PName, Page);

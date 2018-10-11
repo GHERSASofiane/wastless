@@ -17,12 +17,14 @@ public class EnsembleOffer {
     int page;
     public List<Offer> MyListOffre = new ArrayList<Offer>();
 
+    // constructeur
     public EnsembleOffer(String name, String page) {
         this.nameArticle = name; 
         this.page = Integer.parseInt(page) ;
         this.ConstructListe();
     }
 
+    // methode pour recuperer les données dans la BDD et créé les objs offer
     public void ConstructListe(){
          String ProductName, ProductDate, ProductDescription, ProductPicture;
          int ProductId, ProductPrice, ProductStatus, UserId;

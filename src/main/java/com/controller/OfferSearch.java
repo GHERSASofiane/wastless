@@ -24,8 +24,14 @@ public class OfferSearch  extends HttpServlet {
         response.setContentType("application/json");
         PrintWriter out = response.getWriter();
 
-        String PName = request.getParameter("ProductName");
-        String Page = request.getParameter("Page");
+        String PName, Page;  
+        if(request.getParameter("ProductName").equals(null))
+            PName = "";
+        else PName = request.getParameter("ProductName");
+        
+        if(request.getParameter("Page").equals(null))
+            Page = "";
+        else Page = request.getParameter("Page");
         
         EnsembleOffer ensOff = new EnsembleOffer(PName, Page);
 

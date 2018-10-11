@@ -41,13 +41,13 @@ public class OfferDetail extends Offer{
         result = result.concat("\"ProductStatus\" : ");
         result = result.concat("\""+this.ProductStatus+"\",");
         result = result.concat("\"UserId\" : ");
-        result = result.concat("\""+this.UserId+"\"");
+        result = result.concat("\""+this.UserId+"\",");
         result = result.concat("\"UserName\" : ");
-        result = result.concat("\""+this.UserName+"\"");
+        result = result.concat("\""+this.UserName+"\",");
         result = result.concat("\"UserMail\" : ");
-        result = result.concat("\""+this.UserMail+"\"");
+        result = result.concat("\""+this.UserMail+"\",");
         result = result.concat("\"UserAdress\" : ");
-        result = result.concat("\""+this.UserAdress+"\"");
+        result = result.concat("\""+this.UserAdress+"\",");
         result = result.concat("\"UserPhone\" : ");
         result = result.concat("\""+this.UserPhone+"\"");
 

@@ -29,21 +29,21 @@ public class OfferConsultModel {
     
     public void getOffreDet(){
             String ProductName, ProductDate, ProductDescription, ProductPicture;
-            int ProductId, ProductPrice, ProductStatus, UserId;
+            int ProductIdi, UserPhone, ProductPrice, ProductStatus, UserId;
             String UserName, UserMail, UserAdress;
-            int UserPhone;
+           
             
                 try {
 
         Connection db = connection.getConnection();
         Statement stmt = db.createStatement();
-        ResultSet rs = stmt.executeQuery("SELECT * FROM Product, Users WHERE Product.UserId = Users.UserId;");
+        ResultSet rs = stmt.executeQuery("SELECT * FROM Product, Users WHERE ProductId = "+this.ProductId+";");
           while (rs.next()) {
             ProductName = rs.getString("ProductName");
             ProductDate = rs.getString("ProductDate");
             ProductDescription = rs.getString("ProductDescription");
             ProductPicture = rs.getString("ProductPicture");
-            ProductId = rs.getInt("ProductId");
+            ProductIdi = rs.getInt("ProductId");
             ProductPrice = rs.getInt("ProductPrice");
             ProductStatus = rs.getInt("ProductStatus");
             UserId = rs.getInt("UserId");
@@ -53,7 +53,7 @@ public class OfferConsultModel {
             UserPhone = rs.getInt("UserPhone");
             
             this.OffDet = new OfferDetail(ProductName, ProductDate, ProductDescription, 
-                    ProductPicture, ProductId, ProductPrice, ProductStatus, UserId, UserName, 
+                    ProductPicture, ProductIdi, ProductPrice, ProductStatus, UserId, UserName, 
                     UserMail, UserAdress, UserPhone);
  }
         } catch (URISyntaxException e) {

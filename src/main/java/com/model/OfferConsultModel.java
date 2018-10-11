@@ -51,7 +51,7 @@ public class OfferConsultModel {
             UserMail = rs.getString("UserMail");
             UserAdress = rs.getString("UserAdress");
             UserPhone = rs.getInt("UserPhone");
-            rs.next();
+             
             this.OffDet = new OfferDetail(ProductName, ProductDate, ProductDescription, 
                     ProductPicture, ProductId, ProductPrice, ProductStatus, UserId, UserName, 
                     UserMail, UserAdress, UserPhone);

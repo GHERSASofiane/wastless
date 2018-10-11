@@ -37,8 +37,8 @@ public class OfferConsultModel {
 
         Connection db = connection.getConnection();
         Statement stmt = db.createStatement();
-        ResultSet rs = stmt.executeQuery("SELECT * FROM Product, Users ");
-         
+        ResultSet rs = stmt.executeQuery("SELECT * FROM Product, Users WHERE UserId = UserId");
+          while (rs.next()) {
             ProductName = rs.getString("ProductName");
             ProductDate = rs.getString("ProductDate");
             ProductDescription = rs.getString("ProductDescription");
@@ -51,11 +51,11 @@ public class OfferConsultModel {
             UserMail = rs.getString("UserMail");
             UserAdress = rs.getString("UserAdress");
             UserPhone = rs.getInt("UserPhone");
-             
+            
             this.OffDet = new OfferDetail(ProductName, ProductDate, ProductDescription, 
                     ProductPicture, ProductId, ProductPrice, ProductStatus, UserId, UserName, 
                     UserMail, UserAdress, UserPhone);
-
+ }
         } catch (URISyntaxException e) {
             e.printStackTrace();
         }catch (SQLException e) {

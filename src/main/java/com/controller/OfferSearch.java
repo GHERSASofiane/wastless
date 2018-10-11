@@ -3,14 +3,12 @@ package com.controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import java.util.ArrayList;
-import java.util.List;
-import com.beans.*;
 import com.model.*;
 
 public class OfferSearch  extends HttpServlet {
@@ -26,7 +24,10 @@ public class OfferSearch  extends HttpServlet {
         response.setContentType("application/json");
         PrintWriter out = response.getWriter();
 
-        EnsembleOffer ensOff = new EnsembleOffer(request.getParameter("ProductName"));
+        String PName = request.getParameter("ProductName");
+        String Page = request.getParameter("Page");
+        
+        EnsembleOffer ensOff = new EnsembleOffer(PName, Page);
 
         out.println(ensOff.toString());
         out.close();

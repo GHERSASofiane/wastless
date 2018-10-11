@@ -1,7 +1,6 @@
 package launch;
 
 import java.io.File;
-import java.lang.Thread;
 import org.apache.catalina.WebResourceRoot;
 import org.apache.catalina.core.StandardContext;
 import org.apache.catalina.startup.Tomcat;

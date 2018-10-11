@@ -13,11 +13,12 @@ import com.beans.*;
 
 public class EnsembleOffer {
 
-    public String nameArticle ;
+    public String nameArticle, page;
     public List<Offer> MyListOffre = new ArrayList<Offer>();
 
-    public EnsembleOffer(String name) {
+    public EnsembleOffer(String name, String page) {
         this.nameArticle = name;
+        this.page = page;
         this.ConstructListe();
     }
 
@@ -29,7 +30,7 @@ public class EnsembleOffer {
 
         Connection db = connection.getConnection();
         Statement stmt = db.createStatement();
-        ResultSet rs = stmt.executeQuery("SELECT * FROM Product WHERE ProductName LIKE '%"+this.nameArticle+"%'");
+        ResultSet rs = stmt.executeQuery("SELECT * FROM Product WHERE ProductName LIKE '%"+this.nameArticle+"%' OFFSET 2 LIMIT 10 ");
         while (rs.next()) {
             ProductName = rs.getString("ProductName");
             ProductDate = rs.getString("ProductDate");

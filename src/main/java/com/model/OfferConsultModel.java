@@ -37,7 +37,7 @@ public class OfferConsultModel {
 
         Connection db = connection.getConnection();
         Statement stmt = db.createStatement();
-        ResultSet rs = stmt.executeQuery("SELECT * FROM Product,Users WHERE Product.UserId=Users.UserId ");
+        ResultSet rs = stmt.executeQuery("SELECT * FROM Product, Users WHERE Product.UserId=Users.UserId ");
          
             ProductName = rs.getString("ProductName");
             ProductDate = rs.getString("ProductDate");
@@ -51,7 +51,7 @@ public class OfferConsultModel {
             UserMail = rs.getString("UserMail");
             UserAdress = rs.getString("UserAdress");
             UserPhone = rs.getInt("UserPhone");
-            
+            rs.next();
             this.OffDet = new OfferDetail(ProductName, ProductDate, ProductDescription, 
                     ProductPicture, ProductId, ProductPrice, ProductStatus, UserId, UserName, 
                     UserMail, UserAdress, UserPhone);

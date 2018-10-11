@@ -34,7 +34,7 @@ public class OfferConsult  extends HttpServlet {
         OfferConsultModel Off = new OfferConsultModel(ProductId);
  
         // envoie la réponse au client
-        out.println("Off.toString()");
+        out.println(Off.toString());
         out.close();
 
     }

@@ -34,6 +34,8 @@ public class OfferSearch  extends HttpServlet {
         if( PName == null)  PName = "";
         if( Page == null) Page = "0";
          
+        PName = PName.toLowerCase();
+        Page = Page.toLowerCase();
         // appeler le model
         EnsembleOffer ensOff = new EnsembleOffer(PName, Page);
  

@@ -29,7 +29,7 @@ public class OfferConsult  extends HttpServlet {
 
         // recuperer les params
         String ProductId = request.getParameter("ProductId"); 
-         
+        ProductId = ProductId.toLowerCase();
         // appeler le model
         OfferConsultModel Off = new OfferConsultModel(ProductId);
  

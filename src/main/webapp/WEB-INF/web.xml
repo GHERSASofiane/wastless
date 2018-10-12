@@ -54,6 +54,19 @@
 
 
 
+    <servlet>
+        <servlet-name>Weather</servlet-name>
+        <servlet-class>com.controller.Weather</servlet-class>
+
+        <description>Weather</description>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Weather</servlet-name>
+        <url-pattern>/Weather</url-pattern>
+    </servlet-mapping>
+
+
+
     <welcome-file-list>
   <welcome-file>index.jsp</welcome-file>
  </welcome-file-list>

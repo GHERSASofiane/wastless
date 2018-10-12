@@ -1,10 +1,15 @@
+/**
+ * Représent la météo pour une journée
+ */
+
 
 package com.beans;
 
 /**
  *
- * @author ghersa
+ * @author GHERSA Sofiane
  */
+
 public class Weather {
     int WeatherId;
     String Dated, Degree, Description;

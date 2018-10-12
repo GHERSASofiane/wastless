@@ -1,4 +1,6 @@
- 
+/**
+ * Model qui trait des requettes de consultation des détails d'une offre
+ */ 
 package com.model;
 
 import com.beans.OfferDetail;
@@ -9,10 +11,12 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import configuration.connection;
+
 /**
  *
- * @author ghersa
+ * @author GHERSA Sofiane
  */
+
 public class OfferConsultModel {
 
     String ProductId;

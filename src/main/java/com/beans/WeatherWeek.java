@@ -1,3 +1,7 @@
+/**
+ * Représent la météo sur une semaine
+ */
+
 
 package com.beans;
 
@@ -6,8 +10,9 @@ import java.util.List;
 
 /**
  *
- * @author ghersa
+ * @author GHERSA Sofiane
  */
+
 public class WeatherWeek {
     
     List<Weather> MyListeWeather = new ArrayList<Weather>();

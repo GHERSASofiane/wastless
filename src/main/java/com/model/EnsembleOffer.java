@@ -1,3 +1,6 @@
+/**
+ * Model qui trait des requettes de recherche des offres
+ */
 package com.model;
 
 import java.util.ArrayList;
@@ -13,8 +16,9 @@ import com.beans.*;
 
 /**
  *
- * @author ghersa
+ * @author GHERSA Sofiane
  */
+
 public class EnsembleOffer {
 
     public String nameArticle;

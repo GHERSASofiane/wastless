@@ -1,25 +1,28 @@
+/**
+ * Servlet qui reçois les requettes pour consulter la météo
+ */
  
 package com.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 
-import com.model.*;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.swing.text.html.parser.DTDConstants;
 
 /**
  *
- * @author ghersa
+ * @author GHERSA Sofiane
  */
+
 public class Weather  extends HttpServlet {
 
     public Weather() { }
     
      
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setHeader("Access-Control-Allow-Origin", "*");
         response.setHeader("Access-Control-Allow-Credentials", "true");
@@ -39,6 +42,7 @@ public class Weather  extends HttpServlet {
 
     }
 
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }

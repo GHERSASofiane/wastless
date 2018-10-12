@@ -1,3 +1,6 @@
+/**
+ * Servlet qui reçois les requettes sur la cunsultation les détails d'une offre 
+ */
 package com.controller;
 
 import java.io.IOException;
@@ -13,12 +16,14 @@ import com.model.*;
 
 /**
  *
- * @author ghersa
+ * @author GHERSA Sofiane
  */
+
 public class OfferSearch  extends HttpServlet {
     
     public OfferSearch() { }
 
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setHeader("Access-Control-Allow-Origin", "*");
         response.setHeader("Access-Control-Allow-Credentials", "true");
@@ -45,6 +50,7 @@ public class OfferSearch  extends HttpServlet {
 
     }
 
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }

@@ -1,10 +1,15 @@
+/**
+ * Représent un ensemble d'offres
+ */
+
  
 package com.beans;
 
 /**
  *
- * @author ghersa
+ * @author GHERSA Sofiane
  */
+
 public class OfferDetail extends Offer{
 
     String UserName, UserMail, UserAdress;

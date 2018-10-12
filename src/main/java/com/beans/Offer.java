@@ -1,8 +1,12 @@
+/**
+ * Représent une offre
+ */
+
 package com.beans;
 
 /**
  *
- * @author ghersa
+ * @author GHERSA Sofiane
  */
 
 public class Offer {

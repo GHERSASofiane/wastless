@@ -1,4 +1,6 @@
- 
+/**
+ * Model qui trait les requettes de récupération des donner de météo
+ */ 
 package com.model;
 
 import com.beans.*;
@@ -9,10 +11,12 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import configuration.connection;
+
 /**
  *
- * @author ghersa
+ * @author GHERSA Sofiane
  */
+
 public class Weather {
 
     WeatherWeek Ww = new WeatherWeek();

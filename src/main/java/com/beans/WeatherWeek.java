@@ -21,12 +21,10 @@ public class WeatherWeek {
         String result ="{\"Weather\":[";
         
         for (int i = 0; i < this.MyListeWeather.size()-1; i++) {
-            result = result.concat("{\" "+this.MyListeWeather.get(i).Dated+"\" :");
-            result = result.concat(this.MyListeWeather.get(i).toString()+" }, ");
+            result = result.concat(this.MyListeWeather.get(i).toString()+" , ");
         }
         
-            result = result.concat("{\" "+this.MyListeWeather.get(this.MyListeWeather.size()-1).Dated+"\" : ");
-            result = result.concat(this.MyListeWeather.get(this.MyListeWeather.size()-1).toString()+"}");
+            result = result.concat(this.MyListeWeather.get(this.MyListeWeather.size()-1).toString());
             
         result = result.concat("]}");
         return result;

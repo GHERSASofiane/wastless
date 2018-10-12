@@ -18,7 +18,7 @@ public class WeatherWeek {
 
     @Override
     public String toString() {
-        String result ="{";
+        String result ="{\"Weather\":[";
         
         for (int i = 0; i < this.MyListeWeather.size()-1; i++) {
             result = result.concat("\" "+this.MyListeWeather.get(i).Dated+"\" :");
@@ -28,7 +28,7 @@ public class WeatherWeek {
             result = result.concat("\" "+this.MyListeWeather.get(this.MyListeWeather.size()-1).Dated+"\" : ");
             result = result.concat(this.MyListeWeather.get(this.MyListeWeather.size()-1).toString());
             
-        result = result.concat("}");
+        result = result.concat("]}");
         return result;
     }
     

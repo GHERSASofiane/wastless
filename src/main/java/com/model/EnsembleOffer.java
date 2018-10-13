@@ -41,7 +41,7 @@ public class EnsembleOffer {
 
         Connection db = connection.getConnection();
         Statement stmt = db.createStatement();
-        ResultSet rs = stmt.executeQuery("SELECT * FROM Product, Users WHERE ProductStatus = 0 AND Product.UserId = Users.UserId AND ProductName LIKE '%"+this.nameArticle+"%' OFFSET "+(this.page*10)+" LIMIT 10 ");
+        ResultSet rs = stmt.executeQuery("SELECT * FROM Product, Users WHERE ProductStatus = 0 AND Product.UserId = Users.UserId AND ProductName LIKE '%"+this.nameArticle+"%' OFFSET "+(this.page*10)+" LIMIT 10 ORDER BY ProductDate");
         while (rs.next()) {
             ProductName = rs.getString("ProductName");
             ProductDate = rs.getString("ProductDate");

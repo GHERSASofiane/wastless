@@ -5,8 +5,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 import configuration.Connexion;
+import models.Personne;
 import models.Product;
 import status.Reponse;
 
@@ -102,8 +104,6 @@ public class ProductDAO {
 			pst.setInt(1, productId);
 			ResultSet rs = pst.executeQuery();
 			
-			
-			
 			while(rs.next())
 			{
 				product.setProductName(rs.getString(2));
@@ -127,4 +127,25 @@ public class ProductDAO {
 		return new Reponse("ok", product);
 
 	}
+
+	public Reponse validateProduct (String productId) {
+		
+		try {
+			db = Connexion.getConnection();
+			Statement pst = db.createStatement();
+		
+			pst.executeQuery(" UPDATE product Set productStatus = 2 WHERE productId = " +productId+ ";");
+			
+			pst.close();
+			db.close();
+		
+		} catch (URISyntaxException e) {
+			return new Reponse("ko", "error !!! couldn't validate purchase");
+		} catch (SQLException e) {
+			return new Reponse("ko", "error !!! couldn't validate purchase");
+		}
+		
+		return new Reponse("ok", "your purchase has been validated ");
+	}
+
 }

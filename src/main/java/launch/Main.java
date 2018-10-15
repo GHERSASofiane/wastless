@@ -1,22 +1,14 @@
-/**
- * Le main de serveur
- */
-
 package launch;
 
 import java.io.File;
+
 import org.apache.catalina.WebResourceRoot;
 import org.apache.catalina.core.StandardContext;
 import org.apache.catalina.startup.Tomcat;
 import org.apache.catalina.webresources.DirResourceSet;
 import org.apache.catalina.webresources.StandardRoot;
  
-import BackEnd.*;
 
-/**
- *
- * @author GHERSA Sofiane
- */
 
 public class Main {
 

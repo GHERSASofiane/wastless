@@ -1,0 +1,35 @@
+package services;
+
+import com.google.gson.JsonObject;
+
+import converters.JSonConverter;
+import dao.ProductDAO;
+
+
+
+public class ProductService {
+
+	ProductDAO pr = new ProductDAO();
+	
+	public JsonObject searchProduct()
+	{
+		return JSonConverter.objectToJson(pr.searchProduct());
+	}
+	
+	
+	public JsonObject addProduct(int productId, String productName, String productDescription, double productPrice, int productStatus, int userId, String productDate)
+	{		
+		return JSonConverter.objectToJson(addProduct(productId, productName, productDescription, productPrice, productStatus, userId, productDate));
+	}
+	
+	public JsonObject deleteProduct(String productName, double productPrice, int userId)
+	{
+		return JSonConverter.objectToJson(pr.deleteProduct(productName, productPrice, userId));
+	}
+	
+	public JsonObject getProductDetails(int productId)
+	{
+		return JSonConverter.objectToJson(pr.getProductDetails(productId));
+	}
+	
+}

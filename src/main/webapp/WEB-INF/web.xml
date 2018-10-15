@@ -1,57 +1,90 @@
-<?xml version="1.0"?>
-<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
-                         "http://java.sun.com/dtd/web-app_2_3.dtd">
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
 <web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  
+  
+  <filter>
+  	<filter-name>FilterHeadears</filter-name>
+  	<filter-class>filters.HeadersFilter</filter-class>
+  </filter>
+  
+  <filter-mapping>
+  	<filter-name>FilterHeadears</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
 
-    <!-- <servlet>
-        <servlet-name>Test</servlet-name>
-        <servlet-class>com.sdzee.servlets.Test</servlet-class>
-
-        <description>Ma première servlet de test.</description>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>Test</servlet-name>
-        <url-pattern>/toto</url-pattern>
-    </servlet-mapping> -->
-
-
-    <servlet>
-        <servlet-name>OfferSearch</servlet-name>
-        <servlet-class>com.controller.OfferSearch</servlet-class>
-
-        <description>OfferSearch.</description>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>OfferSearch</servlet-name>
-        <url-pattern>/OfferSearch</url-pattern>
-    </servlet-mapping>
-
-
-
-
-    <servlet>
-        <servlet-name>OfferConsult</servlet-name>
-        <servlet-class>com.controller.OfferConsult</servlet-class>
-
-        <description>OfferConsult</description>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>OfferConsult</servlet-name>
-        <url-pattern>/OfferConsult</url-pattern>
-    </servlet-mapping>
-
-
-
-    <servlet>
-        <servlet-name>Weather</servlet-name>
-        <servlet-class>com.controller.Weather</servlet-class>
-
-        <description>Weather</description>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>Weather</servlet-name>
-        <url-pattern>/Weather</url-pattern>
-    </servlet-mapping>
-
-
+  
+  <servlet>
+  	<servlet-name>SignIn</servlet-name>
+  	<display-name>SignIn</display-name>
+  	<description></description>
+  	<servlet-class>controller.SignIn</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ProductSearch</servlet-name>
+  	<display-name>ProductSearch</display-name>
+  	<description></description>
+  	<servlet-class>controller.ProductSearch</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ProductDetail</servlet-name>
+  	<display-name>ProductDetail</display-name>
+  	<description></description>
+  	<servlet-class>controller.ProductDetail</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>addProduct</servlet-name>
+  	<display-name>addProduct</display-name>
+  	<description></description>
+  	<servlet-class>controller.addProduct</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>DeleteProduct</servlet-name>
+  	<display-name>DeleteProduct</display-name>
+  	<description></description>
+  	<servlet-class>controller.DeleteProduct</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>SignUp</servlet-name>
+  	<display-name>SignUp</display-name>
+  	<description></description>
+  	<servlet-class>controller.SignUp</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ReservationProduit</servlet-name>
+  	<display-name>ReservationProduit</display-name>
+  	<description></description>
+  	<servlet-class>controller.ReservationProduit</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>SignIn</servlet-name>
+  	<url-pattern>/authen</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ProductSearch</servlet-name>
+  	<url-pattern>/ProductSearch</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ProductDetail</servlet-name>
+  	<url-pattern>/ProductDetail</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>addProduct</servlet-name>
+  	<url-pattern>/addProduct</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>DeleteProduct</servlet-name>
+  	<url-pattern>/DeleteProduct</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>SignUp</servlet-name>
+  	<url-pattern>/signup</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ReservationProduit</servlet-name>
+  	<url-pattern>/ReservationProduit</url-pattern>
+  </servlet-mapping>
 </web-app>

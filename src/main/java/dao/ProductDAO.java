@@ -92,17 +92,14 @@ public class ProductDAO {
 	
 	}
 	
-	public Reponse getProductDetails(int productId)
+	public Reponse getProductDetails(String productId)
 	{
 		Product product = new Product();
 		try {
 			db = Connexion.getConnection();
-			String res = "select * from product where productId=?";
+			Statement pst = db.createStatement();
 			
-			
-			PreparedStatement pst = db.prepareStatement(res);
-			pst.setInt(1, productId);
-			ResultSet rs = pst.executeQuery();
+			ResultSet rs = pst.executeQuery(("select * from product where productId="+productId+ ";"));
 			
 			while(rs.next())
 			{
@@ -118,9 +115,9 @@ public class ProductDAO {
 			db.close();
 			
 		} catch (URISyntaxException e) {
-			return new Reponse("ko", "y avait eu une erreur");
+			return new Reponse("ko", "Sorry !!! can not download product details");
 		} catch (SQLException e) {
-			return new Reponse("ko", "y avait eu une erreur");
+			return new Reponse("ko", "Sorry !!! can not download product details");
 		}
 		
 		

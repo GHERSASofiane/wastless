@@ -24,11 +24,11 @@ public class ValidateProduct extends HttpServlet {
 	    PrintWriter out = response.getWriter(); //can send character text to the client
 
         //Récupération de paramètre 
-        String ProductId = request.getParameter("ProductId"); 
-        ProductId = ProductId.toLowerCase();
+        String productId = request.getParameter("ProductId"); 
+        productId = productId.toLowerCase();
         
        ProductService product = new ProductService();
-       JsonObject obj = product.validateProduct(ProductId); 
+       JsonObject obj = product.validateProduct(productId); 
        
         out.println(obj);
         out.close();

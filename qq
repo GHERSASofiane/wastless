@@ -1,0 +1,6 @@
+ userid |        usermail         | username | userpassword | userphone |      useradress      | userprofilepicture 
+--------+-------------------------+----------+--------------+-----------+----------------------+--------------------
+      1 | m.ghersa.s@gmail.com    | GHERSA   | ghersa       | 755115459 | 34 rue victor basch  | 
+      2 | k.fekir.infor@gmail.com | hina     | helloworld   | 764372154 | 37 Boulevard Jourdan | 
+(2 rows)
+

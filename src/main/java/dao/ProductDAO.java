@@ -5,8 +5,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 import configuration.Connexion;
+import models.Personne;
 import models.Product;
 import status.Reponse;
 
@@ -90,19 +92,14 @@ public class ProductDAO {
 	
 	}
 	
-	public Reponse getProductDetails(int productId)
+	public Reponse getProductDetails(String productId)
 	{
 		Product product = new Product();
 		try {
 			db = Connexion.getConnection();
-			String res = "select * from product where productId=?";
+			Statement pst = db.createStatement();
 			
-			
-			PreparedStatement pst = db.prepareStatement(res);
-			pst.setInt(1, productId);
-			ResultSet rs = pst.executeQuery();
-			
-			
+			ResultSet rs = pst.executeQuery(("select * from product where productId="+productId+ ";"));
 			
 			while(rs.next())
 			{
@@ -118,13 +115,34 @@ public class ProductDAO {
 			db.close();
 			
 		} catch (URISyntaxException e) {
-			return new Reponse("ko", "y avait eu une erreur");
+			return new Reponse("ko", "Sorry !!! can not download product details");
 		} catch (SQLException e) {
-			return new Reponse("ko", "y avait eu une erreur");
+			return new Reponse("ko", "Sorry !!! can not download product details");
 		}
 		
 		
 		return new Reponse("ok", product);
 
 	}
+
+	public Reponse validateProduct (String productId) {
+		
+		try {
+			db = Connexion.getConnection();
+			Statement pst = db.createStatement();
+		
+			pst.executeQuery(" UPDATE product Set productStatus = 2 WHERE productId = " +productId+ ";");
+			
+			pst.close();
+			db.close();
+		
+		} catch (URISyntaxException e) {
+			return new Reponse("ko", "error !!! couldn't validate purchase");
+		} catch (SQLException e) {
+			return new Reponse("ko", "error !!! couldn't validate purchase");
+		}
+		
+		return new Reponse("ok", "your purchase has been validated ");
+	}
+
 }

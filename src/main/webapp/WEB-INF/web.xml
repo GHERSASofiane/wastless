@@ -71,6 +71,14 @@
 		<description></description>
 		<servlet-class>controller.UserHome</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>Weather</servlet-name>
+		<display-name>Weather</display-name>
+		<description></description>
+		<servlet-class>controller.Weather</servlet-class>
+	</servlet>
+        
+        
 	<servlet-mapping>
 		<servlet-name>SignIn</servlet-name>
 		<url-pattern>/authen</url-pattern>
@@ -106,5 +114,9 @@
 	<servlet-mapping>
 		<servlet-name>UserHome</servlet-name>
 		<url-pattern>/userhome</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Weather</servlet-name>
+		<url-pattern>/Weather</url-pattern>
 	</servlet-mapping>
 </web-app>

@@ -33,6 +33,7 @@ public class SignInDAO {
 			
 			while(rs.next())
 			{
+				personne.setUserId(rs.getInt(1));
 				personne.setUserMail(rs.getString(2));
 				personne.setUserName(rs.getString(3));
 				personne.setUserPicture(rs.getString(7));

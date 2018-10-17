@@ -25,6 +25,7 @@ public class AutorisationAcess {
 		token.withClaim("userId", personne.getUserId());
 		token.withClaim("userMail", personne.getUserMail());
 		token.withClaim("userName", personne.getUserName());
+		token.withClaim("userPicture", personne.getUserPicture());
 		
 		String tok = token.sign(algo);
 		obj.addProperty("token", tok);

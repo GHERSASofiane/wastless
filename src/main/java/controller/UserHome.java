@@ -48,6 +48,7 @@ public class UserHome extends HttpServlet {
 	else
 	{
 		int id = Integer.parseInt(userId.asString());
+		System.out.println("userId  ---------------------> " + userId.asString());
 		UserHomeService uhs = new UserHomeService();
 		obj = uhs.getUserReservation(id);
 	}

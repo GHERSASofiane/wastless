@@ -56,6 +56,7 @@ public class SignUpDAO {
 			 Personne personne = new Personne();
 			while(rs.next())
 			{
+				personne.setUserId(rs.getInt(1));
 				personne.setUserMail(rs.getString(2));
 				personne.setUserName(rs.getString(3));
 				personne.setUserPicture(rs.getString(7));

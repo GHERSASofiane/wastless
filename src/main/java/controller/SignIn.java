@@ -50,7 +50,10 @@ public class SignIn extends HttpServlet {
 		PrintWriter pw = response.getWriter();
 		
 		obj = AutorisationAcess.registerToken(personne);
-		System.out.println(obj);
+		System.out.println("userId ------------------>"  + personne.getUserId());
+		System.out.println("userMail ------------------>"  + personne.getUserMail());
+		System.out.println("userName ------------------>"  + personne.getUserName());
+		
 		pw.println(obj);
 
 		pw.flush();

@@ -14,6 +14,7 @@ import converters.JSonConverter;
 import helpers.Readers;
 import models.Personne;
 import services.SignInService;
+import status.Reponse;
 import tokens.AutorisationAcess;
 
 /**
@@ -48,13 +49,15 @@ public class SignIn extends HttpServlet {
 		JsonObject obj = pers.getUserInformation(personne);
 
 		PrintWriter pw = response.getWriter();
-		personne = (Personne) JSonConverter.objectFromJson(obj, personne);
+		
+		personne  = (Personne) JSonConverter.objectFromJson(obj.getAsJsonObject("reponse"), personne);
+		System.out.println("userId: -----------------------------------" + personne.getUserId());
+		System.out.println("userName: -----------------------------------" + personne.getUserName());
+		System.out.println("userMail: -----------------------------------" + personne.getUserMail());
 		
 		obj = AutorisationAcess.registerToken(personne);
 		
-		System.out.println("userId ------------------>"  + personne.getUserId());
-		System.out.println("userMail ------------------>"  + personne.getUserMail());
-		System.out.println("userName ------------------>"  + personne.getUserName());
+		
 		
 		pw.println(obj);
 

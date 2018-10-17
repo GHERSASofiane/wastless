@@ -29,7 +29,7 @@ public class AutorisationAcess {
                 
                 algo = Algorithm.HMAC256("secretKey");
           
-		Builder token = JWT.create();
+		Builder token = JWT.create().withIssuer("auth0");
 		
 		token.withClaim("userId", personne.getUserId());
 		token.withClaim("userMail", personne.getUserMail());
@@ -47,6 +47,12 @@ public class AutorisationAcess {
 		
 		String token = "";
 
+		try {
+			throw new Exception("je suis dans verify");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		Enumeration<String> headers = request.getHeaderNames();
 		
 		while(headers.hasMoreElements())

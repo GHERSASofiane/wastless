@@ -1,6 +1,7 @@
 package tokens;
 
 
+import java.util.Enumeration;
 import java.util.Iterator;
 
 import javax.servlet.http.HttpServletRequest;
@@ -28,7 +29,7 @@ public class AutorisationAcess {
                 
                 algo = Algorithm.HMAC256("secretKey");
           
-		Builder token = JWT.create();
+		Builder token = JWT.create().withIssuer("auth0");
 		
 		token.withClaim("userId", personne.getUserId());
 		token.withClaim("userMail", personne.getUserMail());
@@ -45,7 +46,20 @@ public class AutorisationAcess {
 	{
 		
 		String token = "";
-		System.out.println("header ----------------> " + request.getHeaderNames());
+
+		try {
+			throw new Exception("je suis dans verify");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		Enumeration<String> headers = request.getHeaderNames();
+		
+		while(headers.hasMoreElements())
+		{
+			String param = headers.nextElement();
+		    System.out.println(param + "----------------> " + request.getHeader(param));
+		}
 		
 		if(request.getHeader("Authorization").isEmpty())
 		{

@@ -8,6 +8,7 @@ import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class HeadersFilter implements Filter{
@@ -20,10 +21,12 @@ public class HeadersFilter implements Filter{
 	public void doFilter(ServletRequest request, ServletResponse  response, FilterChain chain)
 			throws IOException, ServletException {
 		
+		 
+		
 		 ((HttpServletResponse) response).setHeader("Access-Control-Allow-Origin", "*"); 
 		 ((HttpServletResponse) response).setHeader("Access-Control-Allow-Credentials", "true");
 		 ((HttpServletResponse) response).setHeader("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT, OPTIONS, HEAD");
-		 ((HttpServletResponse) response).setHeader("Access-Control-Allow-Headers", "Content-Type, Accept, X-Requested-With, Authorization");
+		 ((HttpServletResponse) response).setHeader("Access-Control-Allow-Headers", "Content-Type, Accept, X-Requested-With");
 
 	    	
 		chain.doFilter(request, response);

@@ -2,7 +2,7 @@ package tokens;
 
 
 import java.util.Enumeration;
-import java.util.Iterator;
+
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -13,9 +13,7 @@ import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.interfaces.Claim;
 import com.auth0.jwt.interfaces.DecodedJWT;
 import com.google.gson.JsonObject;
-import java.io.UnsupportedEncodingException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 
 import models.Personne;
 
@@ -53,20 +51,14 @@ public class AutorisationAcess {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		Enumeration<String> headers = request.getHeaderNames();
 		
-		while(headers.hasMoreElements())
-		{
-			String param = headers.nextElement();
-		    System.out.println(param + "----------------> " + request.getHeader(param));
-		}
 		
 		if(request.getHeader("Authorization").isEmpty())
 		{
 			return null;
 		}
 		
-		token = request.getHeader("Authorization");
+		token = request.getHeader("Authorization").split(" ")[1];
 		System.out.println("token ----------------------> " + token);
 		
 		 Algorithm algorithm ;

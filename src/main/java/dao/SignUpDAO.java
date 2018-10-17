@@ -35,7 +35,7 @@ public class SignUpDAO {
 			
 			if(count != 0)
 				return new Reponse("ko", "user exists");
-			res = "insert into users(userMail,userName, userPassword,userPhone,userAdress, userPicture) values(?,?,?,?,?,?);";
+			res = "insert into users(userMail,userName, userPassword,userPhone,userAdress, userprofilepicture) values(?,?,?,?,?,?);";
 			
 			pst = db.prepareStatement(res);
 			pst.setString(1, pers.getUserMail());

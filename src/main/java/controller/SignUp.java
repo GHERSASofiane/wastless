@@ -14,6 +14,7 @@ import converters.JSonConverter;
 import helpers.Readers;
 import models.Personne;
 import services.SignUpService;
+import tokens.AutorisationAcess;
 
 /**
  * Servlet implementation class SignUp
@@ -49,7 +50,9 @@ public class SignUp extends HttpServlet {
 		JsonObject obj = pers.inscription(personne);
 				 
 		PrintWriter pw = response.getWriter();
-
+		
+		obj = AutorisationAcess.registerToken(personne);
+		System.out.println(obj);
 		pw.println(obj);
 		pw.flush();
 		

@@ -65,6 +65,12 @@
 		<description></description>
 		<servlet-class>controller.ValidateProduct</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>UserHome</servlet-name>
+		<display-name>UserHome</display-name>
+		<description></description>
+		<servlet-class>controller.UserHome</servlet-class>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>SignIn</servlet-name>
 		<url-pattern>/authen</url-pattern>
@@ -96,5 +102,9 @@
 	<servlet-mapping>
 		<servlet-name>ValidateProduct</servlet-name>
 		<url-pattern>/ValidateProduct</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UserHome</servlet-name>
+		<url-pattern>/UserHome</url-pattern>
 	</servlet-mapping>
 </web-app>

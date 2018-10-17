@@ -1,7 +1,6 @@
 package tokens;
 
 
-import java.util.Enumeration;
 import java.util.Iterator;
 
 import javax.servlet.http.HttpServletRequest;

@@ -33,7 +33,7 @@ public class ProductSearch extends HttpServlet {
 
 // recuperer les params
         String PName = request.getParameter("ProductName");
-        int Page = Integer.getInteger(request.getParameter("Page"));
+        int Page = Integer.parseInt(request.getParameter("Page"));
         if (PName == null) {
             PName = "";
         }

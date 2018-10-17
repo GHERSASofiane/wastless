@@ -33,22 +33,22 @@ public class ProductSearch extends HttpServlet {
 
 // recuperer les params
         String PName = request.getParameter("ProductName");
-        int Page = Integer.parseInt(request.getParameter("Page"));
+        String Page = request.getParameter("Page");
         if (PName == null) {
             PName = "";
         }
-        //if (Page == null) {
-          //  Page = "0";
-       // }
+        if (Page == null) {
+            Page = "0";
+        }
 
         PName = PName.toLowerCase();
-        //Page = Page.toLowerCase();
-       // int p = Integer.getInteger(Page);
+        Page = Page.toLowerCase();
+        int p = Integer.parseInt(Page);
         
         // Préparer la répense
         ProductService rep = new ProductService();
                 // Envoie de réponse
-        resp.println(rep.searchProduct(PName, Page));
+        resp.println(rep.searchProduct(PName, p));
         resp.flush(); 
     }
 

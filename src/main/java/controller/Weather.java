@@ -10,8 +10,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import status.Reponse;
-import tokens.AutorisationAcess;
+import services.WeatherService;
+import status.Reponse; 
 
 /**
  *
@@ -27,17 +27,11 @@ public class Weather  extends HttpServlet {
         PrintWriter resp = response.getWriter();
         
         // Préparer la répense
-        models.Weather wt = new models.Weather();
-        wt.setWeatherId(10);
-        
-        
-        
-        JsonObject obj = JSonConverter.objectToJson(new Reponse("ok", wt) );
-        
+        WeatherService WS = new WeatherService();
 		
 		
 		// Envoie de réponse
-		resp.println(obj);
+		resp.println(WS.GetWeather());
 		resp.flush();
         
       

@@ -35,7 +35,7 @@ public class UserReservationDAO {
 				prod.setProductId(rs.getInt(1));
 				prod.setProductName(rs.getString(2));
 				prod.setProductDescription(rs.getString(3));
-				prod.setProductPrice(rs.getDouble(4));
+				prod.setProductPrice(rs.getString(4));
 				prod.setProductPicture(rs.getString(5));
 				prod.setProductDate(rs.getString(6));
 				

@@ -1,67 +1,81 @@
 package models;
 
-
-
 public class Product {
 
-	private int productId;
-	private String productName;
-	private String productDescription;
-	private double productPrice;
-	private String productPicture;
-	private int productStatus;
-	private int userId;
-	private String productDate;
-	
-	
-	public int getProductId() {
-		return productId;
-	}
-	public void setProductId(int productId) {
-		this.productId = productId;
-	}
-	public String getProductName() {
-		return productName;
-	}
-	public void setProductName(String productName) {
-		this.productName = productName;
-	}
-	public String getProductDescription() {
-		return productDescription;
-	}
-	public void setProductDescription(String productDescription) {
-		this.productDescription = productDescription;
-	}
-	public double getProductPrice() {
-		return productPrice;
-	}
-	public void setProductPrice(double productPrice) {
-		this.productPrice = productPrice;
-	}
-	public String getProductPecture() {
-		return productPicture;
-	}
-	public void setProductPicture(String productPecture) {
-		this.productPicture = productPecture;
-	}
-	public int getProductStatus() {
-		return productStatus;
-	}
-	public void setProductStatus(int productStatus) {
-		this.productStatus = productStatus;
-	}
-	public int getUserId() {
-		return userId;
-	}
-	public void setUserId(int userId) {
-		this.userId = userId;
-	}
-	public String getProductDate() {
-		return productDate;
-	}
-	public void setProductDate(String productDate) {
-		this.productDate = productDate;
-	}
-	
-	
+    public String ProductName, ProductDate, ProductDescription, ProductPicture, UserName, ProductPrice;
+    public int ProductId, ProductStatus, UserId;
+
+    public void setProductName(String ProductName) {
+        this.ProductName = ProductName;
+    }
+
+    public void setProductDate(String ProductDate) {
+        this.ProductDate = ProductDate;
+    }
+
+    public void setProductDescription(String ProductDescription) {
+        this.ProductDescription = ProductDescription;
+    }
+
+    public void setProductPicture(String ProductPicture) {
+        this.ProductPicture = ProductPicture;
+    }
+
+    public void setUserName(String UserName) {
+        this.UserName = UserName;
+    }
+
+    public void setProductId(int ProductId) {
+        this.ProductId = ProductId;
+    }
+
+    public void setProductPrice(String ProductPrice) {
+        this.ProductPrice = ProductPrice;
+    }
+
+    public void setProductStatus(int ProductStatus) {
+        this.ProductStatus = ProductStatus;
+    }
+
+    public void setUserId(int UserId) {
+        this.UserId = UserId;
+    } 
+    
+    public String getProductName() {
+        return ProductName;
+    }
+
+    public String getProductDate() {
+        return ProductDate;
+    }
+
+    public String getProductDescription() {
+        return ProductDescription;
+    }
+
+    public String getProductPicture() {
+        return ProductPicture;
+    }
+
+    public String getUserName() {
+        return UserName;
+    }
+
+    public int getProductId() {
+        return ProductId;
+    }
+
+    public String getProductPrice() {
+        return ProductPrice;
+    }
+
+    public int getProductStatus() {
+        return ProductStatus;
+    }
+
+    public int getUserId() {
+        return UserId;
+    }
+
+    
 }

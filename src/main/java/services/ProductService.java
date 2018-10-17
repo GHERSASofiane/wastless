@@ -11,9 +11,9 @@ public class ProductService {
 
 	ProductDAO pr = new ProductDAO();
 	
-	public JsonObject searchProduct()
+	public JsonObject searchProduct(String nameArticle, int page)
 	{
-		return JSonConverter.objectToJson(pr.searchProduct());
+		return JSonConverter.objectToJson(pr.searchProduct(nameArticle, page));
 	}
 	
 	

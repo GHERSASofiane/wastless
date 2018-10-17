@@ -1,6 +1,8 @@
 package tokens;
 
 
+import java.util.Iterator;
+
 import javax.servlet.http.HttpServletRequest;
 
 import com.auth0.jwt.JWT;
@@ -37,6 +39,8 @@ public class AutorisationAcess {
 	{
 		
 		String token = "";
+		System.out.println("header ----------------> " + request.getHeaderNames());
+		
 		if(request.getHeader("Authorization").isEmpty())
 		{
 			return null;

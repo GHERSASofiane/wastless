@@ -10,6 +10,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import status.Reponse;
 import tokens.AutorisationAcess;
 
 /**
@@ -28,7 +29,10 @@ public class Weather  extends HttpServlet {
         // Préparer la répense
         models.Weather wt = new models.Weather();
         wt.setWeatherId(10);
-        JsonObject obj = JSonConverter.objectToJson(wt);
+        
+        
+        
+        JsonObject obj = JSonConverter.objectToJson(new Reponse("ok", wt) );
         
 		
 		

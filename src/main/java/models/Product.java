@@ -1,6 +1,6 @@
 package models;
 
-import java.awt.Image;
+
 
 public class Product {
 

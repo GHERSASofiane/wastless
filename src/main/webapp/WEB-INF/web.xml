@@ -105,6 +105,6 @@
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>UserHome</servlet-name>
-		<url-pattern>/UserHome</url-pattern>
+		<url-pattern>/userhome</url-pattern>
 	</servlet-mapping>
 </web-app>

@@ -24,14 +24,10 @@ public class AutorisationAcess {
 	public static JsonObject registerToken(Personne personne)
 	{
 		JsonObject obj = new JsonObject();
-		Algorithm algo = null;
-            try {
+		Algorithm algo;
+                
                 algo = Algorithm.HMAC256("secretKey");
-            } catch (IllegalArgumentException ex) {
-                Logger.getLogger(AutorisationAcess.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (UnsupportedEncodingException ex) {
-                Logger.getLogger(AutorisationAcess.class.getName()).log(Level.SEVERE, null, ex);
-            }
+          
 		Builder token = JWT.create();
 		
 		token.withClaim("userId", personne.getUserId());
@@ -59,14 +55,10 @@ public class AutorisationAcess {
 		token = request.getHeader("Authorization");
 		System.out.println("token ----------------------> " + token);
 		
-		 Algorithm algorithm = null;
-            try {
+		 Algorithm algorithm ;
+             
                 algorithm = Algorithm.HMAC256("secretKey");
-            } catch (IllegalArgumentException ex) {
-                Logger.getLogger(AutorisationAcess.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (UnsupportedEncodingException ex) {
-                Logger.getLogger(AutorisationAcess.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            
 		    JWTVerifier verifier = JWT.require(algorithm)
 		        .withIssuer("auth0")
 		        .build(); //Reusable verifier instance

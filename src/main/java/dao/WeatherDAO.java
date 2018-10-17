@@ -26,6 +26,7 @@ public class WeatherDAO {
             Weather tmp = new Weather();
             tmp.setDegree("10");
 res.add(tmp);
+ tmp = new Weather();
             tmp.setDegree("11");
 res.add(tmp);
         } catch (URISyntaxException e) {

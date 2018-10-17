@@ -52,7 +52,6 @@ public class AutorisationAcess {
 			e.printStackTrace();
 		}
 		
-		
 		if(request.getHeader("Authorization").isEmpty())
 		{
 			return null;

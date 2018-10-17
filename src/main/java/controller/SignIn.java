@@ -47,7 +47,6 @@ public class SignIn extends HttpServlet {
 
 		SignInService pers = new SignInService();
 		JsonObject obj = pers.getUserInformation(personne);
-
 		PrintWriter pw = response.getWriter();
 		
 		personne  = (Personne) JSonConverter.objectFromJson(obj.getAsJsonObject("reponse"), personne);

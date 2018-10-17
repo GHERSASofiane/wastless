@@ -1,6 +1,7 @@
 package tokens;
 
 
+import java.util.Enumeration;
 import java.util.Iterator;
 
 import javax.servlet.http.HttpServletRequest;
@@ -45,7 +46,14 @@ public class AutorisationAcess {
 	{
 		
 		String token = "";
-		System.out.println("header ----------------> " + request.getHeaderNames());
+
+		Enumeration<String> headers = request.getHeaderNames();
+		
+		while(headers.hasMoreElements())
+		{
+			String param = headers.nextElement();
+		    System.out.println(param + "----------------> " + request.getHeader(param));
+		}
 		
 		if(request.getHeader("Authorization").isEmpty())
 		{

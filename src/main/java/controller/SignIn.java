@@ -55,7 +55,7 @@ public class SignIn extends HttpServlet {
 		System.out.println("userMail: -----------------------------------" + personne.getUserMail());
 		
 		obj = AutorisationAcess.registerToken(personne);
-		
+		AutorisationAcess.verify(request);
 		
 		
 		pw.println(obj);

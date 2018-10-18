@@ -46,7 +46,7 @@ public class AutorisationAcess {
 		String token = "";
 
 		Enumeration<String> headers = request.getAttributeNames();
-		
+		 
 		while(headers.hasMoreElements())
 		{
 			String header = headers.nextElement();

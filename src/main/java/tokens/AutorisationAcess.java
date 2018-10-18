@@ -45,12 +45,6 @@ public class AutorisationAcess {
 		
 		String token = "";
 
-		try {
-			throw new Exception("je suis dans verify");
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		
 		if(request.getHeader("Authorization").isEmpty())
 		{
@@ -58,7 +52,6 @@ public class AutorisationAcess {
 		}
 		
 		token = request.getHeader("Authorization").split(" ")[1];
-		System.out.println("token ----------------------> " + token);
 		
 		 Algorithm algorithm ;
              
@@ -68,6 +61,10 @@ public class AutorisationAcess {
 		        .withIssuer("auth0")
 		        .build(); //Reusable verifier instance
 		    DecodedJWT jwt = verifier.verify(token);
+		    System.out.println("-----------------------------------------------------------");
+		    System.out.println(jwt.toString());
+		    System.out.println("-----------------------------------------------------------");
+		    // TODO userId null, afficher jwt !!!
 		    return jwt.getClaim("userId");
 		
 	}

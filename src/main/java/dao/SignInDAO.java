@@ -39,6 +39,10 @@ public class SignInDAO {
 				personne.setUserPicture(rs.getString(7));
 			}
 			
+			pst.close();
+			rs.close();
+			db.close();
+			
 		} catch (URISyntaxException e) {
 			e.printStackTrace();
 			return new Reponse("ko", "error !!! try again please");

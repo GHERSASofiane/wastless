@@ -43,24 +43,11 @@ public class AutorisationAcess {
 	public static Claim verify(HttpServletRequest request)
 	{
 		
-		String token = "";
-
-		Enumeration<String> headers = request.getAttributeNames();
-		 
-		while(headers.hasMoreElements())
-		{
-			String header = headers.nextElement();
-			System.out.println(header + "------------>" + request.getHeader(header));
-		}
 		
-		if(request.getHeader("authorization").isEmpty())
-		{
-			return null;
-		}
 		
-		token = request.getHeader("Authorization").split(" ")[1];
+		String token = request.getHeader("Authorization").split(" ")[1];
 		
-		 Algorithm algorithm ;
+       Algorithm algorithm ;
              
                 algorithm = Algorithm.HMAC256("secretKey");
             
@@ -75,5 +62,18 @@ public class AutorisationAcess {
 		    return jwt.getClaim("userId");
 		
 	}
+	
+	
+	public static boolean allowUser(HttpServletRequest req)
+	{
+		String auth = req.getHeader("Authorization");
+		if(auth == null)
+			return false;
+		else
+			return true;
+		
+	}
+	
+	
 	
 }

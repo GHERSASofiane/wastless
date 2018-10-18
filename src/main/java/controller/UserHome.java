@@ -34,24 +34,21 @@ public class UserHome extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-	Claim userId = AutorisationAcess.verify(request);
+	
+	PrintWriter pw = response.getWriter();	
 	JsonObject obj = new JsonObject();
 	
-
-	PrintWriter pw = response.getWriter();
-
-	if(userId.asString().isEmpty())
+	if(!AutorisationAcess.allowUser(request))
 	{
 		obj = JSonConverter.objectToJson(new Reponse("ko", "user not logged in"));
 	}
 	else
 	{
-		int id = Integer.parseInt(userId.asString());
-		System.out.println("userId  ---------------------> " + userId.asString());
-		UserHomeService uhs = new UserHomeService();
-		obj = uhs.getUserReservation(id);
+		Claim claim = AutorisationAcess.verify(request);
+		Reponse rep = new Reponse("ok", JSonConverter.objectToJson(claim));
+		obj = JSonConverter.objectToJson(rep);
 	}
+		
 	
 	pw.println(obj);
 	pw.flush();

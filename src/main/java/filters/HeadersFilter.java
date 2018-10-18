@@ -26,8 +26,7 @@ public class HeadersFilter implements Filter{
 		 ((HttpServletResponse) response).setHeader("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT, OPTIONS");
 		 ((HttpServletResponse) response).setHeader("Access-Control-Allow-Headers", "Authorization, Content-Type, Accept, X-Requested-With");
 
-		 if(((HttpServletRequest) request).getMethod().equals("OPTIONS"))
-			 ((HttpServletResponse) response).setStatus(HttpServletResponse.SC_OK);
+		 
 	    	
 		chain.doFilter(request, response);
 	}

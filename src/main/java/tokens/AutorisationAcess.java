@@ -1,7 +1,7 @@
 package tokens;
 
 
-import java.util.Enumeration;
+
 
 
 import javax.servlet.http.HttpServletRequest;
@@ -54,11 +54,7 @@ public class AutorisationAcess {
 		    JWTVerifier verifier = JWT.require(algorithm)
 		        .withIssuer("auth0")
 		        .build(); //Reusable verifier instance
-		    DecodedJWT jwt = verifier.verify(token);
-		    System.out.println("-----------------------------------------------------------");
-		    System.out.println(jwt.toString());
-		    System.out.println("-----------------------------------------------------------");
-		    // TODO userId null, afficher jwt !!!
+		    DecodedJWT jwt = verifier.verify(token); 
 		    return jwt.getClaim("userId");
 		
 	}

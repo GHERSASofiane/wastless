@@ -37,14 +37,6 @@ public class UserHome extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 		
-	Enumeration<String> headers = request.getHeaderNames();
-	
-	while(headers.hasMoreElements())
-	{
-		String header = headers.nextElement();
-		System.out.println(header + " --------------------> " + request.getHeader(header));
-	}
-			
 		
 	PrintWriter pw = response.getWriter();	
 	JsonObject obj = new JsonObject();
@@ -56,8 +48,9 @@ public class UserHome extends HttpServlet {
 	else
 	{
 		Claim claim = AutorisationAcess.verify(request);
-		Reponse rep = new Reponse("ok", JSonConverter.objectToJson(claim));
-		obj = JSonConverter.objectToJson(rep);
+		UserHomeService uhs = new UserHomeService();
+		obj = uhs.getUserReservation(claim.asInt());
+		 
 	}
 		
 	

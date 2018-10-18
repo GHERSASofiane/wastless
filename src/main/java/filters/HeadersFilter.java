@@ -22,7 +22,7 @@ public class HeadersFilter implements Filter{
 		
 		 ((HttpServletResponse) response).setHeader("Access-Control-Allow-Origin", "*"); 
 		 ((HttpServletResponse) response).setHeader("Access-Control-Allow-Credentials", "true");
-		 ((HttpServletResponse) response).setHeader("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT, HEAD");
+		 ((HttpServletResponse) response).setHeader("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT");
 		 ((HttpServletResponse) response).setHeader("Access-Control-Allow-Headers", "Authorization, Content-Type, Accept, X-Requested-With");
 
 	    	

@@ -2,6 +2,7 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Enumeration;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -35,6 +36,16 @@ public class UserHome extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
+		
+	Enumeration<String> headers = request.getHeaderNames();
+	
+	while(headers.hasMoreElements())
+	{
+		String header = headers.nextElement();
+		System.out.println(header + " --------------------> " + request.getHeader(header));
+	}
+			
+		
 	PrintWriter pw = response.getWriter();	
 	JsonObject obj = new JsonObject();
 	

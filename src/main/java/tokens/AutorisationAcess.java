@@ -45,8 +45,15 @@ public class AutorisationAcess {
 		
 		String token = "";
 
+		Enumeration<String> headers = request.getAttributeNames();
 		
-		if(request.getHeader("Authorization").isEmpty())
+		while(headers.hasMoreElements())
+		{
+			String header = headers.nextElement();
+			System.out.println(header + "------------>" + request.getHeader(header));
+		}
+		
+		if(request.getHeader("authorization").isEmpty())
 		{
 			return null;
 		}

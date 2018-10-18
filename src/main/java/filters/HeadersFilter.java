@@ -8,6 +8,7 @@ import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class HeadersFilter implements Filter{
@@ -25,6 +26,8 @@ public class HeadersFilter implements Filter{
 		 ((HttpServletResponse) response).setHeader("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT");
 		 ((HttpServletResponse) response).setHeader("Access-Control-Allow-Headers", "Authorization, Content-Type, Accept, X-Requested-With");
 
+		 if(((HttpServletRequest) request).getMethod().equals("OPTIONS"))
+			 ((HttpServletResponse) response).setStatus(HttpServletResponse.SC_OK);
 	    	
 		chain.doFilter(request, response);
 	}

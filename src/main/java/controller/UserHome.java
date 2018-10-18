@@ -54,11 +54,6 @@ public class UserHome extends HttpServlet {
 	pw.flush();
 	}
 
-	@Override
-	protected void doOptions(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		resp.setStatus(HttpServletResponse.SC_OK);
-	}
 	
 
 }

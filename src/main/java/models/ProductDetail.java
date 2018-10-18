@@ -10,7 +10,7 @@ package models;
  * @author ghersa
  */
 public class ProductDetail extends Product{
-     String UserName, UserMail, UserAdress;
+     String UserMail, UserAdress;
      int UserPhone;
 
     public void setUserName(String UserName) {

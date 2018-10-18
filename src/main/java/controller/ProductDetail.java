@@ -12,38 +12,31 @@ import com.google.gson.JsonObject;
 
 import services.ProductService;
 
-
 public class ProductDetail extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
-   
+
+    private static final long serialVersionUID = 1L;
+
     public ProductDetail() {
         super();
-          }
+    }
 
-	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-	    PrintWriter out = response.getWriter(); //can send character text to the client
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // Récuperer le PrintWriter Pour envoyer la réponse
+        PrintWriter resp = response.getWriter();
 
-        //Recuperate productId in url
-        String productId = request.getParameter("ProductId"); 
-        productId = productId.toLowerCase();
-        
-        ProductService product = new ProductService();
-        JsonObject obj = product.getProductDetails(productId); 
-        
-         out.println(obj);
-         out.close();
- 	
-	}
+        // recuperer les params
+        String ProductId = request.getParameter("ProductId");
+        if (ProductId == null) {
+            ProductId = "";
+        }
+        ProductId = ProductId.toLowerCase();
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
+        // Préparer la répense
+        ProductService rep = new ProductService();
+        // Envoie de réponse
+        resp.println(rep.getProductDetails(ProductId));
+        resp.flush();
+
+    }
 
 }

@@ -28,7 +28,7 @@ public class ProductSearch extends HttpServlet {
      * response)
      */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-               // Récuperer le PrintWriter Pour envoyer la réponse
+        // Récuperer le PrintWriter Pour envoyer la réponse
         PrintWriter resp = response.getWriter();
 
 // recuperer les params
@@ -44,12 +44,12 @@ public class ProductSearch extends HttpServlet {
         PName = PName.toLowerCase();
         Page = Page.toLowerCase();
         int p = Integer.parseInt(Page);
-        
+
         // Préparer la répense
         ProductService rep = new ProductService();
-                // Envoie de réponse
+        // Envoie de réponse
         resp.println(rep.searchProduct(PName, p));
-        resp.flush(); 
+        resp.flush();
     }
 
 }

@@ -10,7 +10,7 @@ import java.sql.Statement;
 import configuration.Connexion;
 import java.util.ArrayList;
 import java.util.List;
-import models.Product;
+import models.*;
 import status.Reponse;
 
 public class ProductDAO {
@@ -104,33 +104,39 @@ public class ProductDAO {
     }
 
     public Reponse getProductDetails(String productId) {
-        Product product = new Product();
+        ProductDetail tmpProd = new ProductDetail();
+        
         try {
             db = Connexion.getConnection();
-            Statement pst = db.createStatement();
-
-            ResultSet rs = pst.executeQuery(("select * from product where productId=" + productId + ";"));
-
-            while (rs.next()) {
-                product.setProductName(rs.getString(2));
-                product.setProductDescription(rs.getString(3));
-                product.setProductPrice(rs.getString(4));
-                product.setProductStatus(rs.getInt(6));
-                product.setProductDate(rs.getString(8));
-            }
-
-            pst.close();
-            rs.close();
+            
+             Statement stmt = db.createStatement();
+        ResultSet rs = stmt.executeQuery("SELECT * FROM Product, Users WHERE Product.userid = Users.userid AND ProductId = "+productId+";");
+          while (rs.next()) {
+              
+            tmpProd.setProductName(rs.getString("ProductName"));  
+            tmpProd.setProductDate(rs.getString("ProductDate"));  
+            tmpProd.setProductDescription(rs.getString("ProductDescription"));  
+            tmpProd.setProductPicture(rs.getString("ProductPicture"));
+            tmpProd.setProductId(rs.getInt("ProductId"));  
+            tmpProd.setProductPrice(rs.getString("ProductPrice"));  
+            tmpProd.setProductStatus(rs.getInt("ProductStatus"));  
+            tmpProd.setUserId(rs.getInt("UserId"));  
+            tmpProd.setUserName(rs.getString("UserName")); 
+            tmpProd.setUserMail(rs.getString("UserMail")); 
+            tmpProd.setUserAdress(rs.getString("UserAdress"));  
+            tmpProd.setUserPhone(rs.getInt("UserPhone")); 
+            
+          } 
             db.close();
 
         } catch (URISyntaxException e) {
-            return new Reponse("ko", "Sorry !!! can not download product details");
+            return new Reponse("ko", "Erreur sur le serveur");
         } catch (SQLException e) {
-            return new Reponse("ko", "Sorry !!! can not download product details");
+            return new Reponse("ko", "Erreur sur le serveur");
         }
-
-        return new Reponse("ok", product);
-
+        
+        return new Reponse("ok", tmpProd);
+        
     }
 
     public Reponse validateProduct(String productId) {

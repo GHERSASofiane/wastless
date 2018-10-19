@@ -49,15 +49,15 @@ public class ProductDAO {
     }
 
     public Reponse addProduct(HttpServletRequest request) {
-        String ProductName, 
-               ProductDate, 
-               ProductDescription, 
-               ProductPicture, 
-               UserName, 
-               ProductPrice
-        int ProductId, 
-            ProductStatus, 
-            UserId
+        String ProductName;
+        String     ProductDate;
+        String ProductDescription;
+        String ProductPicture;
+        String UserName;
+        String      ProductPrice;
+        int ProductId;
+        int   ProductStatus;
+        int   UserId;
         try {
             db = Connexion.getConnection();
             String res = "insert into product(productName, productDescription, productPrice, productStatus, userId, productDate) values(?,?,?,?,?);";

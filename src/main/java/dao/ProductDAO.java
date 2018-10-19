@@ -10,6 +10,7 @@ import java.sql.Statement;
 import configuration.Connexion;
 import java.util.ArrayList;
 import java.util.List;
+import javax.servlet.http.HttpServletRequest;
 import models.*;
 import status.Reponse;
 
@@ -47,8 +48,16 @@ public class ProductDAO {
         return new Reponse("ok", res);
     }
 
-    public Reponse addProduct(int productId, String productName, String productDescription, double productPrice, int productStatus, int userId, String productDate) {
-
+    public Reponse addProduct(HttpServletRequest request) {
+        String ProductName, 
+               ProductDate, 
+               ProductDescription, 
+               ProductPicture, 
+               UserName, 
+               ProductPrice
+        int ProductId, 
+            ProductStatus, 
+            UserId
         try {
             db = Connexion.getConnection();
             String res = "insert into product(productName, productDescription, productPrice, productStatus, userId, productDate) values(?,?,?,?,?);";

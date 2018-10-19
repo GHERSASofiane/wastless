@@ -36,10 +36,10 @@
 		<servlet-class>controller.ProductDetail</servlet-class>
 	</servlet>
 	<servlet>
-		<servlet-name>addProduct</servlet-name>
-		<display-name>addProduct</display-name>
+		<servlet-name>AddProduct</servlet-name>
+		<display-name>AddProduct</display-name>
 		<description></description>
-		<servlet-class>controller.addProduct</servlet-class>
+		<servlet-class>controller.AddProduct</servlet-class>
 	</servlet>
 	<servlet>
 		<servlet-name>DeleteProduct</servlet-name>
@@ -92,8 +92,8 @@
 		<url-pattern>/ProductDetail</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
-		<servlet-name>addProduct</servlet-name>
-		<url-pattern>/addProduct</url-pattern>
+		<servlet-name>AddProduct</servlet-name>
+		<url-pattern>/AddProduct</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>DeleteProduct</servlet-name>

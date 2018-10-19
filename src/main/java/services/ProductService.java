@@ -4,6 +4,7 @@ import com.google.gson.JsonObject;
 
 import converters.JSonConverter;
 import dao.ProductDAO;
+import javax.servlet.http.HttpServletRequest;
 
 
 
@@ -17,9 +18,9 @@ public class ProductService {
 	}
 	
 	
-	public JsonObject addProduct(int productId, String productName, String productDescription, double productPrice, int productStatus, int userId, String productDate)
+	public JsonObject addProduct(HttpServletRequest request)
 	{		
-		return JSonConverter.objectToJson(addProduct(productId, productName, productDescription, productPrice, productStatus, userId, productDate));
+		return JSonConverter.objectToJson(pr.addProduct(request));
 	}
 	
 	public JsonObject deleteProduct(String productName, double productPrice, int userId)

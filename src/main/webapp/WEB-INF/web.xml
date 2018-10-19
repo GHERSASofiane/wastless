@@ -77,6 +77,18 @@
 		<description></description>
 		<servlet-class>controller.Weather</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>bookProduct</servlet-name>
+		<display-name>bookProduct</display-name>
+		<description></description>
+		<servlet-class>controller.bookProduct</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>CancelReservation</servlet-name>
+		<display-name>CancelReservation</display-name>
+		<description></description>
+		<servlet-class>controller.CancelReservation</servlet-class>
+	</servlet>
         
         
 	<servlet-mapping>
@@ -118,5 +130,13 @@
 	<servlet-mapping>
 		<servlet-name>Weather</servlet-name>
 		<url-pattern>/Weather</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>bookProduct</servlet-name>
+		<url-pattern>/bookProduct</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CancelReservation</servlet-name>
+		<url-pattern>/CancelReservation</url-pattern>
 	</servlet-mapping>
 </web-app>

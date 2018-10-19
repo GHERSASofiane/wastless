@@ -60,7 +60,7 @@ public class ProductDAO {
             UserId
         try {
             db = Connexion.getConnection();
-            String res = "insert into product(productName, productDescription, productPrice, productStatus, userId, productDate) values(?,?,?,?,?);";
+            String res = "insert into Product(productName, productDescription, productPrice, productStatus, userId, productDate) values(?,?,?,?,?);";
 
             PreparedStatement pst = db.prepareStatement(res);
             pst.setString(1, productName);
@@ -89,7 +89,7 @@ public class ProductDAO {
     public Reponse deleteProduct(String productName, double productPrice, int userId) {
         try {
             db = Connexion.getConnection();
-            String res = "insert into product(productName, productDescription, productPrice, productStatus, userId, productDate) values(?,?,?,?,?);";
+            String res = "insert into Product(productName, productDescription, productPrice, productStatus, userId, productDate) values(?,?,?,?,?);";
 
             PreparedStatement pst = db.prepareStatement(res);
             pst.setString(1, productName);
@@ -154,7 +154,7 @@ public class ProductDAO {
             db = Connexion.getConnection();
             Statement pst = db.createStatement();
 
-            pst.executeQuery(" UPDATE product Set productStatus = 2 WHERE productId = " + productId + ";");
+            pst.executeQuery(" UPDATE Product Set productStatus = 2 WHERE productId = " + productId + ";");
 
             pst.close();
             db.close();
@@ -168,4 +168,53 @@ public class ProductDAO {
         return new Reponse("ok", "your purchase has been validated ");
     }
 
+	public Reponse bookProduct(String productId,String productName) {
+        try {
+            db = Connexion.getConnection();
+            String req = "INSERT INTO Booking" + "(bookingDated,productId,userId) VALUES(?,?,?)";
+            PreparedStatement pst = db.prepareStatement(req);
+            pst.setString(1, "");
+            pst.setInt(2, Integer.parseInt(productId));
+            pst.setString(3, productName);
+            
+           
+            pst.executeUpdate();
+           
+
+            pst.close();
+            db.close();
+
+        } catch (URISyntaxException e) {
+            return new Reponse("ko", "an error has occured");
+        } catch (SQLException e) {
+            return new Reponse("ko", "an error has occured");
+        }
+
+        return new Reponse("ok", "the product has been reserved");
+	}
+
+	public Object cancelReservation(String productId) {
+
+
+        try {
+            db = Connexion.getConnection();
+            Statement pst = db.createStatement();
+            Statement delete = db.createStatement();
+            
+            pst.executeQuery(" UPDATE Product Set productStatus = 0 WHERE productId = " + productId + ";");
+            delete.executeQuery(" DELETE FROM Booking  WHERE productId = " + productId + ";");
+            
+            delete.close();
+            pst.close();
+            db.close();
+
+        } catch (URISyntaxException e) {
+            return new Reponse("ko", "error !!! Can not cancel reservation");
+        } catch (SQLException e) {
+            return new Reponse("ko", "error !!! Can not cancel reservation");
+        }
+
+        return new Reponse("ok", "your booking has been canceled ");
+
+	}
 }

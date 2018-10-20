@@ -1,579 +1,428 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-	<component name="ChangeListManager">
-		<list default="true" id="1b691451-90ef-45b2-81ac-2761e629338e"
-			name="Default Changelist" comment="" />
-		<ignored path="$PROJECT_DIR$/bin/" />
-		<option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-		<option name="SHOW_DIALOG" value="false" />
-		<option name="HIGHLIGHT_CONFLICTS" value="true" />
-		<option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
-		<option name="LAST_RESOLUTION" value="IGNORE" />
-	</component>
-	<component name="FUSProjectUsageTrigger">
-		<session id="763672768">
-			<usages-collector id="statistics.lifecycle.project">
-				<counts>
-					<entry key="project.closed" value="1" />
-					<entry key="project.open.time.8" value="1" />
-					<entry key="project.open.time.9" value="1" />
-					<entry key="project.opened" value="2" />
-				</counts>
-			</usages-collector>
-			<usages-collector
-				id="statistics.file.extensions.open">
-				<counts>
-					<entry key="java" value="7" />
-					<entry key="name" value="1" />
-					<entry key="xml" value="5" />
-				</counts>
-			</usages-collector>
-			<usages-collector id="statistics.file.types.open">
-				<counts>
-					<entry key="JAVA" value="6" />
-					<entry key="PLAIN_TEXT" value="1" />
-					<entry key="Scratch" value="1" />
-					<entry key="XML" value="5" />
-				</counts>
-			</usages-collector>
-			<usages-collector
-				id="statistics.file.extensions.edit">
-				<counts>
-					<entry key="java" value="94" />
-				</counts>
-			</usages-collector>
-			<usages-collector id="statistics.file.types.edit">
-				<counts>
-					<entry key="JAVA" value="36" />
-					<entry key="Scratch" value="58" />
-				</counts>
-			</usages-collector>
-		</session>
-		<session id="-1484388911">
-			<usages-collector id="statistics.lifecycle.project">
-				<counts>
-					<entry key="project.closed" value="2" />
-					<entry key="project.open.time.13" value="1" />
-					<entry key="project.open.time.22" value="1" />
-					<entry key="project.opened" value="2" />
-				</counts>
-			</usages-collector>
-			<usages-collector
-				id="statistics.file.extensions.open">
-				<counts>
-					<entry key="java" value="18" />
-					<entry key="xml" value="2" />
-				</counts>
-			</usages-collector>
-			<usages-collector id="statistics.file.types.open">
-				<counts>
-					<entry key="JAVA" value="15" />
-					<entry key="Scratch" value="3" />
-					<entry key="XML" value="2" />
-				</counts>
-			</usages-collector>
-			<usages-collector
-				id="statistics.file.extensions.edit">
-				<counts>
-					<entry key="java" value="319" />
-					<entry key="xml" value="4" />
-				</counts>
-			</usages-collector>
-			<usages-collector id="statistics.file.types.edit">
-				<counts>
-					<entry key="JAVA" value="318" />
-					<entry key="Scratch" value="1" />
-					<entry key="XML" value="4" />
-				</counts>
-			</usages-collector>
-		</session>
-	</component>
-	<component name="FileEditorManager">
-		<leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-			<file pinned="false" current-in-tab="true">
-				<entry
-					file="file://$PROJECT_DIR$/src/main/java/com/model/EnsembleOffer.java">
-					<provider selected="true" editor-type-id="text-editor">
-						<state relative-caret-position="15">
-							<caret line="11" column="18" selection-start-line="11"
-								selection-start-column="18" selection-end-line="11"
-								selection-end-column="18" />
-						</state>
-					</provider>
-				</entry>
-			</file>
-			<file pinned="false" current-in-tab="false">
-				<entry
-					file="file://$PROJECT_DIR$/src/main/java/com/beans/Offer.java">
-					<provider selected="true" editor-type-id="text-editor">
-						<state relative-caret-position="405">
-							<caret line="27" column="31" selection-start-line="27"
-								selection-start-column="31" selection-end-line="27"
-								selection-end-column="31" />
-						</state>
-					</provider>
-				</entry>
-			</file>
-			<file pinned="false" current-in-tab="false">
-				<entry
-					file="file://$PROJECT_DIR$/src/main/java/com/controller/OfferSearch.java">
-					<provider selected="true" editor-type-id="text-editor">
-						<state relative-caret-position="151">
-							<caret line="15" column="24" selection-start-line="15"
-								selection-start-column="13" selection-end-line="15"
-								selection-end-column="24" />
-							<folding>
-								<element signature="imports" expanded="true" />
-							</folding>
-						</state>
-					</provider>
-				</entry>
-			</file>
-		</leaf>
-	</component>
-	<component name="Git.Settings">
-		<option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-	</component>
-	<component name="IdeDocumentHistory">
-		<option name="CHANGED_PATHS">
-			<list>
-				<option value="$PROJECT_DIR$/src/main/java/launch/Main.java" />
-				<option
-					value="$APPLICATION_CONFIG_DIR$/scratches/scratch_1.java" />
-				<option
-					value="$PROJECT_DIR$/src/main/java/com/controller/signIn.java" />
-				<option
-					value="$PROJECT_DIR$/src/main/java/com/controller/Dessert.java" />
-				<option
-					value="$PROJECT_DIR$/src/main/java/com/controller/Zwaj.java" />
-				<option
-					value="$APPLICATION_CONFIG_DIR$/scratches/scratch_2.java" />
-				<option
-					value="$PROJECT_DIR$/src/main/java/com/model/OfferSearch.java" />
-				<option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-				<option value="$PROJECT_DIR$/pom.xml" />
-				<option
-					value="$PROJECT_DIR$/src/main/java/com/beans/Offer.java" />
-				<option
-					value="$PROJECT_DIR$/src/main/java/com/beans/EnsembleOffer.java" />
-				<option
-					value="$PROJECT_DIR$/src/main/java/com/model/EnsembleOffer.java" />
-				<option
-					value="$PROJECT_DIR$/src/main/java/com/controller/OfferSearch.java" />
-			</list>
-		</option>
-	</component>
-	<component name="ProjectFrameBounds" extendedState="6">
-		<option name="x" value="67" />
-		<option name="y" value="27" />
-		<option name="width" value="1279" />
-		<option name="height" value="701" />
-	</component>
-	<component name="ProjectView">
-		<navigator proportions="" version="1">
-			<foldersAlwaysOnTop value="true" />
-		</navigator>
-		<panes>
-			<pane id="Course" />
-			<pane id="Scope" />
-			<pane id="ProjectPane">
-				<subPane>
-					<expand>
-						<path>
-							<item name="delta" type="b2602c69:ProjectViewProjectNode" />
-							<item name="wastless" type="462c0819:PsiDirectoryNode" />
-						</path>
-						<path>
-							<item name="delta" type="b2602c69:ProjectViewProjectNode" />
-							<item name="wastless" type="462c0819:PsiDirectoryNode" />
-							<item name="src" type="462c0819:PsiDirectoryNode" />
-						</path>
-						<path>
-							<item name="delta" type="b2602c69:ProjectViewProjectNode" />
-							<item name="wastless" type="462c0819:PsiDirectoryNode" />
-							<item name="src" type="462c0819:PsiDirectoryNode" />
-							<item name="main" type="462c0819:PsiDirectoryNode" />
-						</path>
-						<path>
-							<item name="delta" type="b2602c69:ProjectViewProjectNode" />
-							<item name="wastless" type="462c0819:PsiDirectoryNode" />
-							<item name="src" type="462c0819:PsiDirectoryNode" />
-							<item name="main" type="462c0819:PsiDirectoryNode" />
-							<item name="java" type="462c0819:PsiDirectoryNode" />
-						</path>
-						<path>
-							<item name="delta" type="b2602c69:ProjectViewProjectNode" />
-							<item name="wastless" type="462c0819:PsiDirectoryNode" />
-							<item name="src" type="462c0819:PsiDirectoryNode" />
-							<item name="main" type="462c0819:PsiDirectoryNode" />
-							<item name="java" type="462c0819:PsiDirectoryNode" />
-							<item name="com" type="462c0819:PsiDirectoryNode" />
-						</path>
-						<path>
-							<item name="delta" type="b2602c69:ProjectViewProjectNode" />
-							<item name="wastless" type="462c0819:PsiDirectoryNode" />
-							<item name="src" type="462c0819:PsiDirectoryNode" />
-							<item name="main" type="462c0819:PsiDirectoryNode" />
-							<item name="java" type="462c0819:PsiDirectoryNode" />
-							<item name="com" type="462c0819:PsiDirectoryNode" />
-							<item name="beans" type="462c0819:PsiDirectoryNode" />
-						</path>
-						<path>
-							<item name="delta" type="b2602c69:ProjectViewProjectNode" />
-							<item name="wastless" type="462c0819:PsiDirectoryNode" />
-							<item name="src" type="462c0819:PsiDirectoryNode" />
-							<item name="main" type="462c0819:PsiDirectoryNode" />
-							<item name="java" type="462c0819:PsiDirectoryNode" />
-							<item name="com" type="462c0819:PsiDirectoryNode" />
-							<item name="controller" type="462c0819:PsiDirectoryNode" />
-						</path>
-						<path>
-							<item name="delta" type="b2602c69:ProjectViewProjectNode" />
-							<item name="wastless" type="462c0819:PsiDirectoryNode" />
-							<item name="src" type="462c0819:PsiDirectoryNode" />
-							<item name="main" type="462c0819:PsiDirectoryNode" />
-							<item name="java" type="462c0819:PsiDirectoryNode" />
-							<item name="com" type="462c0819:PsiDirectoryNode" />
-							<item name="model" type="462c0819:PsiDirectoryNode" />
-						</path>
-						<path>
-							<item name="delta" type="b2602c69:ProjectViewProjectNode" />
-							<item name="wastless" type="462c0819:PsiDirectoryNode" />
-							<item name="src" type="462c0819:PsiDirectoryNode" />
-							<item name="main" type="462c0819:PsiDirectoryNode" />
-							<item name="java" type="462c0819:PsiDirectoryNode" />
-							<item name="configuration" type="462c0819:PsiDirectoryNode" />
-						</path>
-						<path>
-							<item name="delta" type="b2602c69:ProjectViewProjectNode" />
-							<item name="wastless" type="462c0819:PsiDirectoryNode" />
-							<item name="src" type="462c0819:PsiDirectoryNode" />
-							<item name="main" type="462c0819:PsiDirectoryNode" />
-							<item name="java" type="462c0819:PsiDirectoryNode" />
-							<item name="launch" type="462c0819:PsiDirectoryNode" />
-						</path>
-						<path>
-							<item name="delta" type="b2602c69:ProjectViewProjectNode" />
-							<item name="wastless" type="462c0819:PsiDirectoryNode" />
-							<item name="src" type="462c0819:PsiDirectoryNode" />
-							<item name="main" type="462c0819:PsiDirectoryNode" />
-							<item name="java" type="462c0819:PsiDirectoryNode" />
-							<item name="launch" type="462c0819:PsiDirectoryNode" />
-							<item name="BackEnd" type="462c0819:PsiDirectoryNode" />
-						</path>
-						<path>
-							<item name="delta" type="b2602c69:ProjectViewProjectNode" />
-							<item name="wastless" type="462c0819:PsiDirectoryNode" />
-							<item name="src" type="462c0819:PsiDirectoryNode" />
-							<item name="main" type="462c0819:PsiDirectoryNode" />
-							<item name="webapp" type="462c0819:PsiDirectoryNode" />
-						</path>
-						<path>
-							<item name="delta" type="b2602c69:ProjectViewProjectNode" />
-							<item name="wastless" type="462c0819:PsiDirectoryNode" />
-							<item name="src" type="462c0819:PsiDirectoryNode" />
-							<item name="main" type="462c0819:PsiDirectoryNode" />
-							<item name="webapp" type="462c0819:PsiDirectoryNode" />
-							<item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-						</path>
-					</expand>
-					<select />
-				</subPane>
-			</pane>
-			<pane id="PackagesPane" />
-		</panes>
-	</component>
-	<component name="PropertiesComponent">
-		<property
-			name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp"
-			value="1539208846593" />
-		<property
-			name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File"
-			value="JAVA" />
-		<property name="settings.editor.selected.configurable"
-			value="preferences.pluginManager" />
-	</component>
-	<component name="RecentsManager">
-		<key name="MoveFile.RECENT_KEYS">
-			<recent name="$PROJECT_DIR$/src/main/java/com/model" />
-			<recent name="$PROJECT_DIR$/src/main/java/com/controller" />
-			<recent name="$APPLICATION_CONFIG_DIR$/OfferSearch" />
-		</key>
-	</component>
-	<component name="RunDashboard">
-		<option name="ruleStates">
-			<list>
-				<RuleState>
-					<option name="name"
-						value="ConfigurationTypeDashboardGroupingRule" />
-				</RuleState>
-				<RuleState>
-					<option name="name" value="StatusDashboardGroupingRule" />
-				</RuleState>
-			</list>
-		</option>
-	</component>
-	<component name="SvnConfiguration">
-		<configuration />
-	</component>
-	<component name="TaskManager">
-		<task active="true" id="Default" summary="Default task">
-			<changelist id="1b691451-90ef-45b2-81ac-2761e629338e"
-				name="Default Changelist" comment="" />
-			<created>1539032796992</created>
-			<option name="number" value="Default" />
-			<option name="presentableId" value="Default" />
-			<updated>1539032796992</updated>
-		</task>
-		<servers />
-	</component>
-	<component name="ToolWindowManager">
-		<frame x="67" y="25" width="1299" height="743"
-			extended-state="6" />
-		<layout>
-			<window_info active="true" content_ui="combo"
-				id="Project" order="0" visible="true" weight="0.20909816" />
-			<window_info id="Structure" order="1" side_tool="true"
-				weight="0.25" />
-			<window_info id="Image Layers" order="2" />
-			<window_info id="Designer" order="3" />
-			<window_info id="UI Designer" order="4" />
-			<window_info id="Capture Tool" order="5" />
-			<window_info id="Favorites" order="6" side_tool="true" />
-			<window_info anchor="bottom" id="Message" order="0" />
-			<window_info anchor="bottom" id="Find" order="1" />
-			<window_info anchor="bottom" id="Run" order="2" />
-			<window_info anchor="bottom" id="Debug" order="3"
-				weight="0.4" />
-			<window_info anchor="bottom" id="Cvs" order="4"
-				weight="0.25" />
-			<window_info anchor="bottom" id="Inspection" order="5"
-				weight="0.4" />
-			<window_info anchor="bottom" id="TODO" order="6" />
-			<window_info anchor="bottom" id="Terminal" order="7" />
-			<window_info anchor="bottom" id="Event Log" order="8"
-				side_tool="true" />
-			<window_info anchor="bottom" id="Version Control"
-				order="9" weight="0.32952693" />
-			<window_info anchor="bottom" id="Inspector" order="10"
-				side_tool="true" />
-			<window_info anchor="bottom" id="Dependencies Viewer"
-				order="11" />
-			<window_info anchor="bottom" id="Usages" order="12" />
-			<window_info anchor="bottom" id="Messages" order="13" />
-			<window_info anchor="right" id="Commander"
-				internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-			<window_info anchor="right" id="Ant Build" order="1"
-				weight="0.25" />
-			<window_info anchor="right" content_ui="combo"
-				id="Hierarchy" order="2" weight="0.25" />
-			<window_info anchor="right" id="Palette" order="3" />
-			<window_info anchor="right" id="Capture Analysis"
-				order="4" />
-			<window_info anchor="right" id="Theme Preview" order="5" />
-			<window_info anchor="right" id="Palette&#9;" order="6" />
-			<window_info anchor="right" id="Maven Projects" order="7" />
-		</layout>
-		<layout-to-restore>
-			<window_info active="true" content_ui="combo"
-				id="Project" order="0" visible="true" weight="0.20351157" />
-			<window_info id="Structure" order="1" side_tool="true"
-				weight="0.25" />
-			<window_info id="Image Layers" order="2" />
-			<window_info id="Designer" order="3" />
-			<window_info id="UI Designer" order="4" />
-			<window_info id="Capture Tool" order="5" />
-			<window_info id="Favorites" order="6" side_tool="true" />
-			<window_info anchor="bottom" id="Messages" order="0" />
-			<window_info anchor="bottom" id="Dependencies Viewer"
-				order="1" />
-			<window_info anchor="bottom" id="Usages" order="2" />
-			<window_info anchor="bottom" id="Inspector" order="3"
-				side_tool="true" />
-			<window_info anchor="bottom" id="Message" order="4" />
-			<window_info anchor="bottom" id="Find" order="5" />
-			<window_info anchor="bottom" id="Run" order="6" />
-			<window_info anchor="bottom" id="Debug" order="7"
-				weight="0.4" />
-			<window_info anchor="bottom" id="Cvs" order="8"
-				weight="0.25" />
-			<window_info anchor="bottom" id="Inspection" order="9"
-				weight="0.4" />
-			<window_info anchor="bottom" id="TODO" order="10" />
-			<window_info anchor="bottom" id="Terminal" order="11" />
-			<window_info anchor="bottom" id="Event Log" order="12"
-				side_tool="true" />
-			<window_info anchor="bottom" id="Version Control"
-				order="13" weight="0.32952693" />
-			<window_info anchor="right" id="Commander"
-				internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-			<window_info anchor="right" id="Ant Build" order="1"
-				weight="0.25" />
-			<window_info anchor="right" content_ui="combo"
-				id="Hierarchy" order="2" weight="0.25" />
-			<window_info anchor="right" id="Palette" order="3" />
-			<window_info anchor="right" id="Capture Analysis"
-				order="4" />
-			<window_info anchor="right" id="Theme Preview" order="5" />
-			<window_info anchor="right" id="Palette&#9;" order="6" />
-			<window_info anchor="right" id="Maven Projects" order="7" />
-		</layout-to-restore>
-	</component>
-	<component name="UsagesViewTool">
-		<version id="1" />
-		<tabs />
-		<default_view_options>
-			<options category_option="false" module_option="true"
-				model_option="true" root_option="true" path_option="false"
-				count_option="true" info_option="true"
-				view_searched_nodes_option="true" group_searched_nodes_option="true"
-				autoscroll_option="false" />
-		</default_view_options>
-	</component>
-	<component name="VcsContentAnnotationSettings">
-		<option name="myLimit" value="2678400000" />
-	</component>
-	<component name="editorHistoryManager">
-		<entry
-			file="file://$PROJECT_DIR$/src/main/java/launch/Main.java">
-			<provider selected="true" editor-type-id="text-editor">
-				<state relative-caret-position="120">
-					<caret line="16" column="7" selection-start-line="16"
-						selection-start-column="7" selection-end-line="16"
-						selection-end-column="7" />
-				</state>
-			</provider>
-		</entry>
-		<entry
-			file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_1.java">
-			<provider selected="true" editor-type-id="text-editor">
-				<state relative-caret-position="120">
-					<caret line="8" selection-start-line="8"
-						selection-end-line="8" />
-				</state>
-			</provider>
-		</entry>
-		<entry file="file://$PROJECT_DIR$/.idea/compiler.xml">
-			<provider selected="true" editor-type-id="text-editor" />
-		</entry>
-		<entry file="file://$PROJECT_DIR$/.idea/misc.xml">
-			<provider selected="true" editor-type-id="text-editor" />
-		</entry>
-		<entry file="file://$PROJECT_DIR$/.idea/.name">
-			<provider selected="true" editor-type-id="text-editor" />
-		</entry>
-		<entry file="file://$PROJECT_DIR$/.idea/modules.xml">
-			<provider selected="true" editor-type-id="text-editor" />
-		</entry>
-		<entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
-			<provider selected="true" editor-type-id="text-editor" />
-		</entry>
-		<entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-			<provider selected="true" editor-type-id="text-editor" />
-		</entry>
-		<entry
-			file="file://$PROJECT_DIR$/src/main/java/com/controller/signIn.java">
-			<provider selected="true" editor-type-id="text-editor">
-				<state relative-caret-position="30">
-					<caret line="2" selection-start-line="2"
-						selection-end-line="7" selection-end-column="46" />
-				</state>
-			</provider>
-		</entry>
-		<entry
-			file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.java">
-			<provider selected="true" editor-type-id="text-editor" />
-		</entry>
-		<entry
-			file="file://$APPLICATION_CONFIG_DIR$/OfferSearch/scratch_2.java">
-			<provider selected="true" editor-type-id="text-editor">
-				<state relative-caret-position="30">
-					<caret line="2" column="8" selection-start-line="2"
-						selection-start-column="8" selection-end-line="2"
-						selection-end-column="8" />
-				</state>
-			</provider>
-		</entry>
-		<entry
-			file="file://$PROJECT_DIR$/src/main/java/com/controller/Zwaj.java">
-			<provider selected="true" editor-type-id="text-editor">
-				<state relative-caret-position="105">
-					<caret line="7" column="46" selection-start-line="7"
-						selection-start-column="46" selection-end-line="7"
-						selection-end-column="46" />
-				</state>
-			</provider>
-		</entry>
-		<entry
-			file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_2.java">
-			<provider selected="true" editor-type-id="text-editor">
-				<state relative-caret-position="15">
-					<caret line="1" selection-start-line="1"
-						selection-end-line="1" />
-				</state>
-			</provider>
-		</entry>
-		<entry
-			file="file://$PROJECT_DIR$/src/main/java/com/controller/Dessert.java">
-			<provider selected="true" editor-type-id="text-editor">
-				<state relative-caret-position="405">
-					<caret line="36" selection-start-line="36"
-						selection-end-line="39" selection-end-column="51" />
-				</state>
-			</provider>
-		</entry>
-		<entry
-			file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-			<provider selected="true" editor-type-id="text-editor">
-				<state relative-caret-position="411">
-					<caret line="33" column="47" lean-forward="true"
-						selection-start-line="33" selection-start-column="47"
-						selection-end-line="33" selection-end-column="47" />
-				</state>
-			</provider>
-		</entry>
-		<entry file="file://$PROJECT_DIR$/pom.xml">
-			<provider selected="true" editor-type-id="text-editor">
-				<state relative-caret-position="135">
-					<caret line="15" selection-start-line="15"
-						selection-end-line="15" />
-				</state>
-			</provider>
-		</entry>
-		<entry
-			file="file://$PROJECT_DIR$/src/main/java/com/model/OfferSearch.java" />
-		<entry
-			file="file://$PROJECT_DIR$/src/main/java/com/beans/Offer.java">
-			<provider selected="true" editor-type-id="text-editor">
-				<state relative-caret-position="405">
-					<caret line="27" column="31" selection-start-line="27"
-						selection-start-column="31" selection-end-line="27"
-						selection-end-column="31" />
-				</state>
-			</provider>
-		</entry>
-		<entry
-			file="file://$PROJECT_DIR$/src/main/java/com/controller/OfferSearch.java">
-			<provider selected="true" editor-type-id="text-editor">
-				<state relative-caret-position="151">
-					<caret line="15" column="24" selection-start-line="15"
-						selection-start-column="13" selection-end-line="15"
-						selection-end-column="24" />
-					<folding>
-						<element signature="imports" expanded="true" />
-					</folding>
-				</state>
-			</provider>
-		</entry>
-		<entry
-			file="file://$PROJECT_DIR$/src/main/java/com/model/EnsembleOffer.java">
-			<provider selected="true" editor-type-id="text-editor">
-				<state relative-caret-position="15">
-					<caret line="11" column="18" selection-start-line="11"
-						selection-start-column="18" selection-end-line="11"
-						selection-end-column="18" />
-				</state>
-			</provider>
-		</entry>
-	</component>
+  <component name="ChangeListManager">
+    <list default="true" id="1b691451-90ef-45b2-81ac-2761e629338e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/ProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ProductDAO.java" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/bin/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="763672768">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="java" value="7" />
+          <entry key="name" value="1" />
+          <entry key="xml" value="5" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JAVA" value="6" />
+          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="Scratch" value="1" />
+          <entry key="XML" value="5" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="94" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="36" />
+          <entry key="Scratch" value="58" />
+        </counts>
+      </usages-collector>
+    </session>
+    <session id="-1484388911">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.13" value="1" />
+          <entry key="project.open.time.22" value="1" />
+          <entry key="project.opened" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="java" value="18" />
+          <entry key="xml" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JAVA" value="15" />
+          <entry key="Scratch" value="3" />
+          <entry key="XML" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="319" />
+          <entry key="xml" value="4" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="318" />
+          <entry key="Scratch" value="1" />
+          <entry key="XML" value="4" />
+        </counts>
+      </usages-collector>
+    </session>
+    <session id="2054967084">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="java" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JAVA" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="33" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="33" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/dao/ProductDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="82" column="11" selection-start-line="82" selection-start-column="11" selection-end-line="82" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/java/launch/Main.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_1.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/controller/signIn.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/controller/Dessert.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/controller/Zwaj.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_2.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/model/OfferSearch.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/beans/Offer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/beans/EnsembleOffer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/model/EnsembleOffer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/controller/OfferSearch.java" />
+        <option value="$PROJECT_DIR$/src/main/java/dao/ProductDAO.java" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="67" />
+    <option name="y" value="27" />
+    <option name="width" value="1279" />
+    <option name="height" value="701" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Course" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="delta" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wastless" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="delta" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wastless" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="delta" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wastless" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="delta" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wastless" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="delta" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wastless" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="configuration" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="delta" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wastless" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="delta" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wastless" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="launch" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="delta" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wastless" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="delta" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wastless" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539976082600" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JAVA" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/com/model" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/controller" />
+      <recent name="$APPLICATION_CONFIG_DIR$/OfferSearch" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1b691451-90ef-45b2-81ac-2761e629338e" name="Default Changelist" comment="" />
+      <created>1539032796992</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1539032796992</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="67" y="25" width="1299" height="743" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2122905" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32952693" />
+      <window_info anchor="bottom" id="Inspector" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Dependencies Viewer" order="11" />
+      <window_info anchor="bottom" id="Usages" order="12" />
+      <window_info anchor="bottom" id="Messages" order="13" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Maven Projects" order="7" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20351157" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="0" />
+      <window_info anchor="bottom" id="Dependencies Viewer" order="1" />
+      <window_info anchor="bottom" id="Usages" order="2" />
+      <window_info anchor="bottom" id="Inspector" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="4" />
+      <window_info anchor="bottom" id="Find" order="5" />
+      <window_info anchor="bottom" id="Run" order="6" />
+      <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="10" />
+      <window_info anchor="bottom" id="Terminal" order="11" />
+      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="13" weight="0.32952693" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Maven Projects" order="7" />
+    </layout-to-restore>
+  </component>
+  <component name="UsagesViewTool">
+    <version id="1" />
+    <tabs />
+    <default_view_options>
+      <options category_option="false" module_option="true" model_option="true" root_option="true" path_option="false" count_option="true" info_option="true" view_searched_nodes_option="true" group_searched_nodes_option="true" autoscroll_option="false" />
+    </default_view_options>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/launch/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="16" column="7" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/compiler.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/.name">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/signIn.java" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/OfferSearch/scratch_2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="8" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/Zwaj.java" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/Dessert.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="411">
+          <caret line="33" column="47" lean-forward="true" selection-start-line="33" selection-start-column="47" selection-end-line="33" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/model/OfferSearch.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/beans/Offer.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/OfferSearch.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/model/EnsembleOffer.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/dao/ProductDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="82" column="11" selection-start-line="82" selection-start-column="11" selection-end-line="82" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+  </component>
 </project>

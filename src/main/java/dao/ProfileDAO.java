@@ -129,7 +129,7 @@ public class ProfileDAO {
 			
 			db = Connexion.getConnection();
 			
-			String req = "UPDATE users SET (userMail, userName, userPassword, userPhone, userAdress, userPicture) = (?,?,?,?,?,?)" + 
+			String req = "UPDATE users SET (userMail, userName, userPassword, userPhone, userAdress, userprofilepicture) = (?,?,?,?,?,?)" + 
 					"  WHERE userId = ?;";
 			
 			PreparedStatement pst = db.prepareStatement(req);

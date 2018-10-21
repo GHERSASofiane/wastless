@@ -51,8 +51,8 @@ public class SignUp extends HttpServlet {
 				 
 		PrintWriter pw = response.getWriter();
 		
-		obj = AutorisationAcess.registerToken(personne);
-		System.out.println(obj);
+		String token = AutorisationAcess.registerToken(personne);
+		obj.addProperty("token", token);
 		pw.println(obj);
 		pw.flush();
 		

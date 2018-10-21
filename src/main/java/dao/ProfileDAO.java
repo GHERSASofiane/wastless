@@ -161,6 +161,8 @@ public class ProfileDAO {
 	private boolean userExist(int userId)
 	{
 		
+		System.out.println("user id -----------------------------------> " + userId);
+		
 		try {
 			db = Connexion.getConnection();
 			String res = "select count(*) from users where userId =?;";

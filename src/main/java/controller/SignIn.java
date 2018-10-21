@@ -13,8 +13,7 @@ import com.google.gson.JsonObject;
 import converters.JSonConverter;
 import helpers.Readers;
 import models.Personne;
-import services.SignInService;
-
+import services.ProfileService;
 import tokens.AutorisationAcess;
 
 /**
@@ -45,7 +44,7 @@ public class SignIn extends HttpServlet {
 		Personne personne = new Personne();
 		personne = (Personne) JSonConverter.objectFromJson(jsObj, personne);
 
-		SignInService pers = new SignInService();
+		ProfileService pers = new ProfileService();
 		JsonObject obj = pers.getUserInformation(personne);
 		PrintWriter pw = response.getWriter();
 		

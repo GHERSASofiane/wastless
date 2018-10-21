@@ -89,6 +89,12 @@
 		<description></description>
 		<servlet-class>controller.CancelReservation</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>EditProfile</servlet-name>
+		<display-name>EditProfile</display-name>
+		<description></description>
+		<servlet-class>controller.EditProfile</servlet-class>
+	</servlet>
         
         
 	<servlet-mapping>
@@ -138,5 +144,9 @@
 	<servlet-mapping>
 		<servlet-name>CancelReservation</servlet-name>
 		<url-pattern>/CancelReservation</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EditProfile</servlet-name>
+		<url-pattern>/editprofile</url-pattern>
 	</servlet-mapping>
 </web-app>

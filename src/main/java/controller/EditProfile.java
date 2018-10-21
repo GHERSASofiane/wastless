@@ -17,37 +17,32 @@ import services.ProfileService;
 import tokens.AutorisationAcess;
 
 /**
- * Servlet implementation class SignUp
+ * Servlet implementation class EditProfile
  */
-public class SignUp extends HttpServlet {
+public class EditProfile extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SignUp() {
+    public EditProfile() {
         super();
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	}
+
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 		JsonObject jsObj = Readers.getJSONfromRequest(request);
 		 
 		 Personne personne = new Personne();
 		 personne = (Personne) JSonConverter.objectFromJson(jsObj, personne);
 		  
 		ProfileService pers = new ProfileService();
-		JsonObject obj = pers.inscription(personne);
+		JsonObject obj = pers.editProfile(personne);
 				 
 		PrintWriter pw = response.getWriter();
 		
@@ -55,7 +50,6 @@ public class SignUp extends HttpServlet {
 		obj.addProperty("token", token);
 		pw.println(obj);
 		pw.flush();
-		
 	}
 
 }

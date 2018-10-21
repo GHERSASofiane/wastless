@@ -29,9 +29,12 @@ public class ProfileDAO {
 			
 			while(rs.next())
 			{
+				
 				personne.setUserId(rs.getInt(1));
 				personne.setUserMail(rs.getString(2));
 				personne.setUserName(rs.getString(3));
+				personne.setUserPhone(rs.getString(5));
+				personne.setUserAddress(rs.getString(6));				
 				personne.setUserPicture(rs.getString(7));
 			}
 			

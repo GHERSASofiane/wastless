@@ -121,7 +121,7 @@ public class ProfileDAO {
 		
 		
 		try {
-			if(userExist(p.getUserId()))
+			if(!userExist(p.getUserId()))
 			{
 				db.close();
 				return new Reponse("ko", "user Don't exist");

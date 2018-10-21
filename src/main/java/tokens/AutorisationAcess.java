@@ -20,9 +20,9 @@ import models.Personne;
 public class AutorisationAcess {
 
 	
-	public static JsonObject registerToken(Personne personne)
+	public static String registerToken(Personne personne)
 	{
-		JsonObject obj = new JsonObject();
+		
 		Algorithm algo;
                 
                 algo = Algorithm.HMAC256("secretKey");
@@ -35,8 +35,8 @@ public class AutorisationAcess {
 		
 		
 		String tok = token.sign(algo);
-		obj.addProperty("token", tok);
-		return obj;
+	
+		return tok;
 	}
 	
 	

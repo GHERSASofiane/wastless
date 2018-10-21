@@ -14,7 +14,7 @@ import converters.JSonConverter;
 import helpers.Readers;
 import models.Personne;
 import services.SignInService;
-import status.Reponse;
+
 import tokens.AutorisationAcess;
 
 /**
@@ -50,7 +50,8 @@ public class SignIn extends HttpServlet {
 		PrintWriter pw = response.getWriter();
 		
 		personne  = (Personne) JSonConverter.objectFromJson(obj.getAsJsonObject("reponse"), personne);
-		obj = AutorisationAcess.registerToken(personne);
+		String token = AutorisationAcess.registerToken(personne);
+		obj.addProperty("token", token);
 		
 		
 		

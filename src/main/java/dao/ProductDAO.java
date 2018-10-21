@@ -49,73 +49,73 @@ public class ProductDAO {
     }
 
     public Reponse addProduct(HttpServletRequest request) {
-<<<<<<< HEAD
-        String ProductName, 
-               ProductDate, 
-               ProductDescription, 
-               ProductPicture, 
-               UserName, 
-               ProductPrice
-        int ProductId, 
-            ProductStatus, 
-            UserId
-        try {
-            db = Connexion.getConnection();
-            String res = "insert into Product(productName, productDescription, productPrice, productStatus, userId, productDate) values(?,?,?,?,?);";
-
-            PreparedStatement pst = db.prepareStatement(res);
-            pst.setString(1, productName);
-            pst.setString(2, productDescription);
-            pst.setDouble(3, productPrice);
-            pst.setInt(4, productStatus);
-            pst.setInt(5, userId);
-            pst.setString(6, productDate);
-
-            ResultSet rs = pst.executeQuery();
-
-            pst.close();
-            rs.close();
-            db.close();
-
-        } catch (URISyntaxException e) {
-            return new Reponse("ko", "votre produit n'a pas pu etre ajouter");
-        } catch (SQLException e) {
-            return new Reponse("ko", "votre produit n'a pas pu etre ajouter");
-        }
-=======
-      //  String ProductName;
-     //   String     ProductDate;
-     //   String ProductDescription;
-       // String ProductPicture;
-     //   String UserName;
-      //  String      ProductPrice;
-     //   int ProductId;
-     //   int   ProductStatus;
-     //   int   UserId;
-     //   try {
-      //      db = Connexion.getConnection();
-        //        String res = "insert into product(productName, productDescription, productPrice, productStatus, userId, productDate) values(?,?,?,?,?);";
-
-        //        PreparedStatement pst = db.prepareStatement(res);
-        //       pst.setString(1, productName);
-        //      pst.setString(2, productDescription);
-        //      pst.setDouble(3, productPrice);
-        //      pst.setInt(4, productStatus);
-        //      pst.setInt(5, userId);
-        //      pst.setString(6, productDate);
-
-        //      ResultSet rs = pst.executeQuery();
-
-        //     pst.close();
-        //     rs.close();
-        //    db.close();
-
-        //   } catch (URISyntaxException e) {
-        //       return new Reponse("ko", "votre produit n'a pas pu etre ajouter");
-        //   } catch (SQLException e) {
-        //      return new Reponse("ko", "votre produit n'a pas pu etre ajouter");
-        //  }
->>>>>>> 1024ff1f81c4461a2d6331e4966332feaad5111a
+ 
+//        String ProductName, 
+//               ProductDate, 
+//               ProductDescription, 
+//               ProductPicture, 
+//               UserName, 
+//               ProductPrice
+//        int ProductId, 
+//            ProductStatus, 
+//            UserId
+//        try {
+//            db = Connexion.getConnection();
+//            String res = "insert into Product(productName, productDescription, productPrice, productStatus, userId, productDate) values(?,?,?,?,?);";
+//
+//            PreparedStatement pst = db.prepareStatement(res);
+//            pst.setString(1, productName);
+//            pst.setString(2, productDescription);
+//            pst.setDouble(3, productPrice);
+//            pst.setInt(4, productStatus);
+//            pst.setInt(5, userId);
+//            pst.setString(6, productDate);
+//
+//            ResultSet rs = pst.executeQuery();
+//
+//            pst.close();
+//            rs.close();
+//            db.close();
+//
+//        } catch (URISyntaxException e) {
+//            return new Reponse("ko", "votre produit n'a pas pu etre ajouter");
+//        } catch (SQLException e) {
+//            return new Reponse("ko", "votre produit n'a pas pu etre ajouter");
+//        }
+//=======
+//      //  String ProductName;
+//     //   String     ProductDate;
+//     //   String ProductDescription;
+//       // String ProductPicture;
+//     //   String UserName;
+//      //  String      ProductPrice;
+//     //   int ProductId;
+//     //   int   ProductStatus;
+//     //   int   UserId;
+//     //   try {
+//      //      db = Connexion.getConnection();
+//        //        String res = "insert into product(productName, productDescription, productPrice, productStatus, userId, productDate) values(?,?,?,?,?);";
+//
+//        //        PreparedStatement pst = db.prepareStatement(res);
+//        //       pst.setString(1, productName);
+//        //      pst.setString(2, productDescription);
+//        //      pst.setDouble(3, productPrice);
+//        //      pst.setInt(4, productStatus);
+//        //      pst.setInt(5, userId);
+//        //      pst.setString(6, productDate);
+//
+//        //      ResultSet rs = pst.executeQuery();
+//
+//        //     pst.close();
+//        //     rs.close();
+//        //    db.close();
+//
+//        //   } catch (URISyntaxException e) {
+//        //       return new Reponse("ko", "votre produit n'a pas pu etre ajouter");
+//        //   } catch (SQLException e) {
+//        //      return new Reponse("ko", "votre produit n'a pas pu etre ajouter");
+//        //  }
+//>>>>>>> 1024ff1f81c4461a2d6331e4966332feaad5111a
 
         return new Reponse("ok", "votre produit est ajouté avec succes");
 

@@ -4,6 +4,8 @@ import com.google.gson.JsonObject;
 
 import converters.JSonConverter;
 import dao.ProductDAO;
+import status.Reponse;
+
 import javax.servlet.http.HttpServletRequest;
 
 
@@ -37,6 +39,10 @@ public class ProductService {
 	public JsonObject validateProduct(String productId)
 	{
 		return JSonConverter.objectToJson(pr.validateProduct(productId));
+	}
+	
+	public JsonObject bookProduct(String productId, String userId) {
+		return JSonConverter.objectToJson(new Reponse("ok","TODO"));
 	}
 	
 }

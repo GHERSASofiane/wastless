@@ -29,9 +29,12 @@ public class ProfileDAO {
 			
 			while(rs.next())
 			{
+				
 				personne.setUserId(rs.getInt(1));
 				personne.setUserMail(rs.getString(2));
 				personne.setUserName(rs.getString(3));
+				personne.setUserPhone(rs.getString(5));
+				personne.setUserAddress(rs.getString(6));				
 				personne.setUserPicture(rs.getString(7));
 			}
 			
@@ -95,6 +98,8 @@ public class ProfileDAO {
 				personne.setUserId(rs.getInt(1));
 				personne.setUserMail(rs.getString(2));
 				personne.setUserName(rs.getString(3));
+				personne.setUserPhone(rs.getString(5));
+				personne.setUserAddress(rs.getString(6));				
 				personne.setUserPicture(rs.getString(7));
 			}
 			
@@ -116,7 +121,7 @@ public class ProfileDAO {
 		
 		
 		try {
-			if(userExist(p.getUserId()))
+			if(!userExist(p.getUserId()))
 			{
 				db.close();
 				return new Reponse("ko", "user Don't exist");
@@ -124,7 +129,7 @@ public class ProfileDAO {
 			
 			db = Connexion.getConnection();
 			
-			String req = "UPDATE users SET (userMail, userName, userPassword, userPhone, userAdress, userPicture) = (?,?,?,?,?,?)" + 
+			String req = "UPDATE users SET (userMail, userName, userPassword, userPhone, userAdress, userprofilepicture) = (?,?,?,?,?,?)" + 
 					"  WHERE userId = ?;";
 			
 			PreparedStatement pst = db.prepareStatement(req);
@@ -155,6 +160,8 @@ public class ProfileDAO {
 	
 	private boolean userExist(int userId)
 	{
+		
+		System.out.println("user id -----------------------------------> " + userId);
 		
 		try {
 			db = Connexion.getConnection();

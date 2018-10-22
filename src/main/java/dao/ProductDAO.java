@@ -19,17 +19,18 @@ public class ProductDAO {
     private Connection db;
 
     public Reponse searchProduct(String nameArticle, int page) {
-        List<Product> res = new ArrayList<Product>();
+        List<Product> res = new ArrayList();
         Product tmp;
         try {
             db = Connexion.getConnection();
+            
             String req = "SELECT * FROM Product, Users WHERE ProductStatus = 0 AND Product.UserId = Users.UserId AND  ( ProductName LIKE '%?%' OR ProductName LIKE '?%' OR  ProductName LIKE '%?') ORDER BY ProductDate OFFSET " + (page * 10) + " LIMIT 10;";
             PreparedStatement stmt = db.prepareStatement(req);
             stmt.setString(1, nameArticle);
             stmt.setString(2, nameArticle);
             stmt.setString(3, nameArticle);
             
-           
+            
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
                 tmp = new Product();
@@ -46,15 +47,12 @@ public class ProductDAO {
 
                 res.add(tmp);
 
+                stmt.close();
+                db.close();
             }
-
-            stmt.close();
-            db.close();
         } catch (URISyntaxException e) {
-        	e.printStackTrace();
             return new Reponse("ko", "Erreur sur le serveur");
         } catch (SQLException e) {
-        	e.printStackTrace();
             return new Reponse("ko", "Erreur sur le serveur");
         }
         return new Reponse("ok", res);

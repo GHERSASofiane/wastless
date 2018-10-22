@@ -24,8 +24,7 @@ public class ProductDAO {
 		try {
 			db = Connexion.getConnection();
 
-			String req = "SELECT * FROM Product, Users WHERE ProductStatus = 0 AND Product.UserId = Users.UserId AND  ( ProductName LIKE '%?%' OR ProductName LIKE '?%' OR  ProductName LIKE '%?') ORDER BY ProductDate OFFSET "
-					+ (page * 10) + " LIMIT 10;";
+			String req = "SELECT * FROM Product, Users WHERE ProductStatus = 0 AND Product.UserId = Users.UserId AND  (Product.ProductName LIKE '%?%' OR Product.ProductName LIKE '?%' OR  Product.ProductName LIKE '%?') ORDER BY ProductDate OFFSET "+ (page * 10) + " LIMIT 10;";
 			PreparedStatement stmt = db.prepareStatement(req);
 			stmt.setString(1, nameArticle);
 			stmt.setString(2, nameArticle);

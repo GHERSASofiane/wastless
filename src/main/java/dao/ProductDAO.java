@@ -19,12 +19,18 @@ public class ProductDAO {
     private Connection db;
 
     public Reponse searchProduct(String nameArticle, int page) {
-        List<Product> res = new ArrayList();
+        List<Product> res = new ArrayList<Product>();
         Product tmp;
         try {
             db = Connexion.getConnection();
-            Statement stmt = db.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM Product, Users WHERE ProductStatus = 0 AND Product.UserId = Users.UserId AND  ( ProductName LIKE '%" + nameArticle + "%' OR ProductName LIKE '" + nameArticle + "%' ) ORDER BY ProductDate OFFSET " + (page * 10) + " LIMIT 10 ");
+            String req = "SELECT * FROM Product, Users WHERE ProductStatus = 0 AND Product.UserId = Users.UserId AND  ( ProductName LIKE '%?%' OR ProductName LIKE '?%' OR  ProductName LIKE '%?') ORDER BY ProductDate OFFSET " + (page * 10) + " LIMIT 10;";
+            PreparedStatement stmt = db.prepareStatement(req);
+            stmt.setString(1, nameArticle);
+            stmt.setString(2, nameArticle);
+            stmt.setString(3, nameArticle);
+            
+           
+            ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
                 tmp = new Product();
 

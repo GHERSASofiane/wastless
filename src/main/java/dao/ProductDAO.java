@@ -44,9 +44,11 @@ public class ProductDAO {
 
                 res.add(tmp);
 
-                stmt.close();
-                db.close();
+                
             }
+            stmt.close();
+            db.close();
+            
         } catch (URISyntaxException e) {
             return new Reponse("ko", "Erreur sur le serveur");
         } catch (SQLException e) {

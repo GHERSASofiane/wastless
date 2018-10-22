@@ -37,8 +37,10 @@ public class WeatherDAO {
             }
 
         } catch (URISyntaxException e) {
+        	e.printStackTrace();
             return new Reponse("ko", "Erreur sur le serveur");
         } catch (SQLException e) {
+        	e.printStackTrace();
             return new Reponse("ko", "Erreur sur le serveur");
         }
         return new Reponse("ok", res);

@@ -39,6 +39,9 @@ public class ProductDAO {
                 tmp.setUserName(rs.getString("UserName"));
 
                 res.add(tmp);
+
+                stmt.close();
+                db.close();
             }
         } catch (URISyntaxException e) {
             return new Reponse("ko", "Erreur sur le serveur");

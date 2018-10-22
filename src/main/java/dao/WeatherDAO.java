@@ -34,6 +34,8 @@ public class WeatherDAO {
                 tmp.setWeatherId(rs.getInt("WeatherId"));
 
                 res.add(tmp);
+                stmt.close();
+                db.close();
             }
 
         } catch (URISyntaxException e) {

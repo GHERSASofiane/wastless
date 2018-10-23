@@ -59,11 +59,7 @@ public class ProductDAO {
     }
 
     public Reponse addProduct(Product product) {
-
-    	String tmp = product.getProductDescription();
-    	product.setProductDescription(tmp.toLowerCase()); 
-    	tmp = product.getProductName();
-    	product.setProductName(tmp.toLowerCase());
+ 
     	product.setProductDate(getDate());
     	product.setProductStatus(0);
 //        String ProductName, 

@@ -13,8 +13,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.google.gson.JsonObject;
 
+import converters.JSonConverter;
+import helpers.Readers;
+import models.Personne;
+import models.Product;
 import services.ProductService;
+import status.Reponse;
 
 /**
  *
@@ -24,14 +30,22 @@ public class AddProduct  extends HttpServlet {
 
     public AddProduct() { }
     
-        protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // Récuperer le PrintWriter Pour envoyer la réponse
         PrintWriter resp = response.getWriter();
 
+        JsonObject jsObj = Readers.getJSONfromRequest(request);
+
+        Product product = new Product();
+        product = (Product) JSonConverter.objectFromJson(jsObj, product);
+        
+        product.setProductDate("2020-20-20");
+        JsonObject rep = JSonConverter.objectToJson(new Reponse("ok", product));
         // Préparer la répense
-        ProductService rep = new ProductService();
+//        ProductService rep = new ProductService();
         // Envoie de réponse
-        resp.println(rep.addProduct(request));
+//        resp.println(rep.addProduct(request));
+        resp.println(rep);
         resp.flush();
 
     }

@@ -18,7 +18,7 @@ public class DeleteProduct  extends HttpServlet {
         // Récuperer le PrintWriter Pour envoyer la réponse
         PrintWriter resp = response.getWriter();
         
-        int idProduct = (Integer) req.getAttribute("idProduct");
+        int idProduct =  Integer.parseInt(req.getParameter("idProduct"));
         
         // Préparer la répense
         ProductService rep = new ProductService();

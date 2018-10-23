@@ -22,8 +22,8 @@ public class ProductService {
 	
 	
 	public JsonObject addProduct(Product product)
-	{		// pr.addProduct(product)
-		return JSonConverter.objectToJson(new Reponse("ok", product));
+	{		 
+		return JSonConverter.objectToJson(pr.addProduct(product));
 	}
 	
 	public JsonObject deleteProduct(String productName, double productPrice, int userId)

@@ -68,16 +68,16 @@ public class ProductDAO {
  
         try {
             db = Connexion.getConnection();
-                String res = "insert into product(ProductName, ProductDate, ProductDescription, ProductPrice, ProductPicture, ProductStatus, UserId) values(?,?,?,?,?,?);";
+                String res = "INSERT INTO product VALUES(,?,?,?,?,?,?);";
 
                 PreparedStatement pst = db.prepareStatement(res);
                pst.setString(1, product.getProductName());
-              pst.setString(2, product.getProductDate());
-              pst.setString(3, product.getProductDescription());
-              pst.setString(4, product.getProductPrice());
-              pst.setString(5, product.getProductPicture());
-              pst.setInt(6, product.getProductStatus());
-              pst.setInt(7, product.getUserId());
+               pst.setString(2, product.getProductDescription());
+               pst.setString(3, product.getProductPrice());
+               pst.setString(4, product.getProductPicture());
+               pst.setInt(5, product.getProductStatus());
+               pst.setInt(6, product.getUserId());
+              pst.setString(7, product.getProductDate());
 
               ResultSet rs = pst.executeQuery();
 

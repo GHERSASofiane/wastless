@@ -31,7 +31,7 @@ public class ProductDAO {
             
           
             Statement stmt = db.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM Product, Users WHERE ProductStatus = 0 AND Product.UserId = Users.UserId AND ProductName LIKE '%" + nameArticle + "%' ORDER BY ProductDate OFFSET " + (page * 10) + " LIMIT 10 ");
+            ResultSet rs = stmt.executeQuery("SELECT * FROM Product, Users WHERE ProductStatus = 0 AND Product.UserId = Users.UserId AND ProductName LIKE '%" + nameArticle + "%' ORDER BY ProductDate DESC OFFSET " + (page * 10) + " LIMIT 10 ");
 
             while (rs.next()) {
                 tmp = new Product();

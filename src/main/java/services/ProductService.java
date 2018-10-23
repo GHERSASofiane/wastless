@@ -13,7 +13,12 @@ import javax.servlet.http.HttpServletRequest;
 
 public class ProductService {
 
-	ProductDAO pr = new ProductDAO();
+	ProductDAO pr = new ProductDAO(); 
+
+	public JsonObject MyPubs(int id)
+	{
+		return JSonConverter.objectToJson(pr.MyPubs(id));
+	}
 	
 	public JsonObject searchProduct(String nameArticle, int page)
 	{

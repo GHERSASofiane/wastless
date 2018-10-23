@@ -62,8 +62,8 @@ public class ProductDAO {
 
     	product.setProductDescription(product.getProductDescription().toLowerCase()); 
     	product.setProductName(product.getProductName().toLowerCase());
-    	product.setProductDate(getDate());
-    	product.setProductStatus(0);
+//    	product.setProductDate(getDate());
+//    	product.setProductStatus(0);
 //        String ProductName, 
 //               ProductDate, 
 //               ProductDescription, 

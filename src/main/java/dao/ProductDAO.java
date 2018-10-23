@@ -62,7 +62,10 @@ public class ProductDAO {
  
     	product.setProductDate(getDate());
     	product.setProductStatus(0);
- 
+
+    	if(!isValide(product.getProductName()))return new Reponse("ko", "invalid name");
+    	if(!isValide(product.getProductDescription()))return new Reponse("ko", "invalid description");
+    	if(!isValide(product.getProductPicture()))return new Reponse("ko", "invalid Picture");  
 //     //   try {
 //      //      db = Connexion.getConnection();
 //        //        String res = "insert into product(productName, productDescription, productPrice, productStatus, userId, productDate) values(?,?,?,?,?);";
@@ -233,6 +236,22 @@ public class ProductDAO {
 		Mydate = Mydate.concat(Integer.toString(calendar.get(calendar.DAY_OF_MONTH)));
 		
 		return Mydate;
+	}
+
+	public boolean isValide(String param) {
+		if(param == null || param.equals("")) {
+			return false;
+		}
+		return true;
+	}
+	
+	public boolean isMailValide(String param) {
+		if(param == null || param.equals("")) {
+			return false;
+		}else {
+			
+		}
+		return true;
 	}
 	
 }

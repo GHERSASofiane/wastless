@@ -75,7 +75,7 @@ public class ProductDAO {
                 PreparedStatement pst = db.prepareStatement(res);
                pst.setString(1, "product.getProductName()11");
                pst.setString(2, "product.getProductDescription()1");
-               pst.setInt(3, 20);
+               pst.setDouble(3, 20);
                pst.setString(4, "product.getProductPicture()");
                pst.setInt(5, 0);
                pst.setInt(6, 1);

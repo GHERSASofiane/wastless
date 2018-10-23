@@ -71,12 +71,12 @@ public class ProductDAO {
                 String res = "INSERT INTO product VALUES(,?,?,?,?,?,?);";
 
                 PreparedStatement pst = db.prepareStatement(res);
-               pst.setString(1, product.getProductName());
-               pst.setString(2, product.getProductDescription());
-               pst.setString(3, product.getProductPrice());
-               pst.setString(4, product.getProductPicture());
+               pst.setString(1, "product.getProductName()");
+               pst.setString(2, "product.getProductDescription()");
+               pst.setString(3, "product.getProductPrice()");
+               pst.setString(4, "product.getProductPicture()");
                pst.setInt(5, product.getProductStatus());
-               pst.setInt(6, product.getUserId());
+               pst.setInt(6, 1);
               pst.setString(7, product.getProductDate());
 
               ResultSet rs = pst.executeQuery();

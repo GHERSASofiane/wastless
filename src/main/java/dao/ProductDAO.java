@@ -83,7 +83,7 @@ public class ProductDAO {
               return new Reponse("ko", "votre produit n'a pas pu etre ajouter");
           } 
 
-        return new Reponse("ok", product);
+        return new Reponse("ok", "Votre produit est bien ajouter ");
 
     }
 

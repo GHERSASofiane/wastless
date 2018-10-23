@@ -42,39 +42,39 @@ public class Product {
     } 
     
     public String getProductName() {
-        return ProductName;
+        return this.ProductName;
     }
 
     public String getProductDate() {
-        return ProductDate;
+        return this.ProductDate;
     }
 
     public String getProductDescription() {
-        return ProductDescription;
+        return this.ProductDescription;
     }
 
     public String getProductPicture() {
-        return ProductPicture;
+        return this.ProductPicture;
     }
 
     public String getUserName() {
-        return UserName;
+        return this.UserName;
     }
 
     public int getProductId() {
-        return ProductId;
+        return this.ProductId;
     }
 
     public String getProductPrice() {
-        return ProductPrice;
+        return this.ProductPrice;
     }
 
     public int getProductStatus() {
-        return ProductStatus;
+        return this.ProductStatus;
     }
 
     public int getUserId() {
-        return UserId;
+        return this.UserId;
     }
 
     

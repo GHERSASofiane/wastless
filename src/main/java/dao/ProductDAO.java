@@ -12,6 +12,9 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
+
+import com.fasterxml.jackson.core.io.SegmentedStringWriter;
+
 import models.*;
 import status.Reponse;
 
@@ -62,33 +65,31 @@ public class ProductDAO {
  
     	product.setProductDate(getDate());
     	product.setProductStatus(0);
+ 
+        try {
+            db = Connexion.getConnection();
+                String res = "insert into product(ProductName, ProductDate, ProductDescription, ProductPrice, ProductPicture, ProductStatus, UserId) values(?,?,?,?,?,?);";
 
-    	if(!isValide(product.getProductName())) {return new Reponse("ko", "invalid name");}
-    	if(!isValide(product.getProductDescription())) {return new Reponse("ko", "invalid description");}
-    	if(!isValide(product.getProductPicture())) {return new Reponse("ko", "invalid Picture");  }
-//     //   try {
-//      //      db = Connexion.getConnection();
-//        //        String res = "insert into product(productName, productDescription, productPrice, productStatus, userId, productDate) values(?,?,?,?,?);";
-//
-//        //        PreparedStatement pst = db.prepareStatement(res);
-//        //       pst.setString(1, productName);
-//        //      pst.setString(2, productDescription);
-//        //      pst.setDouble(3, productPrice);
-//        //      pst.setInt(4, productStatus);
-//        //      pst.setInt(5, userId);
-//        //      pst.setString(6, productDate);
-//
-//        //      ResultSet rs = pst.executeQuery();
-//
-//        //     pst.close();
-//        //     rs.close();
-//        //    db.close();
-//
-//        //   } catch (URISyntaxException e) {
-//        //       return new Reponse("ko", "votre produit n'a pas pu etre ajouter");
-//        //   } catch (SQLException e) {
-//        //      return new Reponse("ko", "votre produit n'a pas pu etre ajouter");
-//        //  } 
+                PreparedStatement pst = db.prepareStatement(res);
+               pst.setString(1, product.getProductName());
+              pst.setString(2, product.getProductDate());
+              pst.setString(3, product.getProductDescription());
+              pst.setString(4, product.getProductPrice());
+              pst.setString(5, product.getProductPicture());
+              pst.setInt(6, product.getProductStatus());
+              pst.setInt(7, product.getUserId());
+
+              ResultSet rs = pst.executeQuery();
+
+             pst.close();
+             rs.close();
+            db.close();
+
+           } catch (URISyntaxException e) {
+               return new Reponse("ko", "votre produit n'a pas pu etre ajouter");
+           } catch (SQLException e) {
+              return new Reponse("ko", "votre produit n'a pas pu etre ajouter");
+          } 
 
         return new Reponse("ok", product);
 

@@ -47,12 +47,16 @@ public class SignUp extends HttpServlet {
 		 personne = (Personne) JSonConverter.objectFromJson(jsObj, personne);
 		  
 		ProfileService pers = new ProfileService();
-		JsonObject obj = pers.inscription(personne);
+		JsonObject obj = pers.inscription(request, personne);
 				 
+		
+		
 		PrintWriter pw = response.getWriter();
 		
-		String token = AutorisationAcess.registerToken(personne);
-		obj.addProperty("token", token);
+		
+		
+//		String token = AutorisationAcess.registerToken(personne);
+//		obj.addProperty("token", token);
 		pw.println(obj);
 		pw.flush();
 		

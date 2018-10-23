@@ -9,6 +9,7 @@ import java.sql.Statement;
 
 import configuration.Connexion;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import models.*;
@@ -57,8 +58,12 @@ public class ProductDAO {
         return new Reponse("ok", res);
     }
 
-    public Reponse addProduct(HttpServletRequest request) {
- 
+    public Reponse addProduct(Product product) {
+
+    	product.ProductDescription = product.ProductDescription.toLowerCase();
+    	product.ProductName = product.ProductName.toLowerCase();
+    	product.ProductDate = getDate();
+    	product.ProductStatus = 0;
 //        String ProductName, 
 //               ProductDate, 
 //               ProductDescription, 
@@ -126,7 +131,7 @@ public class ProductDAO {
 //        //  }
 //>>>>>>> 1024ff1f81c4461a2d6331e4966332feaad5111a
 
-        return new Reponse("ok", "votre produit est ajouté avec succes");
+        return new Reponse("ok", product);
 
     }
 
@@ -261,4 +266,17 @@ public class ProductDAO {
         return new Reponse("ok", "your booking has been canceled ");
 
 	}
+	
+	public String getDate() {
+		String Mydate = "";
+		Calendar calendar = Calendar.getInstance();
+		Mydate = Mydate.concat(Integer.toString(calendar.get(calendar.YEAR)));
+		Mydate = Mydate.concat("-");
+		Mydate = Mydate.concat(Integer.toString(calendar.get(calendar.MONTH)+1));
+		Mydate = Mydate.concat("-");
+		Mydate = Mydate.concat(Integer.toString(calendar.get(calendar.DAY_OF_MONTH)));
+		
+		return Mydate;
+	}
+	
 }

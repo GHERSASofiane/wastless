@@ -39,13 +39,10 @@ public class AddProduct  extends HttpServlet {
         Product product = new Product();
         product = (Product) JSonConverter.objectFromJson(jsObj, product);
         
-        product.setProductDate("2020-20-20");
-        JsonObject rep = JSonConverter.objectToJson(new Reponse("ok", product));
         // Préparer la répense
-//        ProductService rep = new ProductService();
+        ProductService rep = new ProductService();
         // Envoie de réponse
-//        resp.println(rep.addProduct(request));
-        resp.println(rep);
+        resp.println(rep.addProduct(product)); 
         resp.flush();
 
     }

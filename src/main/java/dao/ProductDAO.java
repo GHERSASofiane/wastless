@@ -79,10 +79,9 @@ public class ProductDAO {
                pst.setInt(6, 1);
               pst.setString(7, "product.getProductDate()");
 
-              ResultSet rs = pst.executeQuery();
+              pst.executeUpdate(); 
 
-             pst.close();
-             rs.close();
+             pst.close(); 
             db.close();
 
            } catch (URISyntaxException e) {

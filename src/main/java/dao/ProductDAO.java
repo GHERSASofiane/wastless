@@ -246,7 +246,7 @@ public class ProductDAO {
 	}
 	
 	public boolean isMailValide(String param) {
-		if(param == null || param.equals("")) {
+		if( param.equals("")) {
 			return false;
 		}else {
 			

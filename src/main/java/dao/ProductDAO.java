@@ -63,30 +63,18 @@ public class ProductDAO {
 
     public Reponse addProduct(Product product) {
  
-//    	product.setProductDate(getDate());
-//    	product.setProductStatus(0);
+    	product.setProductDate(getDate());
+    	product.setProductStatus(0);
  
         try {
             db = Connexion.getConnection();
 //            INSERT INTO product(productname,productdescription,productprice,productpicture,productstatus,userid,productdate) 
 //            VALUES('product.getProductName()','product.getProductDescription()',20,'product.getProductPicture()',0,1,'2012-2-2');
-                String res = " INSERT INTO product(productname,productdescription,productprice,productpicture,productstatus,userid,productdate) VALUES('"+product.getProductName()+"','product.getProductDescription()',20,'product.getProductPicture()',0,1,'2012-2-2');";
+                String res = " INSERT INTO product(productname,productdescription,productprice,productpicture,productstatus,userid,productdate) VALUES('"+product.getProductName()+"','"+product.getProductDescription()+"',"+Integer.parseInt(product.getProductPrice())+",'"+product.getProductPicture()+"',0,"+product.getUserId()+",'"+product.getProductDate()+"');";
                 Statement statement = db.createStatement();
                 statement.executeUpdate(res);
                 statement.close();
                 
-//                PreparedStatement pst = db.prepareStatement(res);
-//               pst.setString(1, "product.getProductName()11");
-//               pst.setString(2, "product.getProductDescription()1");
-//               pst.setDouble(3, 20);
-//               pst.setString(4, "product.getProductPicture()");
-//               pst.setInt(5, 0);
-//               pst.setInt(6, 1);
-//              pst.setString(7, "product.getProductDate()");
-//
-//              pst.executeUpdate(); 
-
-//             pst.close(); 
             db.close();
 
            } catch (URISyntaxException e) {

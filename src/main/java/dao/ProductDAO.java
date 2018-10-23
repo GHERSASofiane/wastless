@@ -75,9 +75,9 @@ public class ProductDAO {
                pst.setString(2, "product.getProductDescription()");
                pst.setString(3, "product.getProductPrice()");
                pst.setString(4, "product.getProductPicture()");
-               pst.setInt(5, product.getProductStatus());
+               pst.setInt(5, 0);
                pst.setInt(6, 1);
-              pst.setString(7, product.getProductDate());
+              pst.setString(7, "product.getProductDate()");
 
               ResultSet rs = pst.executeQuery();
 

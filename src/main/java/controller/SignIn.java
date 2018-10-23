@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.google.gson.JsonObject;
 
@@ -45,12 +46,12 @@ public class SignIn extends HttpServlet {
 		personne = (Personne) JSonConverter.objectFromJson(jsObj, personne);
 
 		ProfileService pers = new ProfileService();
-		JsonObject obj = pers.getUserInformation(personne);
+		JsonObject obj = pers.getUserInformation(request, personne);
 		PrintWriter pw = response.getWriter();
 		
-		personne  = (Personne) JSonConverter.objectFromJson(obj.getAsJsonObject("reponse"), personne);
-		String token = AutorisationAcess.registerToken(personne);
-		obj.addProperty("token", token);
+//		personne  = (Personne) JSonConverter.objectFromJson(obj.getAsJsonObject("reponse"), personne);	
+//		String token = AutorisationAcess.registerToken(personne);
+//		obj.addProperty("token", token);
 		
 		
 		

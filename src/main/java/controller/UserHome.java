@@ -8,11 +8,13 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.auth0.jwt.interfaces.Claim;
 import com.google.gson.JsonObject;
 
 import converters.JSonConverter;
+import models.Personne;
 import services.UserHomeService;
 import status.Reponse;
 import tokens.AutorisationAcess;
@@ -37,10 +39,16 @@ public class UserHome extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 		
-		
+	
 	PrintWriter pw = response.getWriter();	
 	JsonObject obj = new JsonObject();
+	HttpSession session = request.getSession();
 	
+	Personne personne = (Personne) session.getAttribute("user");
+	UserHomeService uhs = new UserHomeService();
+	obj = uhs.getUserReservation(personne.getUserId());
+	
+	/**
 	if(!AutorisationAcess.allowUser(request))
 	{
 		obj = JSonConverter.objectToJson(new Reponse("ko", "user not logged in"));
@@ -53,7 +61,7 @@ public class UserHome extends HttpServlet {
 		 
 	}
 		
-	
+	*/
 	pw.println(obj);
 	pw.flush();
 	}

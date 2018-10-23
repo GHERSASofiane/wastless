@@ -58,7 +58,7 @@ public class ProfileDAO {
 
 	public Reponse signUp(Personne pers) {
 
-		if (!userExist(pers))
+		if (userExist(pers))
 			return new Reponse("ko", "user exists");
 
 		try {

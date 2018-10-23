@@ -42,10 +42,11 @@ public class UserHome extends HttpServlet {
 	
 	PrintWriter pw = response.getWriter();	
 	JsonObject obj = new JsonObject();
-	HttpSession session = request.getSession();
 	
+	HttpSession session = request.getSession();
 	Personne personne = (Personne) session.getAttribute("user");
 	UserHomeService uhs = new UserHomeService();
+	
 	obj = uhs.getUserReservation(personne.getUserId());
 	
 	/**

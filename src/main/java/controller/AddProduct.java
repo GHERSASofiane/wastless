@@ -41,8 +41,8 @@ public class AddProduct  extends HttpServlet {
         
         // Préparer la répense
         ProductService rep = new ProductService();
-        // Envoie de réponse rep.addProduct(product)
-        resp.println(new Reponse("ok", product.getProductDescription().toLowerCase())); 
+        // Envoie de réponse 
+        resp.println(rep.addProduct(product)); 
         resp.flush();
 
     }

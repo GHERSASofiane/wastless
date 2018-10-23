@@ -70,7 +70,7 @@ public class ProductDAO {
             db = Connexion.getConnection();
 //            INSERT INTO product(productname,productdescription,productprice,productpicture,productstatus,userid,productdate) 
 //            VALUES('product.getProductName()','product.getProductDescription()',20,'product.getProductPicture()',0,1,'2012-2-2');
-                String res = " INSERT INTO product(productname,productdescription,productprice,productpicture,productstatus,userid,productdate) VALUES('product.getProductName()','product.getProductDescription()',20,'product.getProductPicture()',0,1,'2012-2-2');";
+                String res = " INSERT INTO product(productname,productdescription,productprice,productpicture,productstatus,userid,productdate) VALUES('"+product.getProductName()+"','product.getProductDescription()',20,'product.getProductPicture()',0,1,'2012-2-2');";
                 Statement statement = db.createStatement();
                 statement.executeUpdate(res);
                 statement.close();

@@ -18,6 +18,12 @@
 
 
 	<servlet>
+		<servlet-name>MyPubs</servlet-name>
+		<display-name>MyPubs</display-name>
+		<description></description>
+		<servlet-class>controller.MyPubs</servlet-class>
+	</servlet>
+	<servlet>
 		<servlet-name>SignIn</servlet-name>
 		<display-name>SignIn</display-name>
 		<description></description>
@@ -97,6 +103,10 @@
 	</servlet>
         
         
+	<servlet-mapping>
+		<servlet-name>MyPubs</servlet-name>
+		<url-pattern>/MyPubs</url-pattern>
+	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>SignIn</servlet-name>
 		<url-pattern>/authen</url-pattern>

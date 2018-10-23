@@ -22,6 +22,45 @@ public class ProductDAO {
 
     private Connection db;
 
+    public Reponse MyPubs(int id) {
+    	List<Product> res = new ArrayList();
+        Product tmp;
+        try {
+            db = Connexion.getConnection();
+
+            
+          
+            Statement stmt = db.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT * FROM Product, Users WHERE  Product.UserId = Users.UserId AND Product.UserId " + id + " ORDER BY ProductDate DESC ");
+
+            while (rs.next()) {
+                tmp = new Product();
+
+                tmp.setProductName(rs.getString("ProductName"));
+                tmp.setProductDate(rs.getString("ProductDate"));
+                tmp.setProductDescription(rs.getString("ProductDescription"));
+                tmp.setProductPicture(rs.getString("ProductPicture"));
+                tmp.setProductId(rs.getInt("ProductId"));
+                tmp.setProductPrice(rs.getString("ProductPrice"));
+                tmp.setProductStatus(rs.getInt("ProductStatus"));
+                tmp.setUserId(rs.getInt("UserId"));
+                tmp.setUserName(rs.getString("UserName"));
+
+                res.add(tmp);
+
+                
+            }
+            stmt.close();
+            db.close();
+            
+        } catch (URISyntaxException e) {
+            return new Reponse("ko", "Erreur sur le serveur");
+        } catch (SQLException e) {
+            return new Reponse("ko", "Erreur sur le serveur");
+        }
+        return new Reponse("ok", res);
+    }
+    
     public Reponse searchProduct(String nameArticle, int page) {
         List<Product> res = new ArrayList();
         Product tmp;

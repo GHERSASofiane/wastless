@@ -26,9 +26,9 @@ public class ProductService {
 		return JSonConverter.objectToJson(pr.addProduct(product));
 	}
 	
-	public JsonObject deleteProduct(String productName, double productPrice, int userId)
+	public JsonObject deleteProduct( int id)
 	{
-		return JSonConverter.objectToJson(pr.deleteProduct(productName, productPrice, userId));
+		return JSonConverter.objectToJson(pr.deleteProduct(id));
 	}
 	
 	public JsonObject getProductDetails(String productId)
@@ -36,7 +36,8 @@ public class ProductService {
 		return JSonConverter.objectToJson(pr.getProductDetails(productId));
 	}
 	
-
+// **************************
+	
 	public JsonObject validateProduct(String productId)
 	{
 		return JSonConverter.objectToJson(pr.validateProduct(productId));

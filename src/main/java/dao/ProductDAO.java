@@ -67,9 +67,7 @@ public class ProductDAO {
     	product.setProductStatus(0);
  
         try {
-            db = Connexion.getConnection();
-//            INSERT INTO product(productname,productdescription,productprice,productpicture,productstatus,userid,productdate) 
-//            VALUES('product.getProductName()','product.getProductDescription()',20,'product.getProductPicture()',0,1,'2012-2-2');
+            db = Connexion.getConnection(); 
                 String res = " INSERT INTO product(productname,productdescription,productprice,productpicture,productstatus,userid,productdate) VALUES('"+product.getProductName()+"','"+product.getProductDescription()+"',"+Integer.parseInt(product.getProductPrice())+",'"+product.getProductPicture()+"',0,"+product.getUserId()+",'"+product.getProductDate()+"');";
                 Statement statement = db.createStatement();
                 statement.executeUpdate(res);
@@ -83,26 +81,23 @@ public class ProductDAO {
               return new Reponse("ko", "votre produit n'a pas pu etre ajouter");
           } 
 
-        return new Reponse("ok", "Votre produit est bien ajouter ");
+        return new Reponse("ok", " votre produit est ajouter avec succes ");
 
     }
 
-    public Reponse deleteProduct(String productName, double productPrice, int userId) {
+    public Reponse deleteProduct(int id) {
         try {
+        	
             db = Connexion.getConnection();
-            String res = "insert into Product(productName, productDescription, productPrice, productStatus, userId, productDate) values(?,?,?,?,?);";
+            String query = "DELETE FROM product WHERE productid = ?";
+            PreparedStatement preparedStmt = db.prepareStatement(query);
+            preparedStmt.setInt(1, id);
 
-            PreparedStatement pst = db.prepareStatement(res);
-            pst.setString(1, productName);
-            pst.setDouble(2, productPrice);
-            pst.setInt(3, userId);
-
-            ResultSet rs = pst.executeQuery();
-
-            pst.close();
-            rs.close();
+            // execute the preparedstatement
+            preparedStmt.execute();
+            preparedStmt.close();
             db.close();
-
+ 
         } catch (URISyntaxException e) {
             return new Reponse("ko", "votre produit n'a pas pu être suprimmer");
         } catch (SQLException e) {

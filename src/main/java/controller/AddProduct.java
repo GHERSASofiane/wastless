@@ -16,11 +16,9 @@ import javax.servlet.http.HttpServletResponse;
 import com.google.gson.JsonObject;
 
 import converters.JSonConverter;
-import helpers.Readers;
-import models.Personne;
+import helpers.Readers; 
 import models.Product;
-import services.ProductService;
-import status.Reponse;
+import services.ProductService; 
 
 /**
  *

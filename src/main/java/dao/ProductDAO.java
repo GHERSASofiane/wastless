@@ -9,11 +9,8 @@ import java.sql.Statement;
 
 import configuration.Connexion;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
-import javax.servlet.http.HttpServletRequest;
 
-import com.fasterxml.jackson.core.io.SegmentedStringWriter;
 
 import models.*;
 import status.Reponse;
@@ -100,29 +97,6 @@ public class ProductDAO {
         return new Reponse("ok", res);
     }
 
-    public Reponse addProduct(Product product) {
- 
-    	product.setProductDate(getDate());
-    	product.setProductStatus(0);
- 
-        try {
-            db = Connexion.getConnection(); 
-                String res = " INSERT INTO product(productname,productdescription,productprice,productpicture,productstatus,userid,productdate) VALUES('"+product.getProductName()+"','"+product.getProductDescription()+"',"+Integer.parseInt(product.getProductPrice())+",'"+product.getProductPicture()+"',0,"+product.getUserId()+",'"+product.getProductDate()+"');";
-                Statement statement = db.createStatement();
-                statement.executeUpdate(res);
-                statement.close();
-                
-            db.close();
-
-           } catch (URISyntaxException e) {
-               return new Reponse("ko", "votre produit n'a pas pu etre ajouter");
-           } catch (SQLException e) {
-              return new Reponse("ko", "votre produit n'a pas pu etre ajouter");
-          } 
-
-        return new Reponse("ok", " votre produit est ajouter avec succes ");
-
-    }
 
     public Reponse deleteProduct(int id) {
         try {
@@ -252,33 +226,27 @@ public class ProductDAO {
         return new Reponse("ok", "your booking has been canceled ");
 
 	}
-	
-	public String getDate() {
-		String Mydate = "";
-		Calendar calendar = Calendar.getInstance();
-		Mydate = Mydate.concat(Integer.toString(calendar.get(calendar.YEAR)));
-		Mydate = Mydate.concat("-");
-		Mydate = Mydate.concat(Integer.toString(calendar.get(calendar.MONTH)+1));
-		Mydate = Mydate.concat("-");
-		Mydate = Mydate.concat(Integer.toString(calendar.get(calendar.DAY_OF_MONTH)));
-		
-		return Mydate;
-	}
+// ******  Function fin 
 
-	public boolean isValide(String param) {
-		if(param == null || param.equals("")) {
-			return false;
-		}
-		return true;
-	}
-	
-	public boolean isMailValide(String param) {
-		if( param.equals("")) {
-			return false;
-		}else {
-			
-		}
-		return true;
-	}
+    public Reponse addProduct(Product product) {
+  
+        try {
+            db = Connexion.getConnection(); 
+                String res = " INSERT INTO product(productname,productdescription,productprice,productpicture,productstatus,userid,productdate) VALUES('"+product.getProductName()+"','"+product.getProductDescription()+"',"+Integer.parseInt(product.getProductPrice())+",'"+product.getProductPicture()+"',0,"+product.getUserId()+",'"+product.getProductDate()+"');";
+                Statement statement = db.createStatement();
+                statement.executeUpdate(res);
+                statement.close();
+                
+            db.close();
+
+           } catch (URISyntaxException e) {
+               return new Reponse("ko", "votre produit n'a pas pu etre ajouter");
+           } catch (SQLException e) {
+              return new Reponse("ko", "votre produit n'a pas pu etre ajouter");
+          } 
+
+        return new Reponse("ok", " votre produit est ajouter avec succes ");
+
+    }
 	
 }

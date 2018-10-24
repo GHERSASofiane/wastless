@@ -1,4 +1,6 @@
 package services;
+import java.util.Calendar;
+
 import com.google.gson.JsonObject;
 
 import converters.JSonConverter;
@@ -10,6 +12,8 @@ public class ProductServices {
 
 	ProductDAO pr = new ProductDAO();
 	
+	
+//* ********* function fin
 	public JsonObject addProduct(Product product)
 	{		  
 
@@ -19,10 +23,14 @@ public class ProductServices {
 		if( !IsPresent(product.getUserId()) ) { return JSonConverter.objectToJson( new Reponse("ko", "UserId  est obligatoire") ); }  
 		// TODO image
 		
+    	product.setProductDate(getDate());
+    	product.setProductStatus(0);
+    	
 		return JSonConverter.objectToJson(pr.addProduct(product));
 	}
 	
-
+// ****** fonction utiles
+	
 	private boolean IsPresent(String arg) {
 		
 		if(arg == null || arg.length() == 0) {
@@ -40,6 +48,19 @@ public class ProductServices {
 			return true;
 		}
 		
+	}
+	
+	
+	public String getDate() {
+		String Mydate = "";
+		Calendar calendar = Calendar.getInstance();
+		Mydate = Mydate.concat(Integer.toString(calendar.get(calendar.YEAR)));
+		Mydate = Mydate.concat("-");
+		Mydate = Mydate.concat(Integer.toString(calendar.get(calendar.MONTH)+1));
+		Mydate = Mydate.concat("-");
+		Mydate = Mydate.concat(Integer.toString(calendar.get(calendar.DAY_OF_MONTH)));
+		
+		return Mydate;
 	}
 	
 }

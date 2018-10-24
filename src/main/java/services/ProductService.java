@@ -23,13 +23,7 @@ public class ProductService {
 	{
 		return JSonConverter.objectToJson(pr.searchProduct(nameArticle, page));
 	}
-	
-	
-	public JsonObject addProduct(Product product)
-	{		 
-		return JSonConverter.objectToJson(pr.addProduct(product));
-	}
-	
+		
 	public JsonObject deleteProduct( int id)
 	{
 		return JSonConverter.objectToJson(pr.deleteProduct(id));

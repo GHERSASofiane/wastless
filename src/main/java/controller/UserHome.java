@@ -45,12 +45,7 @@ public class UserHome extends HttpServlet {
 	
 	HttpSession session = request.getSession();
 	System.out.println("userHome session id ------> " + session.getId());
-	Personne personne = (Personne) session.getAttribute("user");
-	UserHomeService uhs = new UserHomeService();
 	
-	obj = uhs.getUserReservation(personne.getUserId());
-	
-	/**
 	if(!AutorisationAcess.allowUser(request))
 	{
 		obj = JSonConverter.objectToJson(new Reponse("ko", "user not logged in"));
@@ -63,7 +58,7 @@ public class UserHome extends HttpServlet {
 		 
 	}
 		
-	*/
+	
 	pw.println(obj);
 	pw.flush();
 	}

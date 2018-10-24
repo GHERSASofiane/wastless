@@ -1,7 +1,6 @@
 package services;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 import com.google.gson.JsonObject;
 
@@ -14,19 +13,12 @@ public class ProfileService {
 	
 	
 	
-	public JsonObject getUserInformation(HttpServletRequest request, Personne personne)
+	public JsonObject getUserInformation( Personne personne)
 	{
 		ProfileDAO siDAO = new ProfileDAO();
 		Reponse reponse = siDAO.logIn(personne);
 		
-		if(reponse.getStatus().equals("ok"))
-		{
-		HttpSession session = request.getSession();
 		
-		System.out.println("session id ------> " + session.getId());
-	//	session.setMaxInactiveInterval(60*10);
-		session.setAttribute("user", reponse.getReponse());
-		}
 		
 		JsonObject res = JSonConverter.objectToJson(reponse);
 		
@@ -35,18 +27,12 @@ public class ProfileService {
 		
 	}
 	
-	public JsonObject inscription(HttpServletRequest request, Personne personne)
+	public JsonObject inscription( Personne personne)
 	{
 	ProfileDAO suDAO = new ProfileDAO();
 	Reponse reponse = suDAO.signUp(personne);
 	
-	if(reponse.getStatus().equals("ok"))
-	{
-	HttpSession session = request.getSession();
-	session.setMaxInactiveInterval(60*10);
-	System.out.println("session id ------> " + session.getId());
-	session.setAttribute("user", reponse.getReponse());
-	}
+	
 	
 	JsonObject res = JSonConverter.objectToJson(reponse);
 	return res;

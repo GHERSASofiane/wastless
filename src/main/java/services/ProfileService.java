@@ -22,8 +22,9 @@ public class ProfileService {
 		if(reponse.getStatus().equals("ok"))
 		{
 		HttpSession session = request.getSession();
+		
 		System.out.println("session id ------> " + session.getId());
-		session.setMaxInactiveInterval(60*10);
+	//	session.setMaxInactiveInterval(60*10);
 		session.setAttribute("user", reponse.getReponse());
 		}
 		

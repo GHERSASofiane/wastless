@@ -44,6 +44,7 @@ public class UserHome extends HttpServlet {
 	JsonObject obj = new JsonObject();
 	
 	HttpSession session = request.getSession();
+	System.out.println("userHome session id ------> " + session.getId());
 	Personne personne = (Personne) session.getAttribute("user");
 	UserHomeService uhs = new UserHomeService();
 	

@@ -22,6 +22,7 @@ public class ProfileService {
 		if(reponse.getStatus().equals("ok"))
 		{
 		HttpSession session = request.getSession();
+		System.out.println("session id ------> " + session.getId());
 		session.setMaxInactiveInterval(60*10);
 		session.setAttribute("user", reponse.getReponse());
 		}
@@ -42,6 +43,7 @@ public class ProfileService {
 	{
 	HttpSession session = request.getSession();
 	session.setMaxInactiveInterval(60*10);
+	System.out.println("session id ------> " + session.getId());
 	session.setAttribute("user", reponse.getReponse());
 	}
 	

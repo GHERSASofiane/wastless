@@ -20,7 +20,6 @@ public class MyPubs extends HttpServlet{
         
         int idUser =  Integer.parseInt(req.getParameter("idUser"));
         
-
         // Préparer la répense
         ProductServices rep = new ProductServices();
         // Envoie de réponse

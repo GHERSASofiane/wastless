@@ -19,11 +19,7 @@ public class ProductService {
 	{
 		return JSonConverter.objectToJson(pr.searchProduct(nameArticle, page));
 	}
-		
-	public JsonObject deleteProduct( int id)
-	{
-		return JSonConverter.objectToJson(pr.deleteProduct(id));
-	}
+
 	
 	public JsonObject getProductDetails(String productId)
 	{

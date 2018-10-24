@@ -101,8 +101,8 @@
 		<description></description>
 		<servlet-class>controller.EditProfile</servlet-class>
 	</servlet>
-        
-        
+
+
 	<servlet-mapping>
 		<servlet-name>MyPubs</servlet-name>
 		<url-pattern>/MyPubs</url-pattern>

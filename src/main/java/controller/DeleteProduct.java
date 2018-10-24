@@ -8,7 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import services.ProductService; 
+import services.ProductService;
+import services.ProductServices; 
 
 public class DeleteProduct  extends HttpServlet {
 	public DeleteProduct() { }
@@ -21,9 +22,9 @@ public class DeleteProduct  extends HttpServlet {
         int idProduct =  Integer.parseInt(req.getParameter("idProduct"));
         
         // Préparer la répense
-        ProductService rep = new ProductService();
+        ProductServices rep = new ProductServices();
         // Envoie de réponse 
-        resp.println(rep.deleteProduct(idProduct)); 
+        resp.println(rep.DeleteProduct(idProduct)); 
         resp.flush();
 	}
 }

@@ -36,6 +36,12 @@
 		<servlet-class>controller.ProductSearch</servlet-class>
 	</servlet>
 	<servlet>
+		<servlet-name>EditProduct</servlet-name>
+		<display-name>EditProduct</display-name>
+		<description></description>
+		<servlet-class>controller.EditProduct</servlet-class>
+	</servlet>
+	<servlet>
 		<servlet-name>ProductDetail</servlet-name>
 		<display-name>ProductDetail</display-name>
 		<description></description>
@@ -122,6 +128,10 @@
 	<servlet-mapping>
 		<servlet-name>AddProduct</servlet-name>
 		<url-pattern>/AddProduct</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EditProduct</servlet-name>
+		<url-pattern>/EditProduct</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>DeleteProduct</servlet-name>

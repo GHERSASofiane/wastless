@@ -160,7 +160,7 @@ public class ProductDAO {
 		return new Reponse("ok", "your booking has been canceled ");
 
 	}
-// ******  Function fin 
+// ******  Function fin   
 
 	public Reponse addProduct(Product product) {
 
@@ -183,6 +183,31 @@ public class ProductDAO {
 		}
 
 		return new Reponse("ok", " votre produit est ajouter avec succes ");
+
+	}
+
+	public Reponse EditProduct(Product product) {
+
+		try {
+			
+			db = Connexion.getConnection();
+			String query = " UPDATE product SET productname = '"+ product.getProductName() +"', productdescription = '"+ product.getProductDescription() +"', "
+					+ " productprice = '"+ Integer.parseInt(product.getProductPrice()) +"', productpicture   = '"+ product.getProductPicture() +"' "
+							+ " WHERE ProductId = "+ product.getProductId() ;
+			
+			PreparedStatement preparedStmt = db.prepareStatement(query);	
+			preparedStmt.executeUpdate();
+ 
+			preparedStmt.close();
+			db.close();
+
+		} catch (URISyntaxException e) {
+			return new Reponse("ko", "votre produit n'a pas pu etre modifier ");
+		} catch (SQLException e) {
+			return new Reponse("ko", "votre produit n'a pas pu etre modifier ");
+		}
+
+		return new Reponse("ok", " votre produit est modifier avec succes ");
 
 	}
 

@@ -36,6 +36,25 @@ public class ProductServices {
 		return JSonConverter.objectToJson(pr.addProduct(product));
 	}
 
+	public JsonObject EditProduct(Product product) {
+
+		if (!IsPresent(product.getProductName())) {
+			return JSonConverter.objectToJson(new Reponse("ko", "ProductName est obligatoire"));
+		}
+		if (!IsPresent(product.getProductDescription())) {
+			return JSonConverter.objectToJson(new Reponse("ko", "ProductDescription  est obligatoire"));
+		}
+		if (!IsPresent(product.getProductPrice())) {
+			return JSonConverter.objectToJson(new Reponse("ko", "ProductPrice  est obligatoire"));
+		}
+		if (!IsPresent(product.getUserId())) {
+			return JSonConverter.objectToJson(new Reponse("ko", "UserId  est obligatoire"));
+		}
+		// TODO image
+  
+		return JSonConverter.objectToJson(pr.EditProduct(product));
+	}
+	
 	public JsonObject DeleteProduct(int id) {
 
 		if (!IsPresent(id)) {

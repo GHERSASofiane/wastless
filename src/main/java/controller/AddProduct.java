@@ -42,7 +42,8 @@ public class AddProduct  extends HttpServlet {
 //        ProductService rep = new ProductService();
         // Envoie de réponse 
 //        resp.println(rep.addProduct(product)); 
-        resp.println(  JSonConverter.objectToJson(new Reponse("ok", product.getProductName()))  ); 
+//        String tmp = product.getProductName()
+        resp.println(  JSonConverter.objectToJson(new Reponse("ok", product.getProductName()==null ))  ); 
         resp.flush();
 
     }

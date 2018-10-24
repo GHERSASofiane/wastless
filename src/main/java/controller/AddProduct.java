@@ -18,7 +18,8 @@ import com.google.gson.JsonObject;
 import converters.JSonConverter;
 import helpers.Readers; 
 import models.Product;
-import services.ProductService; 
+import services.ProductService;
+import status.Reponse; 
 
 /**
  *
@@ -38,9 +39,10 @@ public class AddProduct  extends HttpServlet {
         product = (Product) JSonConverter.objectFromJson(jsObj, product);
         
         // Préparer la répense
-        ProductService rep = new ProductService();
+//        ProductService rep = new ProductService();
         // Envoie de réponse 
-        resp.println(rep.addProduct(product)); 
+//        resp.println(rep.addProduct(product)); 
+        resp.println(new Reponse("ok a sofiane : ", product.getProductName())); 
         resp.flush();
 
     }

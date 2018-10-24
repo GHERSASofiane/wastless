@@ -12,6 +12,14 @@ public class ProductServices {
 
 	ProductDAO pr = new ProductDAO();
 	
+
+	public JsonObject MyPubs(int id)
+	{
+
+		if( !IsPresent(id) ) { return JSonConverter.objectToJson( new Reponse("ko", "Pas d'identifiant pour la recherch ") ); }
+		
+		return JSonConverter.objectToJson(pr.MyPubs(id));
+	}
 	
 //* ********* function fin
 	public JsonObject addProduct(Product product)

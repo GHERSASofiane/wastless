@@ -7,8 +7,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import services.ProductService; 
+ 
+import services.ProductServices; 
 
 public class MyPubs extends HttpServlet{
 	public MyPubs() { }
@@ -22,7 +22,7 @@ public class MyPubs extends HttpServlet{
         
 
         // Préparer la répense
-        ProductService rep = new ProductService();
+        ProductServices rep = new ProductServices();
         // Envoie de réponse
         resp.println(rep.MyPubs(idUser));
         resp.flush();

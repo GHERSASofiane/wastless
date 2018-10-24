@@ -43,8 +43,6 @@ public class UserHome extends HttpServlet {
 	PrintWriter pw = response.getWriter();	
 	JsonObject obj = new JsonObject();
 	
-	HttpSession session = request.getSession();
-	System.out.println("userHome session id ------> " + session.getId());
 	
 	if(!AutorisationAcess.allowUser(request))
 	{

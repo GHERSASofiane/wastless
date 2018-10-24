@@ -42,7 +42,7 @@ public class AddProduct  extends HttpServlet {
 //        ProductService rep = new ProductService();
         // Envoie de réponse 
 //        resp.println(rep.addProduct(product)); 
-        resp.println(new Reponse("ok a sofiane : ", product.getProductName())); 
+        resp.println(new Reponse("ok", product.getProductName())); 
         resp.flush();
 
     }

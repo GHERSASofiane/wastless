@@ -18,7 +18,7 @@ public class UserReservationDAO {
 		
 		Connection db;
 		ArrayList<Product> products = new ArrayList<Product>();
-		
+		System.out.println("user id --------------->" + userId);
 		try {
 			db = Connexion.getConnection();
 			

@@ -177,8 +177,10 @@ public class ProductDAO {
 			db.close();
 
 		} catch (URISyntaxException e) {
+			e.printStackTrace();
 			return new Reponse("ko", "votre produit n'a pas pu etre ajouter");
 		} catch (SQLException e) {
+			e.printStackTrace();
 			return new Reponse("ko", "votre produit n'a pas pu etre ajouter");
 		}
 
@@ -202,8 +204,10 @@ public class ProductDAO {
 			db.close();
 
 		} catch (URISyntaxException e) {
+			e.printStackTrace();
 			return new Reponse("ko", "votre produit n'a pas pu etre modifier ");
 		} catch (SQLException e) {
+			e.printStackTrace();
 			return new Reponse("ko", "votre produit n'a pas pu etre modifier ");
 		}
 
@@ -223,10 +227,25 @@ public class ProductDAO {
 			preparedStmt.execute();
 			preparedStmt.close();
 			db.close();
+			
+
+//			db = Connexion.getConnection();
+//			query = "DELETE FROM booking WHERE productid = ?";
+//			preparedStmt = db.prepareStatement(query);
+//			preparedStmt.setInt(1, id);
+//
+//			// execute the prepared statement
+//			preparedStmt.execute();
+//			preparedStmt.close();
+//			db.close();
+			
+			
 
 		} catch (URISyntaxException e) {
+			e.printStackTrace();
 			return new Reponse("ko", "votre produit n'a pas pu etre suprimmer");
 		} catch (SQLException e) {
+			e.printStackTrace();
 			return new Reponse("ko", "votre produit n'a pas pu etre suprimmer");
 		}
 
@@ -265,8 +284,10 @@ public class ProductDAO {
 			db.close();
 
 		} catch (URISyntaxException e) {
+			e.printStackTrace();
 			return new Reponse("ko", "Erreur sur le serveur");
 		} catch (SQLException e) {
+			e.printStackTrace();
 			return new Reponse("ko", "Erreur sur le serveur");
 		}
 		return new Reponse("ok", res);

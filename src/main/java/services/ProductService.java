@@ -37,4 +37,9 @@ public class ProductService {
 		return JSonConverter.objectToJson(new Reponse("ok","TODO"));
 	}
 	
+	public JsonObject allProducts()
+	{
+		ProductDAO pdao = new ProductDAO();
+		return JSonConverter.objectToJson(pdao.allProducts());
+	}
 }

@@ -107,6 +107,12 @@
 		<description></description>
 		<servlet-class>controller.EditProfile</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>AllProductsController</servlet-name>
+		<display-name>AllProductsController</display-name>
+		<description></description>
+		<servlet-class>controller.AllProductsController</servlet-class>
+	</servlet>
 
 
 	<servlet-mapping>
@@ -168,5 +174,9 @@
 	<servlet-mapping>
 		<servlet-name>EditProfile</servlet-name>
 		<url-pattern>/editprofile</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AllProductsController</servlet-name>
+		<url-pattern>/products</url-pattern>
 	</servlet-mapping>
 </web-app>

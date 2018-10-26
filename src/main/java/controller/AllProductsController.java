@@ -33,6 +33,7 @@ public class AllProductsController extends HttpServlet {
 		ProductService rep = new ProductService();
         resp.println(rep.allProducts());
         resp.flush();
+        
 	}
 
 	

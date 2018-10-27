@@ -16,7 +16,12 @@ import models.Product;
 import services.ProductServices; 
 
 public class EditProduct  extends HttpServlet {
-	public EditProduct() { }
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public EditProduct() { super(); }
 	
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -30,6 +35,7 @@ public class EditProduct  extends HttpServlet {
         
         // Préparer la répense
         ProductServices rep = new ProductServices();
+        
         // Envoie de réponse 
         resp.println(rep.EditProduct(product));  
         resp.flush();

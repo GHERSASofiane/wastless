@@ -14,6 +14,13 @@ public class ProductServices {
 	ProductDAO pr = new ProductDAO();
 
 //* ********* function fin
+	
+	public JsonObject searchProduct(String nameArticle, int page)
+	{
+		
+		return JSonConverter.objectToJson(pr.searchProduct(nameArticle, page));
+	}
+	
 	public JsonObject addProduct(Product product) {
 
 		if (!IsPresent(product.getProductName())) {
@@ -28,7 +35,9 @@ public class ProductServices {
 		if (!IsPresent(product.getUserId())) {
 			return JSonConverter.objectToJson(new Reponse("ko", "UserId  est obligatoire"));
 		}
-		// TODO image
+		if (!IsPresent(product.getProductPicture())) {
+			return JSonConverter.objectToJson(new Reponse("ko", "ProductPicture  est obligatoire"));
+		} 
 
 		product.setProductDate(getDate());
 		product.setProductStatus(0);
@@ -50,8 +59,10 @@ public class ProductServices {
 		if (!IsPresent(product.getUserId())) {
 			return JSonConverter.objectToJson(new Reponse("ko", "UserId  est obligatoire"));
 		}
-		// TODO image
-  
+		if (!IsPresent(product.getProductPicture())) {
+			return JSonConverter.objectToJson(new Reponse("ko", "ProductPicture  est obligatoire"));
+		} 
+		
 		return JSonConverter.objectToJson(pr.EditProduct(product));
 	}
 	

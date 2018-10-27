@@ -19,8 +19,9 @@ public class ProductDAO {
 	private Connection db;
 
 	public Reponse searchProduct(String nameArticle, int page) {
-		List<Product> res = new ArrayList();
+		List<Product> res = new ArrayList<Product>();
 		Product tmp;
+		
 		try {
 			db = Connexion.getConnection();
 

@@ -6,11 +6,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import services.ProductService;
+import services.ProductServices;
 
-/**
- * Servlet implementation class ProductSearch
- */
+ 
 public class ProductSearch extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
@@ -19,14 +17,9 @@ public class ProductSearch extends HttpServlet {
      * @see HttpServlet#HttpServlet()
      */
     public ProductSearch() {
-        super();
-        // TODO Auto-generated constructor stub
+        super(); 
     }
-
-    /**
-     * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-     * response)
-     */
+ 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // Récuperer le PrintWriter Pour envoyer la réponse
         PrintWriter resp = response.getWriter();
@@ -46,7 +39,7 @@ public class ProductSearch extends HttpServlet {
         int p = Integer.parseInt(Page);
 
         // Préparer la répense
-        ProductService rep = new ProductService();
+        ProductServices rep = new ProductServices();
         // Envoie de réponse
         resp.println(rep.searchProduct(PName, p));
         resp.flush();

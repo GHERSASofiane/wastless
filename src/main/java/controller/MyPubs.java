@@ -11,7 +11,12 @@ import javax.servlet.http.HttpServletResponse;
 import services.ProductServices; 
 
 public class MyPubs extends HttpServlet{
-	public MyPubs() { }
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public MyPubs() { super(); }
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse response) throws ServletException, IOException {

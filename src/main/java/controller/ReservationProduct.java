@@ -16,13 +16,11 @@ import services.ReservationService;
 /**
  * Servlet implementation class ReservationProduit
  */
-public class ReservationProduit extends HttpServlet {
+public class ReservationProduct extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public ReservationProduit() {
+     
+    public ReservationProduct() {
         super();
         // TODO Auto-generated constructor stub
     }

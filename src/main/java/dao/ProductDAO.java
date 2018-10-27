@@ -18,83 +18,8 @@ public class ProductDAO {
 
 	private Connection db;
 
-	public Reponse searchProduct(String nameArticle, int page) {
-		List<Product> res = new ArrayList<Product>();
-		Product tmp;
-		
-		try {
-			db = Connexion.getConnection();
 
-			Statement stmt = db.createStatement();
-			ResultSet rs = stmt.executeQuery(
-					"SELECT * FROM Product, Users WHERE ProductStatus = 0 AND Product.UserId = Users.UserId AND ( ProductName LIKE '%"
-							+ nameArticle + "%' OR ProductDescription LIKE '%"+ nameArticle +"%' ) ORDER BY ProductDate DESC OFFSET " + (page * 10) + " LIMIT 10 ");
 
-			while (rs.next()) {
-				tmp = new Product();
-
-				tmp.setProductName(rs.getString("ProductName"));
-				tmp.setProductDate(rs.getString("ProductDate"));
-				tmp.setProductDescription(rs.getString("ProductDescription"));
-				tmp.setProductPicture(rs.getString("ProductPicture"));
-				tmp.setProductId(rs.getInt("ProductId"));
-				tmp.setProductPrice(rs.getString("ProductPrice"));
-				tmp.setProductStatus(rs.getInt("ProductStatus"));
-				tmp.setUserId(rs.getInt("UserId"));
-				tmp.setUserName(rs.getString("UserName"));
-
-				res.add(tmp);
-
-			}
-			stmt.close();
-			db.close();
-
-		} catch (URISyntaxException e) {
-			return new Reponse("ko", "Erreur sur le serveur");
-		} catch (SQLException e) {
-			return new Reponse("ko", "Erreur sur le serveur");
-		}
-		return new Reponse("ok", res);
-	}
-
-	public Reponse getProductDetails(Integer productId) {
-		
-		ProductDetail tmpProd = new ProductDetail();
-
-		try {
-			db = Connexion.getConnection();
-
-			Statement stmt = db.createStatement();
-			ResultSet rs = stmt
-					.executeQuery("SELECT * FROM Product, Users WHERE Product.userid = Users.userid AND ProductId = "
-							+ productId + ";");
-			while (rs.next()) {
-
-				tmpProd.setProductName(rs.getString("ProductName"));
-				tmpProd.setProductDate(rs.getString("ProductDate"));
-				tmpProd.setProductDescription(rs.getString("ProductDescription"));
-				tmpProd.setProductPicture(rs.getString("ProductPicture"));
-				tmpProd.setProductId(rs.getInt("ProductId"));
-				tmpProd.setProductPrice(rs.getString("ProductPrice"));
-				tmpProd.setProductStatus(rs.getInt("ProductStatus"));
-				tmpProd.setUserId(rs.getInt("UserId"));
-				tmpProd.setUserName(rs.getString("UserName"));
-				tmpProd.setUserMail(rs.getString("UserMail"));
-				tmpProd.setUserAdress(rs.getString("UserAdress"));
-				tmpProd.setUserPhone(rs.getInt("UserPhone"));
-
-			}
-			db.close();
-
-		} catch (URISyntaxException e) {
-			return new Reponse("ko", "Erreur sur le serveur");
-		} catch (SQLException e) {
-			return new Reponse("ko", "Erreur sur le serveur");
-		}
-
-		return new Reponse("ok", tmpProd);
-
-	}
 
 	public Reponse validateProduct(String productId) {
 
@@ -162,8 +87,48 @@ public class ProductDAO {
 		return new Reponse("ok", "your booking has been canceled ");
 
 	}
-// ******  Function fin   
+// ******  Function fin    ******************************
 
+
+	public Reponse searchProduct(String nameArticle, int page) {
+		List<Product> res = new ArrayList<Product>();
+		Product tmp;
+		
+		try {
+			db = Connexion.getConnection();
+
+			Statement stmt = db.createStatement();
+			ResultSet rs = stmt.executeQuery(
+					"SELECT * FROM Product, Users WHERE ProductStatus = 0 AND Product.UserId = Users.UserId AND ( ProductName LIKE '%"
+							+ nameArticle + "%' OR ProductDescription LIKE '%"+ nameArticle +"%' ) ORDER BY ProductDate DESC OFFSET " + (page * 10) + " LIMIT 10 ");
+
+			while (rs.next()) {
+				tmp = new Product();
+
+				tmp.setProductName(rs.getString("ProductName"));
+				tmp.setProductDate(rs.getString("ProductDate"));
+				tmp.setProductDescription(rs.getString("ProductDescription"));
+				tmp.setProductPicture(rs.getString("ProductPicture"));
+				tmp.setProductId(rs.getInt("ProductId"));
+				tmp.setProductPrice(rs.getString("ProductPrice"));
+				tmp.setProductStatus(rs.getInt("ProductStatus"));
+				tmp.setUserId(rs.getInt("UserId"));
+				tmp.setUserName(rs.getString("UserName"));
+
+				res.add(tmp);
+
+			}
+			stmt.close();
+			db.close();
+
+		} catch (URISyntaxException e) {
+			return new Reponse("ko", "Erreur sur le serveur");
+		} catch (SQLException e) {
+			return new Reponse("ko", "Erreur sur le serveur");
+		}
+		return new Reponse("ok", res);
+	}
+	
 	public Reponse addProduct(Product product) {
 
 		try {
@@ -172,8 +137,10 @@ public class ProductDAO {
 					+ product.getProductName() + "','" + product.getProductDescription() + "',"
 					+ Integer.parseInt(product.getProductPrice()) + ",'" + product.getProductPicture() + "',0,"
 					+ product.getUserId() + ",'" + product.getProductDate() + "');";
+			
 			Statement statement = db.createStatement();
 			statement.executeUpdate(res);
+			
 			statement.close();
 
 			db.close();
@@ -190,6 +157,45 @@ public class ProductDAO {
 
 	}
 
+	public Reponse getProductDetails(Integer productId) {
+		
+		ProductDetail tmpProd = new ProductDetail();
+
+		try {
+			db = Connexion.getConnection();
+
+			Statement stmt = db.createStatement();
+			ResultSet rs = stmt
+					.executeQuery("SELECT * FROM Product, Users WHERE Product.userid = Users.userid AND ProductId = "
+							+ productId + ";");
+			while (rs.next()) {
+
+				tmpProd.setProductName(rs.getString("ProductName"));
+				tmpProd.setProductDate(rs.getString("ProductDate"));
+				tmpProd.setProductDescription(rs.getString("ProductDescription"));
+				tmpProd.setProductPicture(rs.getString("ProductPicture"));
+				tmpProd.setProductId(rs.getInt("ProductId"));
+				tmpProd.setProductPrice(rs.getString("ProductPrice"));
+				tmpProd.setProductStatus(rs.getInt("ProductStatus"));
+				tmpProd.setUserId(rs.getInt("UserId"));
+				tmpProd.setUserName(rs.getString("UserName"));
+				tmpProd.setUserMail(rs.getString("UserMail"));
+				tmpProd.setUserAdress(rs.getString("UserAdress"));
+				tmpProd.setUserPhone(rs.getInt("UserPhone"));
+
+			}
+			db.close();
+
+		} catch (URISyntaxException e) {
+			return new Reponse("ko", "Erreur sur le serveur");
+		} catch (SQLException e) {
+			return new Reponse("ko", "Erreur sur le serveur");
+		}
+
+		return new Reponse("ok", tmpProd);
+
+	}
+	
 	public Reponse EditProduct(Product product) {
 
 		try {

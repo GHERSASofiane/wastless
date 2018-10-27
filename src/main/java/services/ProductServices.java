@@ -15,6 +15,16 @@ public class ProductServices {
 
 //* ********* function fin
 	
+	public JsonObject getProductDetails(Integer productId)
+	{
+
+		if (!IsPresent( productId )) {
+			return JSonConverter.objectToJson(new Reponse("ko", "productId est obligatoire"));
+		}
+		
+		return JSonConverter.objectToJson(pr.getProductDetails(productId));
+	}
+	
 	public JsonObject searchProduct(String nameArticle, int page)
 	{
 		

@@ -10,12 +10,7 @@ import status.Reponse;
 public class ProductService {
 
 	ProductDAO pr = new ProductDAO(); 
-  
-	public JsonObject getProductDetails(String productId)
-	{
-		return JSonConverter.objectToJson(pr.getProductDetails(productId));
-	}
-	
+   
 // **************************
 	
 	public JsonObject validateProduct(String productId)

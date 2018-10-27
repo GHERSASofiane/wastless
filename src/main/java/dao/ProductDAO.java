@@ -57,7 +57,8 @@ public class ProductDAO {
 		return new Reponse("ok", res);
 	}
 
-	public Reponse getProductDetails(String productId) {
+	public Reponse getProductDetails(Integer productId) {
+		
 		ProductDetail tmpProd = new ProductDetail();
 
 		try {

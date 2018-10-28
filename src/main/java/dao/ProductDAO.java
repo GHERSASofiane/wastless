@@ -257,7 +257,7 @@ public class ProductDAO {
 		try {
 
 			db = Connexion.getConnection();
-			String query = "INSERT INTO Reservation(chatsend, chatreceive, chatproduct, chatmessage) VALUES(?, ?, ?, '?' );";
+			String query = "INSERT INTO Reservation(chatsend, chatreceive, chatproduct, chatmessage) VALUES(?, ?, ?, ? );";
 			PreparedStatement preparedStmt = db.prepareStatement(query);
 			preparedStmt.setInt(1, reserv.getReservationSend());
 			preparedStmt.setInt(2, reserv.getReservationReceive());

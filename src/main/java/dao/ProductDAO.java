@@ -257,12 +257,13 @@ public class ProductDAO {
 		try {
 
 			db = Connexion.getConnection();
-			String query = "INSERT INTO Reservation(chatsend, chatreceive, chatproduct, chatmessage) VALUES(?, ?, ?, ? );";
+			String query = "INSERT INTO Reservation(chatsend, chatreceive, chatproduct, chatmessage, reservationdate ) VALUES(?, ?, ?, ?, ? );";
 			PreparedStatement preparedStmt = db.prepareStatement(query);
 			preparedStmt.setInt(1, reserv.getReservationSend());
 			preparedStmt.setInt(2, reserv.getReservationReceive());
 			preparedStmt.setInt(3, reserv.getReservationProduct());
 			preparedStmt.setString(4, reserv.getReservationMessage());
+			preparedStmt.setString(5, reserv.getReservationDate());
 
 			// execute the prepared statement
 			preparedStmt.executeUpdate();

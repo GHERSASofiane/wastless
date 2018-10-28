@@ -3,8 +3,9 @@ package models;
 
 public class Reservation {
 	
-	private Integer ReservationSend, ReservationReceive, ReservationProduct;
-	private String ReservationMessage, ReservationDate;
+	public Integer ReservationSend, ReservationReceive, ReservationProduct;
+	public String ReservationMessage, ReservationDate;
+	
 	public Integer getReservationSend() {
 		return ReservationSend;
 	}

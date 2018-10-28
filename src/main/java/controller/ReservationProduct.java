@@ -10,7 +10,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.JsonObject;
 
-import services.ReservationService;
+import converters.JSonConverter;
+import helpers.Readers;
+import models.Reservation;
+import services.ProductServices;
+import status.Reponse;
 
 
 /**
@@ -27,19 +31,24 @@ public class ReservationProduct extends HttpServlet {
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int productId = Integer.parseInt(request.getParameter("productId"));
-		int userId = Integer.parseInt(request.getParameter("userId"));
+	 */ 
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	       // Récuperer le PrintWriter Pour envoyer la réponse
+        PrintWriter resp = response.getWriter();
+
+        JsonObject jsObj = Readers.getJSONfromRequest(request);
+        
+        Reservation reserv = new Reservation();
+        reserv = (Reservation) JSonConverter.objectFromJson(jsObj, reserv);
+        
 		
-		ReservationService res = new ReservationService();
-		JsonObject obj = res.reserver(productId, userId);
-			
-		PrintWriter pw = response.getWriter();
-	
-		
-		pw.println(obj);
-		pw.flush();
+        
+        // Préparer la répense
+        ProductServices rep = new ProductServices();
+        // Envoie de réponse 
+//        resp.println(rep.addProduct(reserv)); 
+        resp.println(new JSonConverter().objectToJson(new Reponse("ok", reserv)));  
+        resp.flush();
 		
 		
 	}

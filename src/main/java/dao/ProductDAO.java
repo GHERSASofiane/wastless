@@ -239,19 +239,7 @@ public class ProductDAO {
 			preparedStmt.execute();
 			preparedStmt.close();
 			db.close();
-			
-
-//			db = Connexion.getConnection();
-//			query = "DELETE FROM booking WHERE productid = ?";
-//			preparedStmt = db.prepareStatement(query);
-//			preparedStmt.setInt(1, id);
-//
-//			// execute the prepared statement
-//			preparedStmt.execute();
-//			preparedStmt.close();
-//			db.close();
-			
-			
+			 
 
 		} catch (URISyntaxException e) {
 			e.printStackTrace();
@@ -262,6 +250,35 @@ public class ProductDAO {
 		}
 
 		return new Reponse("ok", "votre produit est supprime avec succes");
+
+	}
+
+	public Reponse addReservation(Reservation reserv) {
+		try {
+
+			db = Connexion.getConnection();
+			String query = "INSERT INTO Reservation(chatsend, chatreceive, chatproduct, chatmessage) VALUES(?, ?, ?, '?' );";
+			PreparedStatement preparedStmt = db.prepareStatement(query);
+			preparedStmt.setInt(1, reserv.getReservationSend());
+			preparedStmt.setInt(2, reserv.getReservationReceive());
+			preparedStmt.setInt(3, reserv.getReservationProduct());
+			preparedStmt.setString(4, reserv.getReservationMessage());
+
+			// execute the prepared statement
+			preparedStmt.executeUpdate();
+			preparedStmt.close();
+			db.close();
+			 
+
+		} catch (URISyntaxException e) {
+			e.printStackTrace();
+			return new Reponse("ko", "votre Reservation n'a pas pu etre ajouter");
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return new Reponse("ko", "votre Reservation n'a pas pu etre ajouter");
+		}
+
+		return new Reponse("ok", "votre Reservation est envoyer avec succes");
 
 	}
 

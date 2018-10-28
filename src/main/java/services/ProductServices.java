@@ -7,6 +7,7 @@ import com.google.gson.JsonObject;
 import converters.JSonConverter;
 import dao.ProductDAO;
 import models.Product;
+import models.Reservation;
 import status.Reponse;
 
 public class ProductServices {
@@ -92,6 +93,27 @@ public class ProductServices {
 		}
 
 		return JSonConverter.objectToJson(pr.MyPubs(id));
+	}
+
+	public JsonObject addReservation(Reservation reserv) {
+
+		if (!IsPresent(reserv.getReservationDate())) {
+			return JSonConverter.objectToJson(new Reponse("ko", "getReservationDate  est obligatoire "));
+		}
+		if (!IsPresent(reserv.getReservationMessage())) {
+			return JSonConverter.objectToJson(new Reponse("ko", "getReservationMessage  est obligatoire "));
+		}
+		if (!IsPresent(reserv.getReservationProduct())) {
+			return JSonConverter.objectToJson(new Reponse("ko", "getReservationProduct  est obligatoire "));
+		}
+		if (!IsPresent(reserv.getReservationReceive())) {
+			return JSonConverter.objectToJson(new Reponse("ko", "getReservationReceive  est obligatoire "));
+		}
+		if (!IsPresent(reserv.getReservationSend())) {
+			return JSonConverter.objectToJson(new Reponse("ko", "getReservationSend  est obligatoire "));
+		}
+
+		return JSonConverter.objectToJson(pr.addReservation(reserv));
 	}
 
 // ****** fonction utiles

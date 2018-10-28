@@ -48,7 +48,7 @@ public class ReservationProduct extends HttpServlet {
         new JSonConverter();
 		// Envoie de réponse 
 //        resp.println(rep.addProduct(reserv)); 
-        resp.println(JSonConverter.objectToJson(new Reponse("ok", reserv.ReservationMessage)));  
+        resp.println(JSonConverter.objectToJson(new Reponse("ok", reserv)));  
         resp.flush();
 		
 		

@@ -52,7 +52,7 @@ public class ComparePrice extends HttpServlet {
 				result.add(product);
 			}
 			
-			
+			 
 			
 		}
 		

@@ -1,7 +1,7 @@
 package models;
  
 
-public class Reservation {
+public class Reservation extends ProductDetail {
 	
 	public Integer ReservationSend, ReservationReceive, ReservationProduct;
 	public String ReservationMessage, ReservationDate;

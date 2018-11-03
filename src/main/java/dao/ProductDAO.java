@@ -298,54 +298,7 @@ public class ProductDAO {
 
 	}
 	
-	
-	// *******************************
-	
-
-
-	public Reponse GetReservationReq(Integer productId) {
-		
-		ProductDetail tmpProd = new ProductDetail();
-
-		try {
-			db = Connexion.getConnection();
-
-			Statement stmt = db.createStatement();
-			ResultSet rs = stmt
-					.executeQuery("SELECT * FROM Reservation, Users WHERE Reservation.chatsend = Users.userid AND chatproduct = "
-							+ productId + ";");
-			while (rs.next()) {
-
-				tmpProd.setProductName(rs.getString("ProductName"));
-				tmpProd.setProductDate(rs.getString("ProductDate"));
-				tmpProd.setProductDescription(rs.getString("ProductDescription"));
-				tmpProd.setProductPicture(rs.getString("ProductPicture"));
-				tmpProd.setProductId(rs.getInt("ProductId"));
-				tmpProd.setProductPrice(rs.getString("ProductPrice"));
-				tmpProd.setProductStatus(rs.getInt("ProductStatus"));
-				tmpProd.setUserId(rs.getInt("UserId"));
-				tmpProd.setUserName(rs.getString("UserName"));
-				tmpProd.setUserMail(rs.getString("UserMail"));
-				tmpProd.setUserAdress(rs.getString("UserAdress"));
-				tmpProd.setUserPhone(rs.getInt("UserPhone"));
-
-			}
-			db.close();
-
-		} catch (URISyntaxException e) {
-			e.printStackTrace();
-			return new Reponse("ko", "Erreur sur le serveur");
-		} catch (SQLException e) {
-			e.printStackTrace();
-			return new Reponse("ko", "Erreur sur le serveur");
-		}
-
-		return new Reponse("ok", tmpProd);
-
-	}
-
-
-
+	// Ajouter une demande de reservation
 	public Reponse addReservation(Reservation reserv) {
 		try {
 
@@ -375,6 +328,65 @@ public class ProductDAO {
 		return new Reponse("ok", "votre Reservation est envoyer avec succes");
 
 	}
+
+	// Recuperer les demandeurs de reservation
+	public Reponse GetReservationReq(Integer productId) {
+		List<Reservation> TabRes = new ArrayList<Reservation>();
+		Reservation tmpProd = new Reservation();
+
+		try {
+			db = Connexion.getConnection();
+
+			Statement stmt = db.createStatement();
+			ResultSet rs = stmt
+					.executeQuery("SELECT * FROM Reservation, Users WHERE Product.ProductId = Reservation.chatproduct AND Reservation.chatsend = Users.userid AND chatproduct = "
+							+ productId + ";");
+			while (rs.next()) {
+
+				tmpProd.setProductName(rs.getString("ProductName"));
+				tmpProd.setProductDate(rs.getString("ProductDate"));
+				tmpProd.setProductDescription(rs.getString("ProductDescription"));
+				tmpProd.setProductPicture(rs.getString("ProductPicture"));
+				tmpProd.setProductId(rs.getInt("ProductId"));
+				tmpProd.setProductPrice(rs.getString("ProductPrice"));
+				tmpProd.setProductStatus(rs.getInt("ProductStatus"));
+				tmpProd.setUserId(rs.getInt("UserId"));
+				tmpProd.setUserName(rs.getString("UserName"));
+				tmpProd.setUserMail(rs.getString("UserMail"));
+				tmpProd.setUserAdress(rs.getString("UserAdress"));
+				tmpProd.setUserPhone(rs.getInt("UserPhone"));
+				 
+				tmpProd.setReservationDate(rs.getString("reservationdate") );
+				tmpProd.setReservationMessage(rs.getString("chatmessage") );
+				tmpProd.setReservationProduct(rs.getInt("chatproduct") );
+				tmpProd.setReservationReceive(rs.getInt("chatreceive") );
+				tmpProd.setReservationSend(rs.getInt("chatsend") );
+				
+				TabRes.add(tmpProd);
+				
+			}
+			stmt.close();
+			rs.close();
+			db.close();
+
+		} catch (URISyntaxException e) {
+			e.printStackTrace();
+			return new Reponse("ko", "Erreur sur le serveur");
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return new Reponse("ko", "Erreur sur le serveur");
+		}
+
+		return new Reponse("ok", TabRes);
+
+	}
+	
+	// *******************************
+	
+
+
+
+
 
 
 	public Reponse allProducts() {

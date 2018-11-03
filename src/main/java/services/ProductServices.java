@@ -100,11 +100,7 @@ public class ProductServices {
 		return JSonConverter.objectToJson(pr.getProductDetails(productId));
 	}
 
-
-	
-	// *******************************************
-
-
+	// Ajouter une demande
 	public JsonObject addReservation(Reservation reserv) {
 
 		if (!IsPresent(reserv.getReservationDate())) {
@@ -125,6 +121,7 @@ public class ProductServices {
 
 		return JSonConverter.objectToJson(pr.addReservation(reserv));
 	}
+	
 
 	public JsonObject GetReservationReq(int id) {
 
@@ -134,6 +131,11 @@ public class ProductServices {
 
 		return JSonConverter.objectToJson(pr.GetReservationReq(id));
 	}
+	
+	// *******************************************
+
+
+
 
 // ****** fonction utiles
 

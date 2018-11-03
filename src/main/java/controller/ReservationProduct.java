@@ -56,7 +56,6 @@ public class ReservationProduct extends HttpServlet {
      reserv = (Reservation) JSonConverter.objectFromJson(jsObj, reserv);
      
 		
-     
      // Préparer la répense
      ProductServices rep = new ProductServices(); 
 		// Envoie de réponse 

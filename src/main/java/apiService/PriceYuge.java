@@ -74,25 +74,25 @@ public class PriceYuge {
 	public static JsonObject detail(String productId)
 	{
 		String uri = url_api + "detail?api_key="+ apiKey + "&id="+productId;
-		return JSonConverter.objectToJson(getResult(uri));
+		return new JsonParser().parse(getResult(uri)).getAsJsonObject();
 	}
 	
 	public static JsonObject specs(String productId)
 	{
 		String uri = url_api + "specs?api_key="+ apiKey + "&id="+productId;
-		return JSonConverter.objectToJson(getResult(uri));
+		return new JsonParser().parse(getResult(uri)).getAsJsonObject();
 	}
 	
 	public static JsonObject productImage(String productId)
 	{
 		String uri = url_api + "images?api_key="+ apiKey + "&id="+productId;
-		return JSonConverter.objectToJson(getResult(uri));
+		return new JsonParser().parse(getResult(uri)).getAsJsonObject();
 	}
 	
 	public static JsonObject productPrices(String productId)
 	{
 		String uri = url_api + "price?api_key="+ apiKey + "&id="+productId;
-		return JSonConverter.objectToJson(getResult(uri));
+		return new JsonParser().parse(getResult(uri)).getAsJsonObject();
 	}
 	
 	

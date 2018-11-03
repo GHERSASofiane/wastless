@@ -113,6 +113,12 @@
 		<description></description>
 		<servlet-class>controller.AllProductsController</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>ComparePrice</servlet-name>
+		<display-name>ComparePrice</display-name>
+		<description></description>
+		<servlet-class>controller.ComparePrice</servlet-class>
+	</servlet>
 
 
 	<servlet-mapping>
@@ -178,5 +184,9 @@
 	<servlet-mapping>
 		<servlet-name>AllProductsController</servlet-name>
 		<url-pattern>/products</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ComparePrice</servlet-name>
+		<url-pattern>/compare</url-pattern>
 	</servlet-mapping>
 </web-app>

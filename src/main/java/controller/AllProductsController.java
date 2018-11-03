@@ -29,6 +29,7 @@ public class AllProductsController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		
 		PrintWriter resp = response.getWriter();
 		ProductService rep = new ProductService();
         resp.println(rep.allProducts());

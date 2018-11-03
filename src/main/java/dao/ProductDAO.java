@@ -362,6 +362,7 @@ public class ProductDAO {
 				tmpProd.setReservationReceive(rs.getInt("chatreceive") );
 				tmpProd.setReservationSend(rs.getInt("chatsend") );
 				
+				
 				TabRes.add(tmpProd);
 				
 			}

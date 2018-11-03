@@ -21,7 +21,7 @@ public class PriceYuge {
 	public static String getResult(String uri)
 	{
 		URL url;
-		String output = "";
+		StringBuilder output = new StringBuilder();
 		try {
 			url = new URL(uri);
 		
@@ -29,14 +29,14 @@ public class PriceYuge {
 		connection.setRequestMethod("GET");
 		connection.setRequestProperty("Accept", "application/json");
 	
-		InputStream xml = connection.getInputStream();
+		InputStream is = connection.getInputStream();
 		
-		BufferedReader br = new BufferedReader(new InputStreamReader(xml));
-
+		BufferedReader br = new BufferedReader(new InputStreamReader(is));
+		String line;
+		
 			
-			System.out.println("Output from Server .... \n");
-			while ((output = br.readLine()) != null) {
-				System.out.println(output);
+			while ((line = br.readLine()) != null) {
+				output.append(line);
 			}
 		
 		connection.disconnect();
@@ -53,7 +53,7 @@ public class PriceYuge {
 			e.printStackTrace();
 		}
 		
-		return output;
+		return output.toString();
 	}
 	
 	public static JsonObject listCategories()

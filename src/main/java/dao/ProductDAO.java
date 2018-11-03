@@ -89,7 +89,7 @@ public class ProductDAO {
 	}
 // ******  Function fin    ******************************
 
-
+	// recherche des annances 
 	public Reponse searchProduct(String nameArticle, int page) {
 		List<Product> res = new ArrayList<Product>();
 		Product tmp;
@@ -130,7 +130,8 @@ public class ProductDAO {
 		}
 		return new Reponse("ok", res);
 	}
-	
+
+	// ajouter une annance
 	public Reponse addProduct(Product product) {
 
 		try {
@@ -159,6 +160,104 @@ public class ProductDAO {
 
 	}
 
+	// recuperer les annaces publier
+	public Reponse MyPubs(int id) {
+
+		List<Product> res = new ArrayList<Product>();
+		Product tmp;
+
+		try {
+			db = Connexion.getConnection();
+
+			Statement stmt = db.createStatement();
+			ResultSet rs = stmt.executeQuery(
+					"SELECT * FROM Product WHERE  Product.UserId = " + id + " ORDER BY ProductDate DESC ");
+
+			while (rs.next()) {
+				tmp = new Product();
+
+				tmp.setProductName(rs.getString("ProductName"));
+				tmp.setProductDate(rs.getString("ProductDate"));
+				tmp.setProductDescription(rs.getString("ProductDescription"));
+				tmp.setProductPicture(rs.getString("ProductPicture"));
+				tmp.setProductId(rs.getInt("ProductId"));
+				tmp.setProductPrice(rs.getString("ProductPrice"));
+				tmp.setProductStatus(rs.getInt("ProductStatus"));
+				tmp.setUserId(rs.getInt("UserId"));
+
+				res.add(tmp);
+
+			}
+			stmt.close();
+			db.close();
+
+		} catch (URISyntaxException e) {
+			e.printStackTrace();
+			return new Reponse("ko", "Erreur sur le serveur");
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return new Reponse("ko", "Erreur sur le serveur");
+		}
+		return new Reponse("ok", res);
+	}
+	
+	// Supprision d'une annance
+	public Reponse deleteProduct(int id) {
+		try {
+
+			db = Connexion.getConnection();
+			String query = "DELETE FROM product WHERE productid = ?";
+			PreparedStatement preparedStmt = db.prepareStatement(query);
+			preparedStmt.setInt(1, id);
+
+			// execute the prepared statement
+			preparedStmt.execute();
+			preparedStmt.close();
+			db.close();
+			 
+
+		} catch (URISyntaxException e) {
+			e.printStackTrace();
+			return new Reponse("ko", "votre produit n'a pas pu etre suprimmer");
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return new Reponse("ko", "votre produit n'a pas pu etre suprimmer");
+		}
+
+		return new Reponse("ok", "votre produit est supprime avec succes");
+
+	}
+	
+	// Modifier une annance
+	public Reponse EditProduct(Product product) {
+
+		try {
+			
+			db = Connexion.getConnection();
+			String query = " UPDATE product SET productname = '"+ product.getProductName() +"', productdescription = '"+ product.getProductDescription() +"', "
+					+ " productprice = '"+ Integer.parseInt(product.getProductPrice()) +"', productpicture   = '"+ product.getProductPicture() +"' "
+							+ " WHERE ProductId = "+ product.getProductId() ;
+			
+			PreparedStatement preparedStmt = db.prepareStatement(query);	
+			preparedStmt.executeUpdate();
+ 
+			preparedStmt.close();
+			db.close();
+
+		} catch (URISyntaxException e) {
+			e.printStackTrace();
+			return new Reponse("ko", "votre produit n'a pas pu etre modifier ");
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return new Reponse("ko", "votre produit n'a pas pu etre modifier ");
+		}
+
+		return new Reponse("ok", " votre produit est modifier avec succes ");
+
+	}
+	// *******************************
+	
+	
 	public Reponse getProductDetails(Integer productId) {
 		
 		ProductDetail tmpProd = new ProductDetail();
@@ -240,59 +339,8 @@ public class ProductDAO {
 		return new Reponse("ok", tmpProd);
 
 	}
-	
-	public Reponse EditProduct(Product product) {
 
-		try {
-			
-			db = Connexion.getConnection();
-			String query = " UPDATE product SET productname = '"+ product.getProductName() +"', productdescription = '"+ product.getProductDescription() +"', "
-					+ " productprice = '"+ Integer.parseInt(product.getProductPrice()) +"', productpicture   = '"+ product.getProductPicture() +"' "
-							+ " WHERE ProductId = "+ product.getProductId() ;
-			
-			PreparedStatement preparedStmt = db.prepareStatement(query);	
-			preparedStmt.executeUpdate();
- 
-			preparedStmt.close();
-			db.close();
 
-		} catch (URISyntaxException e) {
-			e.printStackTrace();
-			return new Reponse("ko", "votre produit n'a pas pu etre modifier ");
-		} catch (SQLException e) {
-			e.printStackTrace();
-			return new Reponse("ko", "votre produit n'a pas pu etre modifier ");
-		}
-
-		return new Reponse("ok", " votre produit est modifier avec succes ");
-
-	}
-
-	public Reponse deleteProduct(int id) {
-		try {
-
-			db = Connexion.getConnection();
-			String query = "DELETE FROM product WHERE productid = ?";
-			PreparedStatement preparedStmt = db.prepareStatement(query);
-			preparedStmt.setInt(1, id);
-
-			// execute the prepared statement
-			preparedStmt.execute();
-			preparedStmt.close();
-			db.close();
-			 
-
-		} catch (URISyntaxException e) {
-			e.printStackTrace();
-			return new Reponse("ko", "votre produit n'a pas pu etre suprimmer");
-		} catch (SQLException e) {
-			e.printStackTrace();
-			return new Reponse("ko", "votre produit n'a pas pu etre suprimmer");
-		}
-
-		return new Reponse("ok", "votre produit est supprime avec succes");
-
-	}
 
 	public Reponse addReservation(Reservation reserv) {
 		try {
@@ -324,45 +372,6 @@ public class ProductDAO {
 
 	}
 
-	public Reponse MyPubs(int id) {
-
-		List<Product> res = new ArrayList<Product>();
-		Product tmp;
-
-		try {
-			db = Connexion.getConnection();
-
-			Statement stmt = db.createStatement();
-			ResultSet rs = stmt.executeQuery(
-					"SELECT * FROM Product WHERE  Product.UserId = " + id + " ORDER BY ProductDate DESC ");
-
-			while (rs.next()) {
-				tmp = new Product();
-
-				tmp.setProductName(rs.getString("ProductName"));
-				tmp.setProductDate(rs.getString("ProductDate"));
-				tmp.setProductDescription(rs.getString("ProductDescription"));
-				tmp.setProductPicture(rs.getString("ProductPicture"));
-				tmp.setProductId(rs.getInt("ProductId"));
-				tmp.setProductPrice(rs.getString("ProductPrice"));
-				tmp.setProductStatus(rs.getInt("ProductStatus"));
-				tmp.setUserId(rs.getInt("UserId"));
-
-				res.add(tmp);
-
-			}
-			stmt.close();
-			db.close();
-
-		} catch (URISyntaxException e) {
-			e.printStackTrace();
-			return new Reponse("ko", "Erreur sur le serveur");
-		} catch (SQLException e) {
-			e.printStackTrace();
-			return new Reponse("ko", "Erreur sur le serveur");
-		}
-		return new Reponse("ok", res);
-	}
 
 	public Reponse allProducts() {
 
@@ -404,4 +413,5 @@ public class ProductDAO {
 		return new Reponse("ok", res);
 	}
 
+	
 }

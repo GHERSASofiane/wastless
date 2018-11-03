@@ -13,25 +13,15 @@ import status.Reponse;
 public class ProductServices {
 
 	ProductDAO pr = new ProductDAO();
-
-//* ********* function fin
-	
-	public JsonObject getProductDetails(Integer productId)
-	{
-
-		if (!IsPresent( productId )) {
-			return JSonConverter.objectToJson(new Reponse("ko", "productId est obligatoire"));
-		}
 		
-		return JSonConverter.objectToJson(pr.getProductDetails(productId));
-	}
-	
+	// recherche des annances 
 	public JsonObject searchProduct(String nameArticle, int page)
 	{
 		
 		return JSonConverter.objectToJson(pr.searchProduct(nameArticle, page));
 	}
 	
+	// ajouter une annance
 	public JsonObject addProduct(Product product) {
 
 		if (!IsPresent(product.getProductName())) {
@@ -56,6 +46,27 @@ public class ProductServices {
 		return JSonConverter.objectToJson(pr.addProduct(product));
 	}
 
+	// recuperer les annances publier
+	public JsonObject MyPubs(int id) {
+
+		if (!IsPresent(id)) {
+			return JSonConverter.objectToJson(new Reponse("ko", "Pas d'identifiant pour la recherch "));
+		}
+
+		return JSonConverter.objectToJson(pr.MyPubs(id));
+	}
+	
+	// supprimer une annance	
+	public JsonObject DeleteProduct(int id) {
+
+		if (!IsPresent(id)) {
+			return JSonConverter.objectToJson(new Reponse("ko", "Pas d'identifiant pour la supprission "));
+		}
+
+		return JSonConverter.objectToJson(pr.deleteProduct(id));
+	}
+
+	// Modifier une annance
 	public JsonObject EditProduct(Product product) {
 
 		if (!IsPresent(product.getProductName())) {
@@ -77,23 +88,19 @@ public class ProductServices {
 		return JSonConverter.objectToJson(pr.EditProduct(product));
 	}
 	
-	public JsonObject DeleteProduct(int id) {
+	// *******************************************
 
-		if (!IsPresent(id)) {
-			return JSonConverter.objectToJson(new Reponse("ko", "Pas d'identifiant pour la supprission "));
+	public JsonObject getProductDetails(Integer productId)
+	{
+
+		if (!IsPresent( productId )) {
+			return JSonConverter.objectToJson(new Reponse("ko", "productId est obligatoire"));
 		}
-
-		return JSonConverter.objectToJson(pr.deleteProduct(id));
+		
+		return JSonConverter.objectToJson(pr.getProductDetails(productId));
 	}
 
-	public JsonObject MyPubs(int id) {
 
-		if (!IsPresent(id)) {
-			return JSonConverter.objectToJson(new Reponse("ko", "Pas d'identifiant pour la recherch "));
-		}
-
-		return JSonConverter.objectToJson(pr.MyPubs(id));
-	}
 
 	public JsonObject addReservation(Reservation reserv) {
 

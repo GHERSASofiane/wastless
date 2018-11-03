@@ -66,7 +66,7 @@ public class PriceYuge {
 	 
 	public static JsonObject searchProduct(String productName)
 	{
-		String uri = url_api + "search?api_key="+ apiKey + "&product="+productName;
+		String uri = url_api + "search?api_key="+ apiKey + "&product="+productName+"&page=1";
 		return new JsonParser().parse(getResult(uri)).getAsJsonObject();
 		
 	}

@@ -62,7 +62,7 @@ public class PriceYuge {
 		String uri = url_api + "list/categories?api_key="+ apiKey + "&page=1";
 		return JSonConverter.objectToJson(getResult(uri));
 	}
-	
+	 
 	public static JsonObject searchProduct(String productName)
 	{
 		String uri = url_api + "search?api_key="+ apiKey + "&product="+productName;

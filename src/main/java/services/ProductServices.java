@@ -88,6 +88,7 @@ public class ProductServices {
 		return JSonConverter.objectToJson(pr.EditProduct(product));
 	}
 	
+	
 	// *******************************************
 
 	public JsonObject getProductDetails(Integer productId)

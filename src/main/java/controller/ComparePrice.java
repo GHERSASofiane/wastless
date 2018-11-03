@@ -48,7 +48,7 @@ public class ComparePrice extends HttpServlet {
 		
 		for(int i = 0; i < 10; i++)
 		{
-			System.out.println("---------------------------------------> : " + data.get(i).getAsString());
+			System.out.println("---------------------------------------> : " + data.get(i).getAsJsonObject().getAsString());
 			System.out.println("-------------------------------------------");
 			
 			/**

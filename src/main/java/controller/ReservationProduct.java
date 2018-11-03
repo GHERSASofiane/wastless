@@ -29,25 +29,39 @@ public class ReservationProduct extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */ 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	       // Récuperer le PrintWriter Pour envoyer la réponse
         PrintWriter resp = response.getWriter();
 
-        JsonObject jsObj = Readers.getJSONfromRequest(request);
-        
-        Reservation reserv = new Reservation();
-        reserv = (Reservation) JSonConverter.objectFromJson(jsObj, reserv);
-        
-		
+        String ids = request.getParameter("id");
+        int id = Integer.parseInt(ids);
+         
         
         // Préparer la répense
         ProductServices rep = new ProductServices(); 
 		// Envoie de réponse 
-        resp.println(rep.addReservation(reserv)); 
+        resp.println(rep.GetReservationReq(id)); 
         resp.flush();
+		
+		
+	}
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	       // Récuperer le PrintWriter Pour envoyer la réponse
+     PrintWriter resp = response.getWriter();
+
+     JsonObject jsObj = Readers.getJSONfromRequest(request);
+     
+     Reservation reserv = new Reservation();
+     reserv = (Reservation) JSonConverter.objectFromJson(jsObj, reserv);
+     
+		
+     
+     // Préparer la répense
+     ProductServices rep = new ProductServices(); 
+		// Envoie de réponse 
+     resp.println(rep.addReservation(reserv)); 
+     resp.flush();
 		
 		
 	}

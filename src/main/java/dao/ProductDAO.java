@@ -199,6 +199,47 @@ public class ProductDAO {
 		return new Reponse("ok", tmpProd);
 
 	}
+
+	public Reponse GetReservationReq(Integer productId) {
+		
+		ProductDetail tmpProd = new ProductDetail();
+
+		try {
+			db = Connexion.getConnection();
+
+			Statement stmt = db.createStatement();
+			ResultSet rs = stmt
+					.executeQuery("SELECT * FROM Reservation, Users WHERE Reservation.chatsend = Users.userid AND chatproduct = "
+							+ productId + ";");
+			while (rs.next()) {
+
+				tmpProd.setProductName(rs.getString("ProductName"));
+				tmpProd.setProductDate(rs.getString("ProductDate"));
+				tmpProd.setProductDescription(rs.getString("ProductDescription"));
+				tmpProd.setProductPicture(rs.getString("ProductPicture"));
+				tmpProd.setProductId(rs.getInt("ProductId"));
+				tmpProd.setProductPrice(rs.getString("ProductPrice"));
+				tmpProd.setProductStatus(rs.getInt("ProductStatus"));
+				tmpProd.setUserId(rs.getInt("UserId"));
+				tmpProd.setUserName(rs.getString("UserName"));
+				tmpProd.setUserMail(rs.getString("UserMail"));
+				tmpProd.setUserAdress(rs.getString("UserAdress"));
+				tmpProd.setUserPhone(rs.getInt("UserPhone"));
+
+			}
+			db.close();
+
+		} catch (URISyntaxException e) {
+			e.printStackTrace();
+			return new Reponse("ko", "Erreur sur le serveur");
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return new Reponse("ko", "Erreur sur le serveur");
+		}
+
+		return new Reponse("ok", tmpProd);
+
+	}
 	
 	public Reponse EditProduct(Product product) {
 

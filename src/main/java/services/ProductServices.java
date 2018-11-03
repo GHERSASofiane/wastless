@@ -116,6 +116,15 @@ public class ProductServices {
 		return JSonConverter.objectToJson(pr.addReservation(reserv));
 	}
 
+	public JsonObject GetReservationReq(int id) {
+
+		if (!IsPresent(id)) {
+			return JSonConverter.objectToJson(new Reponse("ko", "ID  est obligatoire "));
+		}
+
+		return JSonConverter.objectToJson(pr.GetReservationReq(id));
+	}
+
 // ****** fonction utiles
 
 	private boolean IsPresent(String arg) {

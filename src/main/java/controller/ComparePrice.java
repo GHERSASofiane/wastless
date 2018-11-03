@@ -45,13 +45,14 @@ public class ComparePrice extends HttpServlet {
 		{
 			
 			JsonObject product = o.getAsJsonObject();
-			if(product.get("can_compare").getAsBoolean())
+			if(product.get("product_name").getAsString().contains(productName) && product.get("can_compare").getAsBoolean())
 			{
 				JsonObject prices = PriceYuge.productPrices(product.get("product_id").getAsString());
 				product.add("prices", prices);
+				result.add(product);
 			}
 			
-			result.add(product);
+			
 			
 		}
 		

@@ -50,7 +50,7 @@ public class ComparePrice extends HttpServlet {
 		{
 			System.out.println("---------------------------------------> : " + data.get(i).getAsJsonObject().getAsString());
 			System.out.println("-------------------------------------------");
-			
+			 
 			/**
 			JsonObject product = data.get(i).getAsJsonObject();
 			if(product.get("product_name").getAsString().contains(productName) && product.get("can_compare").getAsBoolean())

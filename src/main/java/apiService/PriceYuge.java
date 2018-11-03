@@ -57,7 +57,7 @@ public class PriceYuge {
 		if(output.length() == 0)
 			return new JsonObject();
 		else
-		return JSonConverter.objectToJson(output.toString());
+		return new JsonParser().parse(output.toString()).getAsJsonObject();
 	}
 	
 	public static JsonObject listCategories()

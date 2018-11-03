@@ -40,8 +40,8 @@ public class ComparePrice extends HttpServlet {
 		JsonObject obj = PriceYuge.searchProduct(productName);
 		JsonArray data = obj.getAsJsonArray("data");
 		
-		System.out.println("data ---------------------------------------> : ");
-		System.out.println(data.getAsString());
+		System.out.println("data ---------------------------------------> : " + data.size());
+		
 		System.out.println(" ---------------------------------------> : ");
 		
 		JsonArray result = new JsonArray();

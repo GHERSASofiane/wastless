@@ -19,7 +19,7 @@ public class PriceYuge {
 	private final static String url_api = "https://price-api.datayuge.com/api/v1/compare/";
 	private final static String apiKey = "6ot45T5iehVXKizmj23rbyatgifuj1jUaxu";
 	
-	public static String getResult(String uri)
+	public static JsonObject getResult(String uri)
 	{
 		URL url;
 		StringBuilder output = new StringBuilder();
@@ -54,45 +54,48 @@ public class PriceYuge {
 			e.printStackTrace();
 		}
 		
-		return output.toString();
+		if(output.length() == 0)
+			return new JsonObject();
+		else
+		return JSonConverter.objectToJson(output.toString());
 	}
 	
 	public static JsonObject listCategories()
 	{
 	
 		String uri = url_api + "list/categories?api_key="+ apiKey + "&page=1";
-		return JSonConverter.objectToJson(getResult(uri));
+		return getResult(uri);
 	}
 	 
 	public static JsonObject searchProduct(String productName)
 	{
 		String uri = url_api + "search?api_key="+ apiKey + "&product="+productName+"&page=1";
-		return new JsonParser().parse(getResult(uri)).getAsJsonObject();
+		return getResult(uri);
 		
 	}
 	
 	public static JsonObject detail(String productId)
 	{
 		String uri = url_api + "detail?api_key="+ apiKey + "&id="+productId;
-		return new JsonParser().parse(getResult(uri)).getAsJsonObject();
+		return getResult(uri);
 	}
 	
 	public static JsonObject specs(String productId)
 	{
 		String uri = url_api + "specs?api_key="+ apiKey + "&id="+productId;
-		return new JsonParser().parse(getResult(uri)).getAsJsonObject();
+		return getResult(uri);
 	}
 	
 	public static JsonObject productImage(String productId)
 	{
 		String uri = url_api + "images?api_key="+ apiKey + "&id="+productId;
-		return new JsonParser().parse(getResult(uri)).getAsJsonObject();
+		return getResult(uri);
 	}
 	
 	public static JsonObject productPrices(String productId)
 	{
 		String uri = url_api + "price?api_key="+ apiKey + "&id="+productId;
-		return new JsonParser().parse(getResult(uri)).getAsJsonObject();
+		return getResult(uri);
 	}
 	
 	

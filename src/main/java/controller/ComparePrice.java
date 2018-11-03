@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
+
 import com.google.gson.JsonObject;
 
 import apiService.PriceYuge;
@@ -41,10 +41,10 @@ public class ComparePrice extends HttpServlet {
 		JsonArray data = obj.getAsJsonArray("data");
 		JsonArray result = new JsonArray();
 		
-		for(JsonElement o : data)
+		for(int i = 0; i < 10; i++)
 		{
 			
-			JsonObject product = o.getAsJsonObject();
+			JsonObject product = data.get(i).getAsJsonObject();
 			if(product.get("product_name").getAsString().contains(productName) && product.get("can_compare").getAsBoolean())
 			{
 				JsonObject prices = PriceYuge.productPrices(product.get("product_id").getAsString());

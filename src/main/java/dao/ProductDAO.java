@@ -339,7 +339,7 @@ public class ProductDAO {
 
 			Statement stmt = db.createStatement();
 			ResultSet rs = stmt
-					.executeQuery("SELECT * FROM Reservation, Users WHERE Product.ProductId = Reservation.chatproduct AND Reservation.chatsend = Users.userid AND chatproduct = "
+					.executeQuery("SELECT * FROM Product, Reservation, Users WHERE Product.ProductId = Reservation.chatproduct AND Reservation.chatsend = Users.userid AND chatproduct = "
 							+ productId + ";");
 			while (rs.next()) {
 

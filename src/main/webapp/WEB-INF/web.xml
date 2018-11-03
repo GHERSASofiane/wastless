@@ -66,10 +66,10 @@
 		<servlet-class>controller.SignUp</servlet-class>
 	</servlet>
 	<servlet>
-		<servlet-name>ReservationProduit</servlet-name>
-		<display-name>ReservationProduit</display-name>
+		<servlet-name>ReservationProduct</servlet-name>
+		<display-name>ReservationProduct</display-name>
 		<description></description>
-		<servlet-class>controller.ReservationProduit</servlet-class>
+		<servlet-class>controller.ReservationProduct</servlet-class>
 	</servlet>
 	<servlet>
 		<servlet-name>ValidateProduct</servlet-name>
@@ -154,8 +154,8 @@
 		<url-pattern>/signup</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
-		<servlet-name>ReservationProduit</servlet-name>
-		<url-pattern>/ReservationProduit</url-pattern>
+		<servlet-name>ReservationProduct</servlet-name>
+		<url-pattern>/ReservationProduct</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>ValidateProduct</servlet-name>

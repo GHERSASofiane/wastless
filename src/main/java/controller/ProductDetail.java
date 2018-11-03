@@ -8,8 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
-import services.ProductService;
+import services.ProductServices;
 
 public class ProductDetail extends HttpServlet {
 
@@ -28,12 +27,12 @@ public class ProductDetail extends HttpServlet {
         if (ProductId == null) {
             ProductId = "";
         }
-        ProductId = ProductId.toLowerCase();
+        int p = Integer.parseInt(ProductId); 
 
         // Préparer la répense
-        ProductService rep = new ProductService();
+        ProductServices rep = new ProductServices();
         // Envoie de réponse
-        resp.println(rep.getProductDetails(ProductId));
+        resp.println(rep.getProductDetails(p));
         resp.flush();
 
     }

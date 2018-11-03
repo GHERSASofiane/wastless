@@ -7,12 +7,16 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import services.ProductService;
+ 
 import services.ProductServices; 
 
 public class DeleteProduct  extends HttpServlet {
-	public DeleteProduct() { }
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public DeleteProduct() { super(); }
 	
 	@Override
 	protected void doDelete(HttpServletRequest req, HttpServletResponse response) throws ServletException, IOException {

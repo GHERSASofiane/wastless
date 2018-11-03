@@ -7,6 +7,7 @@ import com.google.gson.JsonObject;
 import converters.JSonConverter;
 import dao.ProductDAO;
 import models.Product;
+import models.Reservation;
 import status.Reponse;
 
 public class ProductServices {
@@ -14,6 +15,23 @@ public class ProductServices {
 	ProductDAO pr = new ProductDAO();
 
 //* ********* function fin
+	
+	public JsonObject getProductDetails(Integer productId)
+	{
+
+		if (!IsPresent( productId )) {
+			return JSonConverter.objectToJson(new Reponse("ko", "productId est obligatoire"));
+		}
+		
+		return JSonConverter.objectToJson(pr.getProductDetails(productId));
+	}
+	
+	public JsonObject searchProduct(String nameArticle, int page)
+	{
+		
+		return JSonConverter.objectToJson(pr.searchProduct(nameArticle, page));
+	}
+	
 	public JsonObject addProduct(Product product) {
 
 		if (!IsPresent(product.getProductName())) {
@@ -28,7 +46,9 @@ public class ProductServices {
 		if (!IsPresent(product.getUserId())) {
 			return JSonConverter.objectToJson(new Reponse("ko", "UserId  est obligatoire"));
 		}
-		// TODO image
+		if (!IsPresent(product.getProductPicture())) {
+			return JSonConverter.objectToJson(new Reponse("ko", "ProductPicture  est obligatoire"));
+		} 
 
 		product.setProductDate(getDate());
 		product.setProductStatus(0);
@@ -50,8 +70,10 @@ public class ProductServices {
 		if (!IsPresent(product.getUserId())) {
 			return JSonConverter.objectToJson(new Reponse("ko", "UserId  est obligatoire"));
 		}
-		// TODO image
-  
+		if (!IsPresent(product.getProductPicture())) {
+			return JSonConverter.objectToJson(new Reponse("ko", "ProductPicture  est obligatoire"));
+		} 
+		
 		return JSonConverter.objectToJson(pr.EditProduct(product));
 	}
 	
@@ -71,6 +93,36 @@ public class ProductServices {
 		}
 
 		return JSonConverter.objectToJson(pr.MyPubs(id));
+	}
+
+	public JsonObject addReservation(Reservation reserv) {
+
+		if (!IsPresent(reserv.getReservationDate())) {
+			return JSonConverter.objectToJson(new Reponse("ko", "getReservationDate  est obligatoire "));
+		}
+		if (!IsPresent(reserv.getReservationMessage())) {
+			return JSonConverter.objectToJson(new Reponse("ko", "getReservationMessage  est obligatoire "));
+		}
+		if (!IsPresent(reserv.getReservationProduct())) {
+			return JSonConverter.objectToJson(new Reponse("ko", "getReservationProduct  est obligatoire "));
+		}
+		if (!IsPresent(reserv.getReservationReceive())) {
+			return JSonConverter.objectToJson(new Reponse("ko", "getReservationReceive  est obligatoire "));
+		}
+		if (!IsPresent(reserv.getReservationSend())) {
+			return JSonConverter.objectToJson(new Reponse("ko", "getReservationSend  est obligatoire "));
+		}
+
+		return JSonConverter.objectToJson(pr.addReservation(reserv));
+	}
+
+	public JsonObject GetReservationReq(int id) {
+
+		if (!IsPresent(id)) {
+			return JSonConverter.objectToJson(new Reponse("ko", "ID  est obligatoire "));
+		}
+
+		return JSonConverter.objectToJson(pr.GetReservationReq(id));
 	}
 
 // ****** fonction utiles

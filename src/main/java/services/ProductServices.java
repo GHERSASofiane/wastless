@@ -88,9 +88,8 @@ public class ProductServices {
 		return JSonConverter.objectToJson(pr.EditProduct(product));
 	}
 	
-	
-	// *******************************************
 
+	// recuperer les details d'une annance
 	public JsonObject getProductDetails(Integer productId)
 	{
 
@@ -101,6 +100,9 @@ public class ProductServices {
 		return JSonConverter.objectToJson(pr.getProductDetails(productId));
 	}
 
+
+	
+	// *******************************************
 
 
 	public JsonObject addReservation(Reservation reserv) {

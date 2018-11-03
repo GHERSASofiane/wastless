@@ -255,9 +255,8 @@ public class ProductDAO {
 		return new Reponse("ok", " votre produit est modifier avec succes ");
 
 	}
-	// *******************************
 	
-	
+	// recuperer les details d'une annance
 	public Reponse getProductDetails(Integer productId) {
 		
 		ProductDetail tmpProd = new ProductDetail();
@@ -298,6 +297,11 @@ public class ProductDAO {
 		return new Reponse("ok", tmpProd);
 
 	}
+	
+	
+	// *******************************
+	
+
 
 	public Reponse GetReservationReq(Integer productId) {
 		

@@ -10,6 +10,7 @@ import java.net.ProtocolException;
 import java.net.URL;
 
 import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 
 import converters.JSonConverter;
 
@@ -66,7 +67,8 @@ public class PriceYuge {
 	public static JsonObject searchProduct(String productName)
 	{
 		String uri = url_api + "search?api_key="+ apiKey + "&product="+productName;
-		return JSonConverter.objectToJson(getResult(uri));
+		return new JsonParser().parse(getResult(uri)).getAsJsonObject();
+		
 	}
 	
 	public static JsonObject detail(String productId)

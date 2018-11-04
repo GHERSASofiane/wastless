@@ -1,5 +1,7 @@
 package apiService;
 
+
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -9,10 +11,14 @@ import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
 
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
-import converters.JSonConverter;
+
+
+
 
 public class PriceYuge {
 
@@ -52,12 +58,16 @@ public class PriceYuge {
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		} 
 		
 		if(output.length() == 0)
 			return new JsonObject();
 		else
-		return new JsonParser().parse(output.toString()).getAsJsonObject();
+		{
+		JsonParser parser = new JsonParser();
+		JsonObject res = (JsonObject) parser.parse(output.toString());
+		return res;
+		}
 	}
 	
 	public static JsonObject listCategories()
@@ -99,16 +109,51 @@ public class PriceYuge {
 	}
 	
 	
+	public static JsonObject getPrices(JsonObject tempObj)
+	{
+		JsonObject prices = PriceYuge.productPrices(tempObj.get("product_id").getAsString());
+		
+		JsonObject obj = new JsonObject();
+		obj.addProperty("product_title", tempObj.get("product_title").getAsString());
+		obj.add("prices", prices);
+		
+		System.out.println(obj);
+		return obj;
+	}
 	
 	
+	public static JsonArray getPricesOfAllProducts(String productTitle)
+	{
+		JsonObject res = PriceYuge.searchProduct(productTitle);
+		JsonArray data = (JsonArray) res.get("data");
+		JsonArray result = new JsonArray();
+		
+		if(data.size() > 10)
+			for(int i = 0; i<10; i++)
+			{
+				JsonObject tempObj = (JsonObject) data.get(i);	
+				result.add(PriceYuge.getPrices(tempObj));
+			}
+		else
+			for(JsonElement ele: data)
+			{
+				
+				JsonObject tempObj = (JsonObject) ele;
+				result.add(PriceYuge.getPrices(tempObj));
+			}
+		
+		return result;
+	}
 	
 	/**
 	public static void main(String[] args) {
 		PriceYuge.listCategories();
 		System.out.println("----------------- search -------------------------");
-		PriceYuge.searchProduct("sony");
-		System.out.println("----------------- detail -------------------------");
-		PriceYuge.detail("ZToxMjIyNA");
+		
+		System.out.println(PriceYuge.getPricesOfAllProducts("sony"));
+		
+//		System.out.println("----------------- detail -------------------------");
+//		PriceYuge.detail("ZToxMjIyNA");
 	}
 	*/
 }

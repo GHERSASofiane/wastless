@@ -38,31 +38,7 @@ public class ComparePrice extends HttpServlet {
 		
 		String productName = request.getParameter("productName");
 		
-		JsonObject obj = PriceYuge.searchProduct(productName);
-		JsonArray data = obj.getAsJsonArray("data");
-		
-		
-		
-		
-		JsonArray result = new JsonArray();
-		
-		for(int i = 0; i < 10; i++)
-		{
-			System.out.println("---------------------------------------> : " + data.get(i).getAsJsonObject().getAsString());
-			System.out.println("-------------------------------------------");
-			 
-			/**
-			JsonObject product = data.get(i).getAsJsonObject();
-			if(product.get("product_name").getAsString().contains(productName) && product.get("can_compare").getAsBoolean())
-			{
-				JsonObject prices = PriceYuge.productPrices(product.get("product_id").getAsString());
-				product.add("prices", prices);
-				result.add(product);
-			}
-			
-			 */
-			
-		}
+		JsonArray result = PriceYuge.getPricesOfAllProducts(productName);
 		
 		PrintWriter resp = response.getWriter();
         resp.println(result);

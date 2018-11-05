@@ -8,9 +8,10 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.swing.plaf.synth.SynthScrollBarUI;
 
 import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
+
 import com.google.gson.JsonObject;
 
 import apiService.PriceYuge;
@@ -37,24 +38,7 @@ public class ComparePrice extends HttpServlet {
 		
 		String productName = request.getParameter("productName");
 		
-		JsonObject obj = PriceYuge.searchProduct(productName);
-		JsonArray data = obj.getAsJsonArray("data");
-		JsonArray result = new JsonArray();
-		
-		for(JsonElement o : data)
-		{
-			
-			JsonObject product = o.getAsJsonObject();
-			if(product.get("product_name").getAsString().contains(productName) && product.get("can_compare").getAsBoolean())
-			{
-				JsonObject prices = PriceYuge.productPrices(product.get("product_id").getAsString());
-				product.add("prices", prices);
-				result.add(product);
-			}
-			
-			 
-			
-		}
+		JsonArray result = PriceYuge.getPricesOfAllProducts(productName);
 		
 		PrintWriter resp = response.getWriter();
         resp.println(result);

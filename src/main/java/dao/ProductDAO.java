@@ -404,7 +404,7 @@ public class ProductDAO {
 		
 		// ajouter dans la table achat
 		String RInsert = "INSERT INTO Booking(bookingDated,productId,userId) VALUES(?,?,?);";
-		preparedStmt = db.prepareStatement(RDelete);
+		preparedStmt = db.prepareStatement(RInsert);
 		preparedStmt.setString(1, this.getDate());
 		preparedStmt.setInt(2, reserv.getProductId());
 		preparedStmt.setInt(3, reserv.getReservationSend());

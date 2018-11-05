@@ -17,9 +17,6 @@ import services.ProductServices;
 import status.Reponse;
 
 
-/**
- * Servlet implementation class ReservationProduit
- */
 public class ReservationProduct extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

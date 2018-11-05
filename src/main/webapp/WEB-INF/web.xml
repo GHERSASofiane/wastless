@@ -66,6 +66,12 @@
 		<servlet-class>controller.SignUp</servlet-class>
 	</servlet>
 	<servlet>
+		<servlet-name>ReservationValidate</servlet-name>
+		<display-name>ReservationValidate</display-name>
+		<description></description>
+		<servlet-class>controller.ReservationValidate</servlet-class>
+	</servlet>
+	<servlet>
 		<servlet-name>ReservationProduct</servlet-name>
 		<display-name>ReservationProduct</display-name>
 		<description></description>
@@ -121,6 +127,10 @@
 	</servlet>
 
 
+	<servlet-mapping>
+		<servlet-name>ReservationValidate</servlet-name>
+		<url-pattern>/ReservationValidate</url-pattern>
+	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>MyPubs</servlet-name>
 		<url-pattern>/MyPubs</url-pattern>

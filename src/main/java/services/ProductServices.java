@@ -121,8 +121,8 @@ public class ProductServices {
 
 		return JSonConverter.objectToJson(pr.addReservation(reserv));
 	}
-	
 
+	// recuperer les reservations demander pour un produit donner
 	public JsonObject GetReservationReq(int id) {
 
 		if (!IsPresent(id)) {
@@ -130,6 +130,16 @@ public class ProductServices {
 		}
 
 		return JSonConverter.objectToJson(pr.GetReservationReq(id));
+	}
+	
+	// recuperer les reservations demander pour un produit donner
+	public JsonObject ReservationValidate(Reservation reserv) {
+
+		if (!IsPresent(reserv.getProductId())) {
+			return JSonConverter.objectToJson(new Reponse("ko", "ID  est obligatoire "));
+		}
+
+		return JSonConverter.objectToJson(pr.ReservationValidate(reserv));
 	}
 	
 	// *******************************************

@@ -9,6 +9,7 @@ import java.sql.Statement;
 
 import configuration.Connexion;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import models.*;
@@ -382,6 +383,48 @@ public class ProductDAO {
 
 	}
 	
+	// Valider une demande de reservation et annuler les autre demande de cette annance et passer le satuts de cette annance a 1 qui veux dire c'est deja reserver
+	public Reponse ReservationValidate(Reservation reserv) {
+		
+		try {
+			
+		db = Connexion.getConnection();
+		
+		// changer le status
+		String RChange = "UPDATE Product SET ProductStatus = 1 WHERE ProductId = ?;";
+		PreparedStatement preparedStmt = db.prepareStatement(RChange);
+		preparedStmt.setInt(1, reserv.getProductId());
+		preparedStmt.execute();
+		
+		// supprimer de la table reservation
+		String RDelete = "DELETE FROM Reservation WHERE chatproduct = ?;";
+		preparedStmt = db.prepareStatement(RDelete);
+		preparedStmt.setInt(1, reserv.getProductId());
+		preparedStmt.execute();
+		
+		// ajouter dans la table achat
+		String RInsert = "INSERT INTO Booking(bookingDated,productId,userId) VALUES(?,?,?);";
+		preparedStmt = db.prepareStatement(RDelete);
+		preparedStmt.setString(1, this.getDate());
+		preparedStmt.setInt(2, reserv.getProductId());
+		preparedStmt.setInt(3, reserv.getReservationSend());
+		preparedStmt.execute();
+
+		preparedStmt.close();
+		db.close();
+		
+		} catch (URISyntaxException e) {
+			e.printStackTrace();
+			return new Reponse("ko", "votre Validation n'a pas pu etre effectuer");
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return new Reponse("ko", "votre Validation n'a pas pu etre effectuer");
+		}
+		
+		return new Reponse("ok", "L'operation de Validation est bien passer :) :) ");
+		
+	}
+		
 	// *******************************
 	
 
@@ -430,5 +473,16 @@ public class ProductDAO {
 		return new Reponse("ok", res);
 	}
 
+	public String getDate() {
+		String Mydate = "";
+		Calendar calendar = Calendar.getInstance();
+		Mydate = Mydate.concat(Integer.toString(calendar.get(calendar.YEAR)));
+		Mydate = Mydate.concat("-");
+		Mydate = Mydate.concat(Integer.toString(calendar.get(calendar.MONTH) + 1));
+		Mydate = Mydate.concat("-");
+		Mydate = Mydate.concat(Integer.toString(calendar.get(calendar.DAY_OF_MONTH)));
+
+		return Mydate;
+	}
 	
 }

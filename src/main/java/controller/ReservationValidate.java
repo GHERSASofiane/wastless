@@ -13,8 +13,7 @@ import com.google.gson.JsonObject;
 import converters.JSonConverter;
 import helpers.Readers;
 import models.Reservation;
-import services.ProductServices;
-import status.Reponse;
+import services.ProductServices; 
 
 public class ReservationValidate extends HttpServlet {
 
@@ -34,11 +33,10 @@ public class ReservationValidate extends HttpServlet {
 		Reservation reserv = new Reservation();
 		reserv = (Reservation) JSonConverter.objectFromJson(jsObj, reserv);
 
-		// Préparer la répense
-//  ProductServices rep = new ProductServices(); 
-//		// Envoie de réponse 
-//  resp.println(rep.addReservation(reserv)); 
-		resp.println(JSonConverter.objectToJson(new Reponse("ok", "id est : " + reserv.getProductId())));
+		// Préparer la réponse
+		ProductServices rep = new ProductServices();
+		// Envoie de réponse
+		resp.println(rep.ReservationValidate(reserv));  
 		resp.flush();
 
 	}

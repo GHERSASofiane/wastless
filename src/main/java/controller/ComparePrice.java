@@ -40,6 +40,7 @@ public class ComparePrice extends HttpServlet {
 		String productName = request.getParameter("productName");
 		
 	//	JsonArray result = PriceYuge.getPricesOfAllProducts(productName);
+		JsonObject result = PriceAPI.searchProduct(productName);
 		
 		while(!PriceAPI.isFinished)
 		{
@@ -50,7 +51,7 @@ public class ComparePrice extends HttpServlet {
 				e.printStackTrace();
 			}
 		}
-		JsonObject result = PriceAPI.searchProduct(productName);
+		
 		PriceAPI.isFinished = false;
 		PrintWriter resp = response.getWriter();
         resp.println(result);

@@ -11,9 +11,12 @@ import javax.servlet.http.HttpServletResponse;
 import com.google.gson.JsonObject;
 
 import converters.JSonConverter;
+import emailOperations.EmailVerification;
 import helpers.Readers;
 import models.Personne;
+
 import services.ProfileService;
+import status.Reponse;
 import tokens.AutorisationAcess;
 
 /**
@@ -46,8 +49,23 @@ public class SignUp extends HttpServlet {
 		 Personne personne = new Personne();
 		 personne = (Personne) JSonConverter.objectFromJson(jsObj, personne);
 		  
-		ProfileService pers = new ProfileService();
-		JsonObject obj = pers.inscription( personne);
+		 JsonObject obj;
+		 
+		 try
+		 {
+		 if(EmailVerification.isAddressValid(personne.getUserMail())) {
+			 ProfileService pers = new ProfileService();
+			 obj = pers.inscription( personne);
+		 }
+		 else
+		 {
+			 obj = JSonConverter.objectToJson(new Reponse("ko", personne.getUserMail() + "not vailde"));
+		 }
+		 } catch(Exception e)
+		 {
+			 obj = JSonConverter.objectToJson(new Reponse("ko", personne.getUserMail() + "not vailde")); 
+		 }
+		 
 				 
 		
 		

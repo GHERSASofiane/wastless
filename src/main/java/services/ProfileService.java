@@ -1,7 +1,5 @@
 package services;
 
-import javax.servlet.http.HttpServletRequest;
-
 import com.google.gson.JsonObject;
 
 import converters.JSonConverter;
@@ -45,5 +43,13 @@ public class ProfileService {
 	JsonObject res = JSonConverter.objectToJson(reponse);
 	return res;
 	}
-
+	
+	
+	public JsonObject forgotMail(String email)
+	{
+	ProfileDAO pdao= new ProfileDAO();
+	Reponse reponse = pdao.forgotMail(email);
+	JsonObject res = JSonConverter.objectToJson(reponse);
+	return res;
+	}
 }

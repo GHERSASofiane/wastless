@@ -128,6 +128,7 @@ public class PriceYuge {
 		JsonArray data = (JsonArray) res.get("data");
 		JsonArray result = new JsonArray();
 		
+		if(data != null)
 		if(data.size() > 10)
 			for(int i = 0; i<10; i++)
 			{

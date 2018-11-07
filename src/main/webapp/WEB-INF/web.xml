@@ -124,6 +124,12 @@
 		<description></description>
 		<servlet-class>controller.ComparePrice</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>ForgotMail</servlet-name>
+		<display-name>ForgotMail</display-name>
+		<description></description>
+		<servlet-class>controller.ForgotMail</servlet-class>
+	</servlet>
 
 
 	<servlet-mapping>
@@ -197,5 +203,9 @@
 	<servlet-mapping>
 		<servlet-name>ComparePrice</servlet-name>
 		<url-pattern>/compare</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ForgotMail</servlet-name>
+		<url-pattern>/forgotMail</url-pattern>
 	</servlet-mapping>
 </web-app>

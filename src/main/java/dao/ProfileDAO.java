@@ -218,4 +218,58 @@ public class ProfileDAO {
 		return true;
 	}
 
+	
+	public Reponse forgotMail(String email)
+	{
+		String req = "select count(*) from users where userMail =?;";
+		String password = "";
+		try {
+			
+		db = Connexion.getConnection();
+		PreparedStatement pst = db.prepareStatement(req);
+		pst.setString(1, email);
+		
+
+		ResultSet rs = pst.executeQuery();
+		int count = 0;
+		while (rs.next()) {
+			count = rs.getInt(1);
+		}
+
+		if (count == 0)
+		{
+			pst.close();
+			rs.close();
+			db.close();
+			return new Reponse("ko", "mail don't exist");
+		}
+		else
+		{
+			req = "select userPassword from users where userMail =?;";
+			pst = db.prepareStatement(req);
+			pst.setString(1, email);
+			
+
+			 rs = pst.executeQuery();
+			
+			while (rs.next()) {
+				password = rs.getString(1);
+			}
+		}
+
+		pst.close();
+		rs.close();
+		db.close();
+
+	} 
+		catch (Exception e) {
+		e.printStackTrace();
+		return new Reponse("ko", "mail don't exist");
+	} 
+
+		
+		return new Reponse("ok", password);
+		
+	}
+	
 }

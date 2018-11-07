@@ -38,9 +38,11 @@ public class ComparePrice extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String productName = request.getParameter("productName");
+		System.out.println("---------------------" + productName + "---------------------");
+		
 		
 	//	JsonArray result = PriceYuge.getPricesOfAllProducts(productName);
-		JsonObject result = PriceAPI.searchProduct(productName);
+		JsonObject result = PriceAPI.searchProduct(productName.replaceAll("%20", " "));
 		
 		while(!PriceAPI.isFinished)
 		{

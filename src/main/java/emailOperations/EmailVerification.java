@@ -32,7 +32,7 @@ public class EmailVerification {
 	    private static ArrayList<String> getMX( String hostName )
 	          throws NamingException {
 	      // Perform a DNS lookup for MX records in the domain
-	      Hashtable<String, String> env = new Hashtable<>();
+	      Hashtable<String, String> env = new Hashtable<String, String>();
 	      env.put("java.naming.factory.initial",
 	              "com.sun.jndi.dns.DnsContextFactory");
 	      DirContext ictx = new InitialDirContext( env ); 
@@ -50,7 +50,7 @@ public class EmailVerification {
 	      // Huzzah! we have machines to try. Return them as an array list
 	      // NOTE: We SHOULD take the preference into account to be absolutely
 	      //   correct. This is left as an exercise for anyone who cares.
-	      ArrayList<String> res = new ArrayList<>();
+	      ArrayList<String> res = new ArrayList<String>();
 	      NamingEnumeration<?> en = attr.getAll();
 	      while ( en.hasMore() ) {
 	         String x = (String) en.next();

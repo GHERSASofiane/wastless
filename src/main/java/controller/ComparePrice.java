@@ -42,7 +42,7 @@ public class ComparePrice extends HttpServlet {
 		
 		
 	//	JsonArray result = PriceYuge.getPricesOfAllProducts(productName);
-		JsonObject result = PriceAPI.searchProduct(productName.replaceAll("%20", " "));
+		JsonObject result = PriceAPI.searchProduct(productName.replaceAll(" ", "%20"));
 		
 		while(!PriceAPI.isFinished)
 		{

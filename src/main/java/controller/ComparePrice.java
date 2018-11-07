@@ -40,7 +40,18 @@ public class ComparePrice extends HttpServlet {
 		String productName = request.getParameter("productName");
 		
 	//	JsonArray result = PriceYuge.getPricesOfAllProducts(productName);
+		
+		while(!PriceAPI.isFinished)
+		{
+			try {
+				Thread.sleep(100);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 		JsonObject result = PriceAPI.searchProduct(productName);
+		PriceAPI.isFinished = false;
 		PrintWriter resp = response.getWriter();
         resp.println(result);
         resp.flush();

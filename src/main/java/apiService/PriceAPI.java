@@ -20,6 +20,7 @@ public class PriceAPI {
 	private final static String country = "&country=fr";
 	private final static String topic = "&topic=product_and_offers";
 	private final static String key = "&key=term";
+	public static boolean isFinished = false;
 	
 	
 	
@@ -100,7 +101,7 @@ public class PriceAPI {
 			}
 			waitBulk = waitForFinish(bulkId);
 		}
-		
+		isFinished = true;
 		String status = bulk.get("status").getAsString();
 		System.out.println("bulk id : " + bulkId + " status : " + status);
 		String uri = url_product + bulkId + apiKey;

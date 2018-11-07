@@ -14,6 +14,7 @@ import com.google.gson.JsonArray;
 
 import com.google.gson.JsonObject;
 
+import apiService.PriceAPI;
 import apiService.PriceYuge;
 
 
@@ -38,8 +39,8 @@ public class ComparePrice extends HttpServlet {
 		
 		String productName = request.getParameter("productName");
 		
-		JsonArray result = PriceYuge.getPricesOfAllProducts(productName);
-		
+	//	JsonArray result = PriceYuge.getPricesOfAllProducts(productName);
+		JsonObject result = PriceAPI.searchProduct(productName);
 		PrintWriter resp = response.getWriter();
         resp.println(result);
         resp.flush();

@@ -40,6 +40,20 @@ public class AutorisationAcess {
 	}
 	
 	
+	public static String encodePassword(String password)
+	{
+	
+		Algorithm algo;
+        algo = Algorithm.HMAC256("secretKey");
+        Builder token = JWT.create().withIssuer("auth0");
+        token.withClaim("userPassword", password);
+        String tok = token.sign(algo);
+
+        return tok;
+	}
+	
+	
+	
 	public static Claim verify(HttpServletRequest request)
 	{
 		
@@ -58,6 +72,8 @@ public class AutorisationAcess {
 		    return jwt.getClaim("userId");
 		
 	}
+	
+	
 	
 	
 	public static boolean allowUser(HttpServletRequest req)

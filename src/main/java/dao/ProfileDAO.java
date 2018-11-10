@@ -9,6 +9,7 @@ import java.sql.SQLException;
 import configuration.Connexion;
 import models.Personne;
 import status.Reponse;
+import tokens.AutorisationAcess;
 
 public class ProfileDAO {
 
@@ -268,7 +269,7 @@ public class ProfileDAO {
 	} 
 
 		
-		return new Reponse("ok", password);
+		return new Reponse("ok", AutorisationAcess.encodePassword(password));
 		
 	}
 	

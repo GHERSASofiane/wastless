@@ -48,15 +48,7 @@ public class SignIn extends HttpServlet {
 		ProfileService pers = new ProfileService();
 		JsonObject obj = pers.getUserInformation( personne);
 		PrintWriter pw = response.getWriter();
-		
-		personne  = (Personne) JSonConverter.objectFromJson(obj.getAsJsonObject("reponse"), personne);	
-		String token = AutorisationAcess.registerToken(personne);
-		obj.addProperty("token", token);
-		
-		
-		
 		pw.println(obj);
-
 		pw.flush();
 
 	}

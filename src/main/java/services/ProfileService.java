@@ -6,6 +6,7 @@ import converters.JSonConverter;
 import dao.ProfileDAO;
 import models.Personne;
 import status.Reponse;
+import tokens.AutorisationAcess;
 
 public class ProfileService {
 	
@@ -16,7 +17,13 @@ public class ProfileService {
 		ProfileDAO siDAO = new ProfileDAO();
 		Reponse reponse = siDAO.logIn(personne);
 		
-		
+		if(reponse.getStatus().equals("ok"))
+		{
+			JsonObject res = JSonConverter.objectToJson(reponse);
+			String token = AutorisationAcess.registerToken(personne);
+			res.addProperty("token", token);
+			return res;
+		}
 		
 		JsonObject res = JSonConverter.objectToJson(reponse);
 		
@@ -30,7 +37,13 @@ public class ProfileService {
 	ProfileDAO suDAO = new ProfileDAO();
 	Reponse reponse = suDAO.signUp(personne);
 	
-	
+	if(reponse.getStatus().equals("ok"))
+	{
+		JsonObject res = JSonConverter.objectToJson(reponse);
+		String token = AutorisationAcess.registerToken(personne);
+		res.addProperty("token", token);
+		return res;
+	}
 	
 	JsonObject res = JSonConverter.objectToJson(reponse);
 	return res;

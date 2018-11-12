@@ -50,31 +50,14 @@ public class SignUp extends HttpServlet {
 		 personne = (Personne) JSonConverter.objectFromJson(jsObj, personne);
 		  
 		 JsonObject obj;
+		 ProfileService pers = new ProfileService();
+		 obj = pers.inscription( personne);
 		 
-		 try
-		 {
-		 if(EmailVerification.isAddressValid(personne.getUserMail())) {
-			 ProfileService pers = new ProfileService();
-			 obj = pers.inscription( personne);
-		 }
-		 else
-		 {
-			 obj = JSonConverter.objectToJson(new Reponse("ko", personne.getUserMail() + "not vailde"));
-		 }
-		 } catch(Exception e)
-		 {
-			 obj = JSonConverter.objectToJson(new Reponse("ko", personne.getUserMail() + "not vailde")); 
-		 }
-		 
-				 
-		
-		
 		PrintWriter pw = response.getWriter();
 		
 		
 		
-		String token = AutorisationAcess.registerToken(personne);
-		obj.addProperty("token", token);
+		
 		pw.println(obj);
 		pw.flush();
 		

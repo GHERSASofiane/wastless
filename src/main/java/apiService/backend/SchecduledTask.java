@@ -1,4 +1,5 @@
-package apiService;
+package apiService.backend;
+
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -9,40 +10,32 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
+import apiService.PriceAPI;
+import apiService.PriceYuge;
+import converters.JSonConverter;
+
+
 public class SchecduledTask extends TimerTask {
 
 	@Override
 	public void run() {
 		System.out.println(new Date() + " Execution de ma tache");
-	/**	
-		JsonObject obj = (JsonObject) PriceYuge.searchProduct("sony");
-	
-		
+		List<String> productNames = getProductName.productNames();		
+		JsonObject obj = (JsonObject) PriceAPI.searchProduct(PriceAPI.values(productNames));
 		JsonArray result = obj.getAsJsonArray("results");
-		List<ProductPrices> productprices = new ArrayList<>();
+		List<ProductPrices> productprices = new ArrayList<ProductPrices>();
 		
 		for(JsonElement ele : result)
 		{
 			JsonObject product = ele.getAsJsonObject().get("content").getAsJsonObject();
 			ProductPrices ps = new ProductPrices();
-			ps = (ProductPrices) JSonConverter.objectFromJson(product, ps);
-			
+			ps = (ProductPrices) JSonConverter.objectFromJson(product, ps);	
 			productprices.add(ps);
 			System.out.println(ps.getName());
 		}
 		
 		
-		for(ProductPrices pPrices : productprices)
-		{
-			System.out.println("-------------" + pPrices.getName() + "-----------------");
-			for(ProductStore offer : pPrices.getOffers())
-			{
-				System.out.println(" ---------" +  offer.getShop_name() + ", " + offer.getPrice());
-			}
-		}
-		
-		*/
-		
+		getProductName.insert(productprices);	
 	}
 
 }

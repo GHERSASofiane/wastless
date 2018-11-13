@@ -21,7 +21,7 @@ public class PriceAPI {
 	private final static String country = "&country=fr";
 	private final static String topic = "&topic=product_and_offers";
 	private final static String key = "&key=term";
-	private static boolean isFinished = false;
+	public static boolean isFinished = false;
 	
 	
 	

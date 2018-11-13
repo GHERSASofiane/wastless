@@ -79,7 +79,7 @@ public class getProductName {
 		
 		try {
 			Connection db = Connexion.getConnection();
-			String res = " INSERT INTO productPrices VALUES" + values;
+			String res = " INSERT INTO productPrices VALUES" + values + ";";
 					
 			
 			Statement statement = db.createStatement();

@@ -26,11 +26,14 @@ public class SchecduledTask extends TimerTask {
 		
 		for(JsonElement ele : result)
 		{
-			JsonObject product = ele.getAsJsonObject().get("content").getAsJsonObject();
-			ProductPrices ps = new ProductPrices();
-			ps = (ProductPrices) JSonConverter.objectFromJson(product, ps);	
-			productprices.add(ps);
-			System.out.println(ps.getName());
+			if(ele.getAsJsonObject().get("content") instanceof JsonObject)
+			{
+				JsonObject product = ele.getAsJsonObject().get("content").getAsJsonObject();
+				ProductPrices ps = new ProductPrices();
+				ps = (ProductPrices) JSonConverter.objectFromJson(product, ps);	
+				productprices.add(ps);
+				System.out.println(ps.getName());
+			}
 		}
 		
 		

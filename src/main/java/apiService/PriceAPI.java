@@ -120,8 +120,9 @@ public class PriceAPI {
 			sb.append("value=" + p.replaceAll(" ", "%20") + "%0A");
 		}
 		
-		if(sb.length() > 0)
-			sb.deleteCharAt(sb.length() - 1);
+		
+		if(sb.length() > 2)
+			sb.delete(sb.length() - 3, sb.length() - 1);
 		
 		return sb.toString();
 	}

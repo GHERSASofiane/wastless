@@ -11,7 +11,6 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
 import apiService.PriceAPI;
-import apiService.PriceYuge;
 import converters.JSonConverter;
 
 

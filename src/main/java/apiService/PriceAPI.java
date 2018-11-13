@@ -21,7 +21,7 @@ public class PriceAPI {
 	private final static String country = "&country=fr";
 	private final static String topic = "&topic=product_and_offers";
 	private final static String key = "&key=term";
-	public static boolean isFinished = false;
+	private static boolean isFinished = false;
 	
 	
 	
@@ -70,7 +70,8 @@ public class PriceAPI {
 	public static JsonObject createNewJob(String productName)
 	{
 		
-		URL url;
+	
+		isFinished = false;
 		String uri =  url_job + apiKey + source + country + topic + key + "&values=" + productName;
 		return (JsonObject) connect(uri, "POST");
 		
@@ -78,20 +79,22 @@ public class PriceAPI {
 	}
 	
 	
-	public static JsonObject waitForFinish(String bulkId)
+	public static void waitForFinish(String bulkId)
 	{
 		String uri = url_job + "/" + bulkId + apiKey;
-		return (JsonObject) connect(uri, "GET");
+		connect(uri, "GET");
+		isFinished = true;
 	}
 	 
 	public static JsonObject searchProduct(String productName)
 	{
+		
 		JsonObject bulk = createNewJob(productName).getAsJsonObject();
 		String bulkId = bulk.get("job_id").getAsString();
 		
-		JsonObject waitBulk = waitForFinish(bulkId);
+		waitForFinish(bulkId);
 		
-		while(!waitBulk.get("status").getAsString().equals("finished"))
+		while(!isFinished)
 		{
 			try {
 				Thread.sleep(100);
@@ -100,7 +103,7 @@ public class PriceAPI {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			waitBulk = waitForFinish(bulkId);
+			
 		}
 		isFinished = true;
 		String status = bulk.get("status").getAsString();

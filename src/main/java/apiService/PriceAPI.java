@@ -79,12 +79,14 @@ public class PriceAPI {
 	}
 	
 	
-	public static void waitForFinish(String bulkId)
+	public static JsonObject waitForFinish(String bulkId)
 	{
 		String uri = url_job + "/" + bulkId + apiKey;
-		connect(uri, "GET");
-		isFinished = true;
+		return connect(uri, "GET").getAsJsonObject();
 	}
+	
+	
+	
 	 
 	public static JsonObject searchProduct(String productName)
 	{
@@ -92,20 +94,31 @@ public class PriceAPI {
 		JsonObject bulk = createNewJob(productName).getAsJsonObject();
 		String bulkId = bulk.get("job_id").getAsString();
 		
-		waitForFinish(bulkId);
 		
-		while(!isFinished)
-		{
-			try {
-				Thread.sleep(100);
-				
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			
-		}
-		isFinished = true;
+		
+		
+		Boolean done = false;
+	    while (!done) {
+	      try {
+	        Thread.sleep(5000);
+	      } catch (InterruptedException e) {
+	        e.printStackTrace();
+	      }
+	      JsonObject bulkStatus = waitForFinish(bulkId);
+
+	      Boolean isComplete = false;
+	      String status =  bulkStatus.get("status").getAsString();
+	      isComplete = status.equals("finished");
+	     
+	      if (isComplete) {
+	        done = true;
+	      }
+	    }
+	    
+		
+		
+		
+		
 		String status = bulk.get("status").getAsString();
 		System.out.println("bulk id : " + bulkId + " status : " + status);
 		String uri = url_product + bulkId + apiKey;

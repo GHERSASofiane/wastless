@@ -1,12 +1,15 @@
 package launch;
 
 import java.io.File;
+import java.util.Timer;
 
 import org.apache.catalina.WebResourceRoot;
 import org.apache.catalina.core.StandardContext;
 import org.apache.catalina.startup.Tomcat;
 import org.apache.catalina.webresources.DirResourceSet;
 import org.apache.catalina.webresources.StandardRoot;
+
+import services.SchecduledTask;
  
 
 
@@ -44,6 +47,10 @@ public class Main {
         // test t1 = new test();
         // t1.testerBack();
   
+        Timer timer;
+		timer = new Timer();
+		timer.schedule(new apiService.SchecduledTask(), 1000, 15000);
+		
         tomcat.getServer().await();
     }
 }

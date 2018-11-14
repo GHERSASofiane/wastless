@@ -90,7 +90,7 @@ public class PriceAPI {
 	 
 	public static JsonObject searchProduct(String productName)
 	{
-		
+		/**
 		JsonObject bulk = createNewJob(productName).getAsJsonObject();
 		String bulkId = bulk.get("job_id").getAsString();
 		
@@ -115,17 +115,12 @@ public class PriceAPI {
 	      }
 	    }
 	    
-		
-		
-		
-		
 		String status = bulk.get("status").getAsString();
 		System.out.println("bulk id : " + bulkId + " status : " + status);
-		
-		
-		
 		String uri = url_product + bulkId + apiKey;
-	//	String uri = url_product + "5beb41d178e9a0000f4e2c77" + apiKey;
+		*/
+		
+		String uri = url_product + "5bec6d267a4b2b169dee6eb6" + apiKey;
 		
 		return  connect(uri, "GET").getAsJsonObject();
 		

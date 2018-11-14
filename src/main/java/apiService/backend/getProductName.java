@@ -104,7 +104,11 @@ public class getProductName {
 			db.close();
 
 			if (!pPrices.getOffers().isEmpty())
-				return JSonConverter.objectToJson(new Reponse("ok", new ArrayList<ProductPrices>().add(pPrices)));
+			{
+				List<ProductPrices> result= new ArrayList<ProductPrices>();
+				result.add(pPrices);
+				return JSonConverter.objectToJson(new Reponse("ok", result));
+			}
 			else {
 				return JSonConverter.objectToJson(new Reponse("ok", searchProduct(productName)));
 			}

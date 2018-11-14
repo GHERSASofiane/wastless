@@ -79,7 +79,7 @@ public class getProductName {
 	
 	public static JsonObject productExist(String productName)
 	{
-		
+		System.out.println("--------------------------> : " + productName);
 		try {
 			Connection db = Connexion.getConnection();
 
@@ -91,7 +91,6 @@ public class getProductName {
 			ProductPrices pPrices = new ProductPrices();
 			pPrices.setName(productName);
 			
-			List<ProductStore> stores = new ArrayList<ProductStore>();
 			
 			while (res.next()) {
 				ProductStore ps = new ProductStore();

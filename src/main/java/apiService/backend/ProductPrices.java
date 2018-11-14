@@ -1,11 +1,12 @@
 package apiService.backend;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ProductPrices {
 
 	private String name;
-	private List<ProductStore> offers;
+	private List<ProductStore> offers = new ArrayList<ProductStore>();
 	
 	public String getName() {
 		return name;

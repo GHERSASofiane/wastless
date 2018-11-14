@@ -32,7 +32,7 @@ public class SchecduledTask extends TimerTask {
 				ProductPrices ps = new ProductPrices();
 				ps = (ProductPrices) JSonConverter.objectFromJson(product, ps);	
 				productprices.add(ps);
-				System.out.println(ps.getName());
+			//	System.out.println(ps.getName());
 			}
 		}
 		

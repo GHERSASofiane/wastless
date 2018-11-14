@@ -9,7 +9,11 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.google.gson.JsonObject;
+
 import configuration.Connexion;
+import converters.JSonConverter;
+import status.Reponse;
 
 public class getProductName {
 
@@ -70,6 +74,49 @@ public class getProductName {
 			e.printStackTrace();
 
 		}
+	}
+	
+	
+	public static JsonObject productExist(String productName)
+	{
+		
+		try {
+			Connection db = Connexion.getConnection();
+
+			String req = ("SELECT * FROM productPrices where productName=?");
+			PreparedStatement pst = db.prepareStatement(req);
+			pst.setString(1, productName);
+			ResultSet res =  pst.executeQuery();
+			
+			ProductPrices pPrices = new ProductPrices();
+			pPrices.setName(productName);
+			
+			List<ProductStore> stores = new ArrayList<ProductStore>();
+			
+			while (res.next()) {
+				ProductStore ps = new ProductStore();
+				ps.setShop_name(res.getString("storename"));
+				ps.setPrice(res.getDouble("price"));
+				ps.setUrl(res.getString("url"));
+				pPrices.getOffers().add(ps);
+			}
+			
+			pst.close();
+			db.close();
+			
+			if(!pPrices.getOffers().isEmpty())
+				return JSonConverter.objectToJson(new Reponse("ok", pPrices));
+			
+			
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			return JSonConverter.objectToJson(new Reponse("ko", "oops, erreur 500"));
+			
+
+		} 
+		
+		return JSonConverter.objectToJson(new Reponse("ko", "aucun produit trouvé"));
 	}
 
 }

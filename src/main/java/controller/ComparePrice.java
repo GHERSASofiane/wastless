@@ -16,6 +16,7 @@ import com.google.gson.JsonObject;
 
 import apiService.PriceAPI;
 import apiService.PriceYuge;
+import apiService.backend.getProductName;
 
 
 /**
@@ -38,23 +39,14 @@ public class ComparePrice extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String productName = request.getParameter("productName");
-		System.out.println("---------------------" + productName + "---------------------");
+		
+		JsonObject result = getProductName.productExist(productName);
+				
+		// PriceAPI.searchProduct(productName.replaceAll(" ", "%20"));
 		
 		
-	//	JsonArray result = PriceYuge.getPricesOfAllProducts(productName);
-		JsonObject result = PriceAPI.searchProduct(productName.replaceAll(" ", "%20"));
 		
-		while(!PriceAPI.isFinished)
-		{
-			try {
-				Thread.sleep(100);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
 		
-		PriceAPI.isFinished = false;
 		PrintWriter resp = response.getWriter();
         resp.println(result);
         resp.flush();

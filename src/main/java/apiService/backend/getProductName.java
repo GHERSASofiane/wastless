@@ -140,13 +140,21 @@ public class getProductName {
 		List<ProductPrices> productprices = new ArrayList<ProductPrices>();
 
 		for (JsonElement ele : result) {
+
+			ProductPrices ps = null;
+
 			if (ele.getAsJsonObject().get("content") instanceof JsonObject) {
 				JsonObject product = ele.getAsJsonObject().get("content").getAsJsonObject();
-				ProductPrices ps = new ProductPrices();
+				ps = new ProductPrices();
 				ps = (ProductPrices) JSonConverter.objectFromJson(product, ps);
-				productprices.add(ps);
-
 			}
+
+			if (ps != null && ele.getAsJsonObject().get("query") instanceof JsonObject) {
+				JsonObject product = ele.getAsJsonObject().get("query").getAsJsonObject();
+				ps.setName(product.get("value").getAsString());
+				productprices.add(ps);
+			}
+
 		}
 
 		return productprices;
@@ -161,13 +169,9 @@ public class getProductName {
 			pst.close();
 			db.close();
 
-		} 
-		catch (Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
-		
 	}
 }
-
-

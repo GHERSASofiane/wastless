@@ -9,8 +9,11 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
+import apiService.PriceAPI;
 import configuration.Connexion;
 import converters.JSonConverter;
 import status.Reponse;
@@ -104,7 +107,11 @@ public class getProductName {
 			db.close();
 			
 			if(!pPrices.getOffers().isEmpty())
-				return JSonConverter.objectToJson(new Reponse("ok", pPrices));
+				return JSonConverter.objectToJson(new Reponse("ok", new ArrayList<ProductPrices>().add(pPrices)));
+			else
+			{
+				return JSonConverter.objectToJson(new Reponse("ok", searchProduct(productName)));
+			}
 			
 			
 
@@ -115,7 +122,50 @@ public class getProductName {
 
 		} 
 		
-		return JSonConverter.objectToJson(new Reponse("ko", "aucun produit trouvé"));
+		
+	}
+	
+	
+	public static List<ProductPrices> searchProduct(String productName)
+	{
+		String req = "select productName from product where productName not in (select productName from productPrices);";
+		final List<ProductPrices> productprices = productFromAPI(productName);
+		
+		new Thread(new Runnable() {
+			
+			public void run() {
+				
+				getProductName.insert(productprices);	
+				
+			}
+		}).start();
+		
+		
+		return productprices;
 	}
 
+	
+	
+public static List<ProductPrices> productFromAPI(String productNames)
+{
+	
+	JsonObject obj = (JsonObject) PriceAPI.searchProduct(productNames);
+	JsonArray result = obj.getAsJsonArray("results");
+	List<ProductPrices> productprices = new ArrayList<ProductPrices>();
+	
+	for(JsonElement ele : result)
+	{
+		if(ele.getAsJsonObject().get("content") instanceof JsonObject)
+		{
+			JsonObject product = ele.getAsJsonObject().get("content").getAsJsonObject();
+			ProductPrices ps = new ProductPrices();
+			ps = (ProductPrices) JSonConverter.objectFromJson(product, ps);	
+			productprices.add(ps);
+		
+		}
+	}
+
+	return productprices;
+}
+	
 }

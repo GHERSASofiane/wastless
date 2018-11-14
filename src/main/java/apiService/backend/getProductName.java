@@ -78,10 +78,8 @@ public class getProductName {
 
 		}
 	}
-	
-	
-	public static JsonObject productExist(String productName)
-	{
+
+	public static JsonObject productExist(String productName) {
 		System.out.println("--------------------------> : " + productName);
 		try {
 			Connection db = Connexion.getConnection();
@@ -89,12 +87,11 @@ public class getProductName {
 			String req = ("SELECT * FROM productPrices where productName=?");
 			PreparedStatement pst = db.prepareStatement(req);
 			pst.setString(1, productName);
-			ResultSet res =  pst.executeQuery();
-			
+			ResultSet res = pst.executeQuery();
+
 			ProductPrices pPrices = new ProductPrices();
 			pPrices.setName(productName);
-			
-			
+
 			while (res.next()) {
 				ProductStore ps = new ProductStore();
 				ps.setShop_name(res.getString("storename"));
@@ -102,70 +99,75 @@ public class getProductName {
 				ps.setUrl(res.getString("url"));
 				pPrices.getOffers().add(ps);
 			}
-			
+
 			pst.close();
 			db.close();
-			
-			if(!pPrices.getOffers().isEmpty())
+
+			if (!pPrices.getOffers().isEmpty())
 				return JSonConverter.objectToJson(new Reponse("ok", new ArrayList<ProductPrices>().add(pPrices)));
-			else
-			{
+			else {
 				return JSonConverter.objectToJson(new Reponse("ok", searchProduct(productName)));
 			}
-			
-			
 
 		} catch (Exception e) {
 			e.printStackTrace();
 			return JSonConverter.objectToJson(new Reponse("ko", "oops, erreur 500"));
-			
 
-		} 
-		
-		
+		}
+
 	}
-	
-	
-	public static List<ProductPrices> searchProduct(String productName)
-	{
+
+	public static List<ProductPrices> searchProduct(String productName) {
 		String req = "select productName from product where productName not in (select productName from productPrices);";
 		final List<ProductPrices> productprices = productFromAPI(productName);
-		
+
 		new Thread(new Runnable() {
-			
+
 			public void run() {
-				
-				getProductName.insert(productprices);	
-				
+
+				getProductName.insert(productprices);
+
 			}
 		}).start();
-		
-		
+
 		return productprices;
 	}
 
-	
-	
-public static List<ProductPrices> productFromAPI(String productNames)
-{
-	
-	JsonObject obj = (JsonObject) PriceAPI.searchProduct(productNames);
-	JsonArray result = obj.getAsJsonArray("results");
-	List<ProductPrices> productprices = new ArrayList<ProductPrices>();
-	
-	for(JsonElement ele : result)
-	{
-		if(ele.getAsJsonObject().get("content") instanceof JsonObject)
-		{
-			JsonObject product = ele.getAsJsonObject().get("content").getAsJsonObject();
-			ProductPrices ps = new ProductPrices();
-			ps = (ProductPrices) JSonConverter.objectFromJson(product, ps);	
-			productprices.add(ps);
-		
+	public static List<ProductPrices> productFromAPI(String productNames) {
+
+		JsonObject obj = (JsonObject) PriceAPI.searchProduct(productNames);
+		JsonArray result = obj.getAsJsonArray("results");
+		List<ProductPrices> productprices = new ArrayList<ProductPrices>();
+
+		for (JsonElement ele : result) {
+			if (ele.getAsJsonObject().get("content") instanceof JsonObject) {
+				JsonObject product = ele.getAsJsonObject().get("content").getAsJsonObject();
+				ProductPrices ps = new ProductPrices();
+				ps = (ProductPrices) JSonConverter.objectFromJson(product, ps);
+				productprices.add(ps);
+
+			}
 		}
+
+		return productprices;
 	}
 
-	return productprices;
+	public static void deleteProductsFromDB() {
+
+		try {
+			Connection db = Connexion.getConnection();
+			Statement pst = db.createStatement();
+			pst.executeQuery(" delete from productPrices;");
+			pst.close();
+			db.close();
+
+		} 
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		
+	}
 }
-	
-}
+
+

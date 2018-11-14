@@ -123,7 +123,7 @@ public class getProductName {
 
 	public static List<ProductPrices> searchProduct(String productName) {
 		String req = "select productName from product where productName not in (select productName from productPrices);";
-		final List<ProductPrices> productprices = productFromAPI(productName);
+		final List<ProductPrices> productprices = productFromAPI(productName.replaceAll(" ", "%20"));
 
 		new Thread(new Runnable() {
 

@@ -85,7 +85,7 @@ public class getProductName {
 
 			String req = ("SELECT * FROM productPrices where productName=?");
 			PreparedStatement pst = db.prepareStatement(req);
-			pst.setString(1, productName);
+			pst.setString(1, productName.replaceAll("%20", " "));
 			ResultSet res =  pst.executeQuery();
 			
 			ProductPrices pPrices = new ProductPrices();

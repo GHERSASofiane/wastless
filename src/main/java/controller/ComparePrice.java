@@ -40,7 +40,7 @@ public class ComparePrice extends HttpServlet {
 		
 		String productName = request.getParameter("productName");
 		
-		JsonObject result = getProductName.productExist(productName);
+		JsonObject result = getProductName.productExist(productName.replaceAll("%20", " "));
 				
 		// PriceAPI.searchProduct(productName.replaceAll(" ", "%20"));
 		

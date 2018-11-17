@@ -14,7 +14,9 @@ import com.google.gson.JsonObject;
 import converters.JSonConverter;
 import helpers.Readers; 
 import models.Product;
-import services.ProductServices; 
+import services.ProductServices;
+import status.Reponse;
+import tokens.AutorisationAcess; 
 
 /**
  *
@@ -30,13 +32,24 @@ public class AddProduct  extends HttpServlet {
 
         JsonObject jsObj = Readers.getJSONfromRequest(request);
 
+        JsonObject result = new JsonObject();
+        
+        if(!AutorisationAcess.isTokenExist(request))
+        {
+        	result = JSonConverter.objectToJson(new Reponse("ko", "user not logged in"));
+        }
+        else
+        {
+        
         Product product = new Product();
         product = (Product) JSonConverter.objectFromJson(jsObj, product);
         
         // Préparer la répense
         ProductServices rep = new ProductServices();
+        result = rep.addProduct(product);
+        }
         // Envoie de réponse 
-        resp.println(rep.addProduct(product));  
+        resp.println(result);  
         resp.flush();
 
     }

@@ -14,7 +14,7 @@ import com.auth0.jwt.interfaces.Claim;
 import com.auth0.jwt.interfaces.DecodedJWT;
 import com.google.gson.JsonObject;
 
-
+import DAO.ProfilDAO;
 import models.Personne;
 
 public class AutorisationAcess {
@@ -85,7 +85,38 @@ public class AutorisationAcess {
 			return true;
 		
 	}
-	
+
+
+	/** =============== ====================== verifier si l'utilisateur est bien connecter en utilisant le token */
+
+	public static boolean isTokenExist(HttpServletRequest request)
+	{
+		if(!AutorisationAcess.allowUser(request))
+		{
+			return false;
+		//	JsonObject obj = JSonConverter.objectToJson(new Reponse("ko", "user not logged in"));
+		}
+		else
+		{
+			try
+			{
+			Claim claim = AutorisationAcess.verify(request);
+			ProfilDAO ps = new ProfilDAO();
+			
+			if(!ps.getUserWithId(claim.asInt()))
+				return false;
+			
+			
+			}
+			catch(Exception e)
+			{
+				e.printStackTrace();
+				return false;
+			}
+		}
+		
+		return true;
+	}
 	
 	
 }
